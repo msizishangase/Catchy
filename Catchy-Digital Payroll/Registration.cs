@@ -48,9 +48,42 @@ namespace Catchy_Digital_Payroll
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Dashboard dash = new Dashboard();
-            dash.Show();
-            this.Hide();
+            string gender = "";
+
+            if (radMale.Checked)
+            {
+                gender = "Male";
+            }
+            else if (radFemale.Checked)
+            {
+                gender = "Female";
+            }
+            else if (radOther.Checked)
+            {
+                gender = txtOtherGender.Text;
+            }
+
+            HR_Manager hr = new HR_Manager();
+            hr.propFullname = txtFullname.Text;
+            hr.propUsername = txtUsername.Text;
+            hr.propEmail = txtEmailaddress.Text;
+            hr.propPassword = txtPassword.Text;
+            hr.propGender = gender;
+
+            if (hr.UserAlreadyExist() == false)
+            {
+                hr.Register();
+
+                Dashboard dash = new Dashboard();
+                dash.Show();
+                this.Hide();
+            }
+            else
+            {
+
+                MessageBox.Show($"An account with the username: {txtUsername.Text} already has an account!", "ALERT");
+            }
+
         }
     }
     

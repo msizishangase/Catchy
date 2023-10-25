@@ -28,5 +28,23 @@ namespace Catchy_Digital_Payroll
         {
             Application.Exit();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            HR_Manager hr = new HR_Manager();
+            hr.propUsername = txtUsername.Text;
+            hr.propPassword = txtPassword.Text;
+            
+            if (hr.LogIn() == true)
+            {
+                Dashboard dash = new Dashboard();
+                dash.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Check credentials and try again!", "ALERT");
+            }
+        }
     }
 }

@@ -70,6 +70,15 @@ namespace Catchy_Digital_Payroll
                 }
             }
         }
+
+        public HR_Manager()
+        {
+            propFullname = "";
+            propUsername = "";
+            propEmail = "";
+            propPassword = "";
+            propGender = "";
+        }
         
         public HR_Manager(string fullName, string username, string email, string password, string gender)
         {
@@ -89,12 +98,13 @@ namespace Catchy_Digital_Payroll
                 writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}");
             }
         }
-        public void LogIn()
+        public bool LogIn()
         {
             string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
             string[] Record = new string[5];
+            bool matches = false;
 
             using (reader)
             {
@@ -104,11 +114,44 @@ namespace Catchy_Digital_Payroll
                     Record = lineRead.Split('|');
                     if (Record[1] == propUsername && Record[4] == propPassword)
                     {
-                        Dashboard dash = new Dashboard();
-                        dash.Show();
+                        return matches = true;
                     }
+                    else
+                    {
+                        return matches;
+                    }
+                    lineRead = reader.ReadLine();
                 }
             }
+            return matches;
+        }
+
+        public bool UserAlreadyExist()
+        {
+            string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
+            StreamReader reader = new StreamReader(file);
+            string lineRead = "";
+            string[] Record = new string[5];
+            bool exist = false;
+
+            using (reader)
+            {
+                lineRead = reader.ReadLine();
+                while (lineRead != null)
+                {
+                    Record = lineRead.Split('|');
+                    if (Record[1] == propUsername)
+                    {
+                        exist = true;
+                    }
+                    else
+                    {
+                        return exist;
+                    }
+                    lineRead = reader.ReadLine();
+                }
+            }
+            return exist;
         }
     }
 }
