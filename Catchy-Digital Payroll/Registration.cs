@@ -69,7 +69,6 @@ namespace Catchy_Digital_Payroll
             hr.propEmail = txtEmailaddress.Text;
             hr.propPassword = txtPassword.Text;
             hr.propGender = gender;
-            hr.propProfilePic = pictureBox1.ImageLocation;
 
             if (hr.UserAlreadyExist() == false)
             {
@@ -98,7 +97,6 @@ namespace Catchy_Digital_Payroll
             }
 
             HR_Manager hr = new HR_Manager();
-            hr.propProfilePic = openFileDialog.FileName;
         }
     }
 

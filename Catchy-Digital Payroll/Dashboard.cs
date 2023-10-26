@@ -15,11 +15,13 @@ namespace Catchy_Digital_Payroll
         public Dashboard()
         {
             InitializeComponent();
+            
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            //
+            label1.Text = Username;
         }
+        public string Username { get; set; }
     }
 }

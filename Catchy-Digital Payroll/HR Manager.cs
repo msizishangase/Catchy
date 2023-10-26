@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Catchy_Digital_Payroll
 {
-    internal class HR_Manager
+    public class HR_Manager
     {
         string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
 
@@ -100,12 +100,12 @@ namespace Catchy_Digital_Payroll
                 writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}");
             }
         }
-        public bool LogIn()
+        public string LogIn()
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
             string[] Record = new string[6];
-            bool matches = false;
+            string matches = "";
 
             using (reader)
             {
@@ -115,12 +115,7 @@ namespace Catchy_Digital_Payroll
                     Record = lineRead.Split('|');
                     if (Record[1] == propUsername && Record[4] == propPassword)
                     {
-                        //propProfilePic = Record[5];
-                        matches = true;
-                    }
-                    else
-                    {
-                        matches = false;
+                        matches = propUsername;
                     }
                     lineRead = reader.ReadLine();
                 }
@@ -154,5 +149,6 @@ namespace Catchy_Digital_Payroll
             }
             return exist;
         }
+        
     }
 }

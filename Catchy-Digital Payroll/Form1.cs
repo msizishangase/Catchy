@@ -35,13 +35,14 @@ namespace Catchy_Digital_Payroll
             hr.propUsername = txtUsername.Text;
             hr.propPassword = txtPassword.Text;
             
-            if (hr.LogIn() == true)
+            if (hr.LogIn() != "")
             {
                 Dashboard dash = new Dashboard();
+                dash.Username = hr.LogIn();
                 dash.Show();
                 this.Hide();
             }
-            else
+            else if (hr.LogIn() == "")
             {
                 MessageBox.Show("Check credentials and try again!", "ALERT");
             }
