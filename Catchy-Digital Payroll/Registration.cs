@@ -69,6 +69,7 @@ namespace Catchy_Digital_Payroll
             hr.propEmail = txtEmailaddress.Text;
             hr.propPassword = txtPassword.Text;
             hr.propGender = gender;
+            hr.propProfilePic = pictureBox1.ImageLocation;
 
             if (hr.UserAlreadyExist() == false)
             {
