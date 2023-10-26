@@ -16,5 +16,20 @@ namespace Catchy_Digital_Payroll
         {
             InitializeComponent();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            HR_Manager hR_Manager = new HR_Manager();
+            string image = hR_Manager.propProfilePic;
+            label1.Text = hR_Manager.propUsername;
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.png; *.jpeg; *.gif; *.bmp|All Files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                profileTest1.ImageLocation = image;
+            }
+        }
     }
 }

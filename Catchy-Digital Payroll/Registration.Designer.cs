@@ -219,6 +219,7 @@
             btnAddProfilePicture.TabIndex = 10;
             btnAddProfilePicture.Text = "Add profile pic (Optional)";
             btnAddProfilePicture.UseVisualStyleBackColor = true;
+            btnAddProfilePicture.Click += btnAddProfilePicture_Click;
             // 
             // radMale
             // 

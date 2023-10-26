@@ -85,6 +85,20 @@ namespace Catchy_Digital_Payroll
             }
 
         }
+
+        private void btnAddProfilePicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.png; *.jpeg; *.gif; *.bmp|All Files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = openFileDialog.FileName;
+            }
+
+            HR_Manager hr = new HR_Manager();
+            hr.propProfilePic = openFileDialog.FileName;
+        }
     }
-    
+
 }
