@@ -118,7 +118,7 @@ namespace Catchy_Digital_Payroll
                     }
                     else
                     {
-                        return matches;
+                        matches = false;
                     }
                     lineRead = reader.ReadLine();
                 }
