@@ -22,6 +22,7 @@ namespace Catchy_Digital_Payroll
         private void Dashboard_Load(object sender, EventArgs e)
         {
             btnUserProfile.Text = "  Logged in as" + "\n" + $"  {Username}";
+            NavBar.Start();
         }
 
         private void NavBar_Tick(object sender, EventArgs e)

@@ -55,7 +55,7 @@
             NavigationBar.MinimumSize = new Size(51, 565);
             NavigationBar.Name = "NavigationBar";
             NavigationBar.Padding = new Padding(5);
-            NavigationBar.Size = new Size(174, 565);
+            NavigationBar.Size = new Size(51, 565);
             NavigationBar.TabIndex = 2;
             // 
             // btnReports
@@ -70,7 +70,7 @@
             btnReports.ImageAlign = ContentAlignment.TopLeft;
             btnReports.Location = new Point(5, 185);
             btnReports.Name = "btnReports";
-            btnReports.Size = new Size(164, 45);
+            btnReports.Size = new Size(41, 45);
             btnReports.TabIndex = 3;
             btnReports.Text = "  Reports";
             btnReports.TextAlign = ContentAlignment.MiddleLeft;
@@ -90,9 +90,8 @@
             btnUserProfile.ImageAlign = ContentAlignment.TopLeft;
             btnUserProfile.Location = new Point(5, 515);
             btnUserProfile.Name = "btnUserProfile";
-            btnUserProfile.Size = new Size(164, 45);
+            btnUserProfile.Size = new Size(41, 45);
             btnUserProfile.TabIndex = 3;
-            btnUserProfile.Text = "  User\r\n";
             btnUserProfile.TextAlign = ContentAlignment.MiddleLeft;
             btnUserProfile.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUserProfile.UseVisualStyleBackColor = false;
@@ -110,7 +109,7 @@
             btnSettings.ImageAlign = ContentAlignment.TopLeft;
             btnSettings.Location = new Point(5, 140);
             btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(164, 45);
+            btnSettings.Size = new Size(41, 45);
             btnSettings.TabIndex = 3;
             btnSettings.Text = "  Settings";
             btnSettings.TextAlign = ContentAlignment.MiddleLeft;
@@ -130,7 +129,7 @@
             btnAboutUs.ImageAlign = ContentAlignment.TopLeft;
             btnAboutUs.Location = new Point(5, 95);
             btnAboutUs.Name = "btnAboutUs";
-            btnAboutUs.Size = new Size(164, 45);
+            btnAboutUs.Size = new Size(41, 45);
             btnAboutUs.TabIndex = 3;
             btnAboutUs.Text = "  About Us";
             btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
@@ -150,7 +149,7 @@
             btnEmployees.ImageAlign = ContentAlignment.TopLeft;
             btnEmployees.Location = new Point(5, 50);
             btnEmployees.Name = "btnEmployees";
-            btnEmployees.Size = new Size(164, 45);
+            btnEmployees.Size = new Size(41, 45);
             btnEmployees.TabIndex = 3;
             btnEmployees.Text = "  Employees";
             btnEmployees.TextAlign = ContentAlignment.MiddleLeft;
@@ -170,7 +169,7 @@
             btnDashboard.ImageAlign = ContentAlignment.TopLeft;
             btnDashboard.Location = new Point(5, 5);
             btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(164, 45);
+            btnDashboard.Size = new Size(41, 45);
             btnDashboard.TabIndex = 3;
             btnDashboard.Text = "  Dashboard";
             btnDashboard.TextAlign = ContentAlignment.MiddleLeft;
