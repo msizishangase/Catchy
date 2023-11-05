@@ -74,6 +74,7 @@
             // 
             // btnExit
             // 
+            btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnExit.ForeColor = Color.FromArgb(192, 0, 0);

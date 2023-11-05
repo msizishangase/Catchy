@@ -61,8 +61,9 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(30, 9);
+            label5.Location = new Point(33, 9);
             label5.Name = "label5";
             label5.Size = new Size(116, 20);
             label5.TabIndex = 4;
@@ -73,7 +74,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("MS Reference Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(9, 75, 108);
-            label4.Location = new Point(5, 1);
+            label4.Location = new Point(12, 1);
             label4.Name = "label4";
             label4.Size = new Size(31, 29);
             label4.TabIndex = 3;
@@ -209,10 +210,10 @@
             // 
             // btnAddProfilePicture
             // 
-            btnAddProfilePicture.FlatAppearance.BorderSize = 0;
+            btnAddProfilePicture.FlatAppearance.BorderColor = Color.FromArgb(9, 75, 108);
             btnAddProfilePicture.FlatStyle = FlatStyle.Flat;
             btnAddProfilePicture.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddProfilePicture.ForeColor = Color.Red;
+            btnAddProfilePicture.ForeColor = Color.Black;
             btnAddProfilePicture.Location = new Point(19, 143);
             btnAddProfilePicture.Name = "btnAddProfilePicture";
             btnAddProfilePicture.Size = new Size(232, 28);
@@ -302,6 +303,7 @@
             // 
             // btnExit
             // 
+            btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnExit.ForeColor = Color.FromArgb(192, 0, 0);
@@ -317,13 +319,14 @@
             // 
             // btnBack
             // 
+            btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnBack.ForeColor = Color.FromArgb(9, 75, 108);
             btnBack.Image = Properties.Resources.icons8_back_30;
             btnBack.Location = new Point(19, 436);
             btnBack.Name = "btnBack";
-            btnBack.Size = new Size(95, 37);
+            btnBack.Size = new Size(91, 37);
             btnBack.TabIndex = 13;
             btnBack.Text = "Back";
             btnBack.TextImageRelation = TextImageRelation.ImageBeforeText;

@@ -34,7 +34,7 @@ namespace Catchy_Digital_Payroll
             HR_Manager hr = new HR_Manager();
             hr.propUsername = txtUsername.Text;
             hr.propPassword = txtPassword.Text;
-            
+
             if (hr.LogIn() != "")
             {
                 Dashboard dash = new Dashboard();

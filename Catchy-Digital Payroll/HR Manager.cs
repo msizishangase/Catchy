@@ -144,7 +144,7 @@ namespace Catchy_Digital_Payroll
                     {
                         return exist;
                     }
-                    lineRead = reader.ReadLine();
+                    lineRead = reader.ReadLine();  
                 }
             }
             return exist;
