@@ -20,7 +20,59 @@ namespace Catchy_Digital_Payroll
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            label1.Text = Username;
+            btnUserProfile.Text = "  Logged in as" + "\n" + $"  {Username}";
+        }
+
+        private void NavBar_Tick(object sender, EventArgs e)
+        {
+            if (sideBarExpand)
+            {
+                NavigationBar.Width += 10;
+                if (NavigationBar.Width == NavigationBar.MaximumSize.Width)
+                {
+                    sideBarExpand = false;
+                    NavBar.Stop();
+                }
+            }
+            else
+            {
+                NavigationBar.Width -= 10;
+                if (NavigationBar.Width == NavigationBar.MinimumSize.Width)
+                {
+                    sideBarExpand = true;
+                    NavBar.Stop();
+                }
+            }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            NavBar.Start();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            NavBar.Start();
+        }
+
+        private void btnAboutUs_Click(object sender, EventArgs e)
+        {
+            NavBar.Start();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            NavBar.Start();
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            NavBar.Start();
+        }
+
+        private void btnUserProfile_Click(object sender, EventArgs e)
+        {
+            NavBar.Start();
         }
         public string Username { get; set; }
     }
