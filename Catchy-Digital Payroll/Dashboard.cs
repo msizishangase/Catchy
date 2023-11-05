@@ -12,10 +12,11 @@ namespace Catchy_Digital_Payroll
 {
     public partial class Dashboard : Form
     {
+        bool sideBarExpand;
         public Dashboard()
         {
             InitializeComponent();
-            
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -32,10 +33,24 @@ namespace Catchy_Digital_Payroll
                 {
                     sideBarExpand = false;
                     NavBar.Stop();
+
+                    btnDashboard.Text = "  Dashboard";
+                    btnEmployees.Text = "  Employees";
+                    btnAboutUs.Text = "  About Us";
+                    btnReports.Text = "  Reports";
+                    btnSettings.Text = "  Settings";
+                    btnUserProfile.Text = "  Logged in as" + "\n" + $"  {Username}";
                 }
             }
             else
             {
+                btnEmployees.Text = "";
+                btnDashboard.Text = "";
+                btnAboutUs.Text = "";
+                btnReports.Text = "";
+                btnSettings.Text = "";
+                btnUserProfile.Text = "";
+
                 NavigationBar.Width -= 10;
                 if (NavigationBar.Width == NavigationBar.MinimumSize.Width)
                 {
@@ -74,6 +89,7 @@ namespace Catchy_Digital_Payroll
         {
             NavBar.Start();
         }
+
         public string Username { get; set; }
     }
 }
