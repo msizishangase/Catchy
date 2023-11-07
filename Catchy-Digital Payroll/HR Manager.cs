@@ -99,13 +99,18 @@ namespace Catchy_Digital_Payroll
             {
                 writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}");
             }
+            MessageBox.Show("Your details are as follows:\n" +
+                $"Full name: {propFullname}\n" +
+                $"Username: {propUsername}\n" +
+                $"Email: {propEmail}\n" +
+                $"Password: {propPassword}", "DETAILS");
         }
-        public string LogIn()
+        public string CurrentUser() //Determines the current logged in user
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
             string[] Record = new string[6];
-            string matches = "";
+            string currentUser = "";
 
             using (reader)
             {
@@ -115,7 +120,29 @@ namespace Catchy_Digital_Payroll
                     Record = lineRead.Split('|');
                     if (Record[1] == propUsername && Record[4] == propPassword)
                     {
-                        matches = propUsername;
+                        currentUser = propUsername;
+                    }
+                    lineRead = reader.ReadLine();
+                }
+            }
+            return currentUser;
+        }
+        public bool LogIn() //Returns true if username matches the password and false if it does not
+        {
+            StreamReader reader = new StreamReader(file);
+            string lineRead = "";
+            string[] Record = new string[6];
+            bool matches = false;
+
+            using (reader)
+            {
+                lineRead = reader.ReadLine();
+                while (lineRead != null)
+                {
+                    Record = lineRead.Split('|');
+                    if (Record[1] == propUsername && Record[4] == propPassword)
+                    {
+                        matches = true;
                     }
                     lineRead = reader.ReadLine();
                 }
@@ -123,7 +150,7 @@ namespace Catchy_Digital_Payroll
             return matches;
         }
 
-        public bool UserAlreadyExist()
+        public bool UserAlreadyExist() //Returns true if user exists already and false if he/she doesn't
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";

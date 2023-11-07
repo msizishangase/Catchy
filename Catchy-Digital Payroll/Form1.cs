@@ -16,12 +16,14 @@ namespace Catchy_Digital_Payroll
 
         private void btnForgotPassword_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Relax, try to remember your password!", "ALERT");
+            MessageBox.Show("Contact the developer team \ncatchypayroll@gmail.com\n+27755462801", "ALERT");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             txtPassword.PasswordChar = '*';
+            lblUsernameWarning.Visible = false;
+            lblPasswordWarning.Visible = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -31,20 +33,62 @@ namespace Catchy_Digital_Payroll
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            HR_Manager hr = new HR_Manager();
-            hr.propUsername = txtUsername.Text;
-            hr.propPassword = txtPassword.Text;
-
-            if (hr.LogIn() != "")
+            if (txtUsername.Text == "" && txtPassword.Text == "")
             {
-                Dashboard dash = new Dashboard();
-                dash.Username = hr.LogIn();
-                dash.Show();
-                this.Hide();
+                lblUsernameWarning.Visible = true;
+                lblPasswordWarning.Visible = true;
             }
-            else if (hr.LogIn() == "")
+            else if (txtUsername.Text == "")
             {
-                MessageBox.Show("Check credentials and try again!", "ALERT");
+                lblUsernameWarning.Visible = true;
+                lblPasswordWarning.Visible = false;
+            }
+            else if (txtPassword.Text == "")
+            {
+                lblUsernameWarning.Visible = false;
+                lblPasswordWarning.Visible = true;
+            }
+            else
+            {
+                HR_Manager hr = new HR_Manager();
+                hr.propUsername = txtUsername.Text;
+                hr.propPassword = txtPassword.Text;
+
+                if (hr.LogIn())
+                {
+                    Dashboard dash = new Dashboard();
+                    dash.Username = hr.CurrentUser();
+                    dash.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect credentials, try again!", "ALERT");
+                }
+            }
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                lblUsernameWarning.Visible = true;
+            }
+            else
+            {
+                lblUsernameWarning.Visible = false;
+            }
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                lblPasswordWarning.Visible = true;
+            }
+            else
+            {
+                lblPasswordWarning.Visible = false;
             }
         }
     }
