@@ -169,7 +169,7 @@ namespace Catchy_Digital_Payroll
                     }
                     else
                     {
-                        return exist;
+                        exist = false;
                     }
                     lineRead = reader.ReadLine();  
                 }

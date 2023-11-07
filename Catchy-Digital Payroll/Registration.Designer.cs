@@ -308,6 +308,7 @@
             txtUsername.Size = new Size(286, 27);
             txtUsername.TabIndex = 6;
             txtUsername.TextChanged += txtUsername_TextChanged;
+            txtUsername.Leave += txtUsername_Leave;
             // 
             // label9
             // 

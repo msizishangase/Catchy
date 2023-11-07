@@ -112,7 +112,7 @@ namespace Catchy_Digital_Payroll
 
                                     Dashboard dash = new Dashboard();
                                     dash.Show();
-                                    //dash.Username = hr.CurrentUser();
+                                    dash.Username = txtUsername.Text;
                                     this.Hide();
                                 }
                                 else
@@ -237,6 +237,12 @@ namespace Catchy_Digital_Payroll
         {
             if (txtUsername.Text == "")
             {
+                lblUsernameWarning.Text = "Create username";
+                lblUsernameWarning.Visible = true;
+            }
+            else if (txtUsername.Text.Length < 5)
+            {
+                lblUsernameWarning.Text = "Username too short";
                 lblUsernameWarning.Visible = true;
             }
             else
@@ -308,6 +314,11 @@ namespace Catchy_Digital_Payroll
             {
                 return false;
             }
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            //
         }
     }
 
