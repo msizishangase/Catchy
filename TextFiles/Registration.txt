@@ -2,3 +2,7 @@ John Doe|John123|Male|john@gmail.com|1234|icons8-user-100.png
 Msizi Shangase|Msizi22|Male|mmm|1234|
 hjsddhshds|Sanele|Male|mn|1234|
 dsfhesr|Sanele|Male|ndf|1234|
+Sandiswa|Ndlela|Female|sandy@gmail.com|Sandy
+||||
+||||
+Sandiswa Ndlela|Sandy123|Female|sandiswa@gmail.com|123456

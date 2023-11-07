@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Catchy_Digital_Payroll
 {
-    internal class HR_Manager
+    public class HR_Manager
     {
         string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
 
@@ -99,8 +99,35 @@ namespace Catchy_Digital_Payroll
             {
                 writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}");
             }
+            MessageBox.Show("Your details are as follows:\n" +
+                $"Full name: {propFullname}\n" +
+                $"Username: {propUsername}\n" +
+                $"Email: {propEmail}\n" +
+                $"Password: {propPassword}", "DETAILS");
         }
-        public bool LogIn()
+        public string CurrentUser() //Determines the current logged in user
+        {
+            StreamReader reader = new StreamReader(file);
+            string lineRead = "";
+            string[] Record = new string[6];
+            string currentUser = "";
+
+            using (reader)
+            {
+                lineRead = reader.ReadLine();
+                while (lineRead != null)
+                {
+                    Record = lineRead.Split('|');
+                    if (Record[1] == propUsername && Record[4] == propPassword)
+                    {
+                        currentUser = propUsername;
+                    }
+                    lineRead = reader.ReadLine();
+                }
+            }
+            return currentUser;
+        }
+        public bool LogIn() //Returns true if username matches the password and false if it does not
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
@@ -115,12 +142,7 @@ namespace Catchy_Digital_Payroll
                     Record = lineRead.Split('|');
                     if (Record[1] == propUsername && Record[4] == propPassword)
                     {
-                        //propProfilePic = Record[5];
                         matches = true;
-                    }
-                    else
-                    {
-                        matches = false;
                     }
                     lineRead = reader.ReadLine();
                 }
@@ -128,7 +150,7 @@ namespace Catchy_Digital_Payroll
             return matches;
         }
 
-        public bool UserAlreadyExist()
+        public bool UserAlreadyExist() //Returns true if user exists already and false if he/she doesn't
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
@@ -149,10 +171,11 @@ namespace Catchy_Digital_Payroll
                     {
                         return exist;
                     }
-                    lineRead = reader.ReadLine();
+                    lineRead = reader.ReadLine();  
                 }
             }
             return exist;
         }
+        
     }
 }

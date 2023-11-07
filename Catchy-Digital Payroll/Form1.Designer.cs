@@ -40,6 +40,8 @@
             txtUsername = new TextBox();
             pictureBox1 = new PictureBox();
             lnkSignUp = new LinkLabel();
+            lblPasswordWarning = new Label();
+            lblUsernameWarning = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -63,6 +65,8 @@
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(lnkSignUp);
+            panel1.Controls.Add(lblPasswordWarning);
+            panel1.Controls.Add(lblUsernameWarning);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -74,6 +78,7 @@
             // 
             // btnExit
             // 
+            btnExit.FlatAppearance.BorderSize = 0;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnExit.ForeColor = Color.FromArgb(192, 0, 0);
@@ -94,7 +99,7 @@
             btnForgotPassword.FlatStyle = FlatStyle.Flat;
             btnForgotPassword.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnForgotPassword.ForeColor = Color.FromArgb(9, 75, 108);
-            btnForgotPassword.Location = new Point(224, 251);
+            btnForgotPassword.Location = new Point(222, 257);
             btnForgotPassword.Name = "btnForgotPassword";
             btnForgotPassword.Size = new Size(188, 43);
             btnForgotPassword.TabIndex = 3;
@@ -109,7 +114,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = SystemColors.Control;
-            btnLogin.Location = new Point(15, 251);
+            btnLogin.Location = new Point(13, 257);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(188, 43);
             btnLogin.TabIndex = 3;
@@ -122,7 +127,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(txtPassword);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new Point(14, 187);
+            panel3.Location = new Point(12, 193);
             panel3.Name = "panel3";
             panel3.Size = new Size(400, 41);
             panel3.TabIndex = 2;
@@ -137,6 +142,7 @@
             txtPassword.PlaceholderText = "Enter password";
             txtPassword.Size = new Size(349, 20);
             txtPassword.TabIndex = 3;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // pictureBox2
             // 
@@ -169,6 +175,7 @@
             txtUsername.PlaceholderText = "catchypayroll@gmail.com";
             txtUsername.Size = new Size(349, 20);
             txtUsername.TabIndex = 3;
+            txtUsername.TextChanged += txtUsername_TextChanged;
             // 
             // pictureBox1
             // 
@@ -192,6 +199,30 @@
             lnkSignUp.TabStop = true;
             lnkSignUp.Text = "Sign Up";
             lnkSignUp.LinkClicked += lnkSignUp_LinkClicked;
+            // 
+            // lblPasswordWarning
+            // 
+            lblPasswordWarning.AutoSize = true;
+            lblPasswordWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPasswordWarning.ForeColor = Color.Red;
+            lblPasswordWarning.Location = new Point(197, 174);
+            lblPasswordWarning.Name = "lblPasswordWarning";
+            lblPasswordWarning.Padding = new Padding(2, 0, 0, 0);
+            lblPasswordWarning.Size = new Size(211, 16);
+            lblPasswordWarning.TabIndex = 0;
+            lblPasswordWarning.Text = "Password field cannot be empty";
+            // 
+            // lblUsernameWarning
+            // 
+            lblUsernameWarning.AutoSize = true;
+            lblUsernameWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUsernameWarning.ForeColor = Color.Red;
+            lblUsernameWarning.Location = new Point(199, 111);
+            lblUsernameWarning.Name = "lblUsernameWarning";
+            lblUsernameWarning.Padding = new Padding(2, 0, 0, 0);
+            lblUsernameWarning.Size = new Size(213, 16);
+            lblUsernameWarning.TabIndex = 0;
+            lblUsernameWarning.Text = "Username field cannot be empty";
             // 
             // label3
             // 
@@ -325,5 +356,7 @@
         private Label label6;
         private ListBox listBox1;
         private Button btnExit;
+        private Label lblPasswordWarning;
+        private Label lblUsernameWarning;
     }
 }
