@@ -3,8 +3,10 @@ C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\bin\D
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\bin\Debug\net6.0-windows\Catchy-Digital Payroll.runtimeconfig.json
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\bin\Debug\net6.0-windows\Catchy-Digital Payroll.dll
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\bin\Debug\net6.0-windows\Catchy-Digital Payroll.pdb
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Dashboard.resources
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Form1.resources
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Properties.Resources.resources
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Registration.resources
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.csproj.GenerateResource.cache
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.AssemblyInfoInputs.cache
@@ -15,5 +17,3 @@ C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\D
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.pdb
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.genruntimeconfig.cache
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\ref\Catchy-Digital Payroll.dll
-C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Registration.resources
-C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Dashboard.resources

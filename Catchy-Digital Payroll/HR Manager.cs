@@ -7,14 +7,15 @@ using System.IO;
 
 namespace Catchy_Digital_Payroll
 {
-    internal class HR_Manager
+    public class HR_Manager
     {
+        string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
+
         private string fullName;
         private string username;
         private string email;
         private string password;
         private string gender;
-        private string profilePic;
 
         public string propFullname
         {
@@ -71,17 +72,6 @@ namespace Catchy_Digital_Payroll
                 }
             }
         }
-        public string propProfilePic
-        {
-            get { return profilePic; }
-            set
-            {
-                if (value != "")
-                {
-                    profilePic = value;
-                }
-            }
-        }
 
         public HR_Manager()
         {
@@ -90,31 +80,55 @@ namespace Catchy_Digital_Payroll
             propEmail = "";
             propPassword = "";
             propGender = "";
-            propProfilePic = "";
         }
         
-        public HR_Manager(string fullName, string username, string email, string password, string gender, string profilePic)
+        public HR_Manager(string fullName, string username, string email, string password, string gender)
         {
             propFullname = fullName;
             propUsername = username;
             propEmail = email;
             propPassword = password;
             propGender = gender;
-            propProfilePic = "icons8-user-100.png";
+
         }
         public void Register()
         {
-            string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
             StreamWriter writer = new StreamWriter(file, true);
 
             using (writer)
             {
-                writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}|{propProfilePic}");
+                writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}");
             }
+            MessageBox.Show("Your details are as follows:\n" +
+                $"Full name: {propFullname}\n" +
+                $"Username: {propUsername}\n" +
+                $"Email: {propEmail}\n" +
+                $"Password: {propPassword}", "DETAILS");
         }
-        public bool LogIn()
+        public string CurrentUser() //Determines the current logged in user
         {
-            string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
+            StreamReader reader = new StreamReader(file);
+            string lineRead = "";
+            string[] Record = new string[6];
+            string currentUser = "";
+
+            using (reader)
+            {
+                lineRead = reader.ReadLine();
+                while (lineRead != null)
+                {
+                    Record = lineRead.Split('|');
+                    if (Record[1] == propUsername && Record[4] == propPassword)
+                    {
+                        currentUser = propUsername;
+                    }
+                    lineRead = reader.ReadLine();
+                }
+            }
+            return currentUser;
+        }
+        public bool LogIn() //Returns true if username matches the password and false if it does not
+        {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
             string[] Record = new string[6];
@@ -128,12 +142,7 @@ namespace Catchy_Digital_Payroll
                     Record = lineRead.Split('|');
                     if (Record[1] == propUsername && Record[4] == propPassword)
                     {
-                        //propProfilePic = Record[5];
                         matches = true;
-                    }
-                    else
-                    {
-                        matches = false;
                     }
                     lineRead = reader.ReadLine();
                 }
@@ -141,12 +150,11 @@ namespace Catchy_Digital_Payroll
             return matches;
         }
 
-        public bool UserAlreadyExist()
+        public bool UserAlreadyExist() //Returns true if user exists already and false if he/she doesn't
         {
-            string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
-            string[] Record = new string[5];
+            string[] Record = new string[6];
             bool exist = false;
 
             using (reader)
@@ -163,22 +171,11 @@ namespace Catchy_Digital_Payroll
                     {
                         return exist;
                     }
-                    lineRead = reader.ReadLine();
+                    lineRead = reader.ReadLine();  
                 }
             }
             return exist;
         }
-        public string CurrentUser()
-        {
-            string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Current User.txt";
-            StreamWriter writer = new StreamWriter(file, true);
-            
-
-            using (writer)
-            {
-                writer.WriteLine($"{propUsername}|{propProfilePic}");
-            }
-            return propProfilePic;
-        }
+        
     }
 }

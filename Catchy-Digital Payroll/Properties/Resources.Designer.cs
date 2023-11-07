@@ -63,6 +63,16 @@ namespace Catchy_Digital_Payroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_about_us_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-about-us-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_back_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-back-30", resourceCulture);
@@ -76,6 +86,16 @@ namespace Catchy_Digital_Payroll.Properties {
         internal static System.Drawing.Bitmap icons8_coal_mine_90 {
             get {
                 object obj = ResourceManager.GetObject("icons8-coal-mine-90", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_employees_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-employees-30 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +123,36 @@ namespace Catchy_Digital_Payroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_graph_report_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-graph-report-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_home_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-home-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_menu_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-menu-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_password_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-100", resourceCulture);
@@ -123,6 +173,16 @@ namespace Catchy_Digital_Payroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_settings_30__3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-settings-30 (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_user_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-100", resourceCulture);
@@ -136,6 +196,16 @@ namespace Catchy_Digital_Payroll.Properties {
         internal static System.Drawing.Bitmap icons8_user_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-30 (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
