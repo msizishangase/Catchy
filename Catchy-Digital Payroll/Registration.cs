@@ -113,6 +113,8 @@ namespace Catchy_Digital_Payroll
                                     Dashboard dash = new Dashboard();
                                     dash.Show();
                                     dash.Username = txtUsername.Text;
+                                    dash.User = txtFullname.Text;
+                                    dash.Picture = pictureBox1.ImageLocation; 
                                     this.Hide();
                                 }
                                 else
@@ -150,12 +152,22 @@ namespace Catchy_Digital_Payroll
 
         private void btnAddProfilePicture_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Image Files (*.jpg; *.png; *.jpeg; *.gif; *.bmp)|*.jpg; *.png; *.jpeg; *.gif; *.bmp|All Files (*.*)|*.*";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            Dashboard dash = new Dashboard();
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                pictureBox1.ImageLocation = openFileDialog.FileName;
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Get the selected file name
+                    string selectedFileName = openFileDialog.FileName;
+
+                    // Display the image in the PictureBox
+                    pictureBox1.Image = Image.FromFile(selectedFileName);
+
+                    // Set the image name using the property
+                    dash.Picture = selectedFileName;
+
+                }
             }
         }
 

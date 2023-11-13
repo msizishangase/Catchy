@@ -19,11 +19,32 @@ namespace Catchy_Digital_Payroll
             InitializeComponent();
 
         }
+        private Form? activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDisplay.Controls.Add(childForm);
+            panelDisplay.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             btnUserProfile.Text = "  Logged in as" + "\n" + $"  {Username}";
+            lblUser.Text = $"{User} [ADMIN]";
+
             NavBar.Start();
+            Time.Start();
+            openChildForm(new Main_menu());
+
         }
 
         private void NavBar_Tick(object sender, EventArgs e)
@@ -91,7 +112,7 @@ namespace Catchy_Digital_Payroll
 
         private void btnUserProfile_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Profile());
         }
 
         private void btnMenu_Enter(object sender, EventArgs e)
@@ -168,7 +189,7 @@ namespace Catchy_Digital_Payroll
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            //
+            openChildForm(new Main_menu());
         }
 
         private void btnDashboard_Enter(object sender, EventArgs e)
@@ -183,6 +204,25 @@ namespace Catchy_Digital_Payroll
             btnDashboard.BackColor = ColorTranslator.FromHtml("9, 75, 108");
         }
 
+        private void Time_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("HH:mm tt");
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Form1 form = new Form1();
+            form.Show();
+        }
+
         public string Username { get; set; }
+        public string User { get; set; }
+        public string Picture { get; set; }
     }
 }

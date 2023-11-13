@@ -38,7 +38,18 @@
             btnDashboard = new Button();
             btnMenu = new Button();
             NavBar = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            lblUser = new Label();
+            lblTime = new Label();
+            Time = new System.Windows.Forms.Timer(components);
+            panelDisplay = new Panel();
+            panel2 = new Panel();
+            linkLogout = new LinkLabel();
             NavigationBar.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // NavigationBar
@@ -218,12 +229,100 @@
             NavBar.Interval = 10;
             NavBar.Tick += NavBar_Tick;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.MintCream;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(lblUser);
+            panel1.Controls.Add(lblTime);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(174, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(901, 28);
+            panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Right;
+            pictureBox1.Image = Properties.Resources.icons8_user_100;
+            pictureBox1.Location = new Point(598, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(30, 27);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
+            // lblUser
+            // 
+            lblUser.Anchor = AnchorStyles.Right;
+            lblUser.AutoSize = true;
+            lblUser.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUser.ForeColor = Color.FromArgb(9, 75, 108);
+            lblUser.Location = new Point(634, 5);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(264, 19);
+            lblUser.TabIndex = 0;
+            lblUser.Text = "{NAME} {SURNAME} [ADMIN]";
+            // 
+            // lblTime
+            // 
+            lblTime.Anchor = AnchorStyles.Left;
+            lblTime.AutoSize = true;
+            lblTime.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTime.ForeColor = Color.FromArgb(9, 75, 108);
+            lblTime.Location = new Point(6, 5);
+            lblTime.Name = "lblTime";
+            lblTime.Size = new Size(61, 19);
+            lblTime.TabIndex = 0;
+            lblTime.Text = "14:00";
+            // 
+            // Time
+            // 
+            Time.Tick += Time_Tick;
+            // 
+            // panelDisplay
+            // 
+            panelDisplay.Dock = DockStyle.Top;
+            panelDisplay.Location = new Point(174, 28);
+            panelDisplay.Name = "panelDisplay";
+            panelDisplay.Size = new Size(901, 514);
+            panelDisplay.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(9, 75, 108);
+            panel2.Controls.Add(linkLogout);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(174, 538);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(901, 26);
+            panel2.TabIndex = 0;
+            // 
+            // linkLogout
+            // 
+            linkLogout.Anchor = AnchorStyles.Right;
+            linkLogout.AutoSize = true;
+            linkLogout.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            linkLogout.ForeColor = Color.White;
+            linkLogout.LinkBehavior = LinkBehavior.HoverUnderline;
+            linkLogout.LinkColor = Color.White;
+            linkLogout.Location = new Point(832, 3);
+            linkLogout.Name = "linkLogout";
+            linkLogout.Size = new Size(66, 19);
+            linkLogout.TabIndex = 0;
+            linkLogout.TabStop = true;
+            linkLogout.Text = "Log out";
+            linkLogout.LinkClicked += linkLogout_LinkClicked;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(983, 565);
+            ClientSize = new Size(1075, 564);
+            Controls.Add(panel2);
+            Controls.Add(panelDisplay);
+            Controls.Add(panel1);
             Controls.Add(NavigationBar);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dashboard";
@@ -231,6 +330,11 @@
             Text = "Dashboard";
             Load += Dashboard_Load;
             NavigationBar.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -244,5 +348,13 @@
         private Button btnAboutUs;
         private System.Windows.Forms.Timer NavBar;
         private Button btnDashboard;
+        private Panel panel1;
+        private Label lblTime;
+        private System.Windows.Forms.Timer Time;
+        private PictureBox pictureBox1;
+        private Label lblUser;
+        private Panel panelDisplay;
+        private Panel panel2;
+        private LinkLabel linkLogout;
     }
 }

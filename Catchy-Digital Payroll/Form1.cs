@@ -24,6 +24,7 @@ namespace Catchy_Digital_Payroll
             txtPassword.PasswordChar = '*';
             lblUsernameWarning.Visible = false;
             lblPasswordWarning.Visible = false;
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -53,12 +54,17 @@ namespace Catchy_Digital_Payroll
                 HR_Manager hr = new HR_Manager();
                 hr.propUsername = txtUsername.Text;
                 hr.propPassword = txtPassword.Text;
+                hr.Active();
 
                 if (hr.LogIn())
                 {
                     Dashboard dash = new Dashboard();
                     dash.Username = hr.CurrentUser();
+                    dash.User = hr.GetFullName();
                     dash.Show();
+
+                    Profile profile = new Profile();
+                    profile.MyName = txtUsername.Text;
                     this.Hide();
                 }
                 else

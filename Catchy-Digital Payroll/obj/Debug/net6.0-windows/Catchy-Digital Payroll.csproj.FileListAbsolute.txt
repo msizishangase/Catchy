@@ -17,3 +17,8 @@ C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\D
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.pdb
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy-Digital Payroll.genruntimeconfig.cache
 C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\ref\Catchy-Digital Payroll.dll
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Main_menu.resources
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.UserControlBlank.resources
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.UserControlDays.resources
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Employees.resources
+C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\Catchy-Digital Payroll\obj\Debug\net6.0-windows\Catchy_Digital_Payroll.Profile.resources
