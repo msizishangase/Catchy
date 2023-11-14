@@ -8,5 +8,6 @@ namespace Catchy_Digital_Payroll
 {
     internal class Employee
     {
+
     }
 }
