@@ -31,20 +31,20 @@
             panel1 = new Panel();
             label1 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtEmployeeName = new TextBox();
+            cmbDepartment = new ComboBox();
             groupBox1 = new GroupBox();
-            radioButton1 = new RadioButton();
+            radAnnual = new RadioButton();
+            radPaternity = new RadioButton();
+            radMaternity = new RadioButton();
+            radSchool = new RadioButton();
+            radVacation = new RadioButton();
+            radFamilyEmergency = new RadioButton();
+            radSick = new RadioButton();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txtSurpervisorName = new TextBox();
             label4 = new Label();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
-            radioButton6 = new RadioButton();
-            radioButton7 = new RadioButton();
-            linkLabel1 = new LinkLabel();
+            lnkSubmit = new LinkLabel();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,32 +77,32 @@
             label2.TabIndex = 2;
             label2.Text = "Employee name";
             // 
-            // textBox1
+            // txtEmployeeName
             // 
-            textBox1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(30, 74);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(298, 26);
-            textBox1.TabIndex = 3;
+            txtEmployeeName.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmployeeName.Location = new Point(30, 74);
+            txtEmployeeName.Name = "txtEmployeeName";
+            txtEmployeeName.Size = new Size(298, 26);
+            txtEmployeeName.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbDepartment
             // 
-            comboBox1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(30, 176);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(298, 27);
-            comboBox1.TabIndex = 4;
+            cmbDepartment.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbDepartment.FormattingEnabled = true;
+            cmbDepartment.Location = new Point(30, 176);
+            cmbDepartment.Name = "cmbDepartment";
+            cmbDepartment.Size = new Size(298, 27);
+            cmbDepartment.TabIndex = 4;
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(radioButton7);
-            groupBox1.Controls.Add(radioButton6);
-            groupBox1.Controls.Add(radioButton5);
-            groupBox1.Controls.Add(radioButton4);
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Controls.Add(radAnnual);
+            groupBox1.Controls.Add(radPaternity);
+            groupBox1.Controls.Add(radMaternity);
+            groupBox1.Controls.Add(radSchool);
+            groupBox1.Controls.Add(radVacation);
+            groupBox1.Controls.Add(radFamilyEmergency);
+            groupBox1.Controls.Add(radSick);
             groupBox1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(30, 223);
             groupBox1.Name = "groupBox1";
@@ -111,17 +111,89 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Reason for leave";
             // 
-            // radioButton1
+            // radAnnual
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton1.Location = new Point(6, 25);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(106, 23);
-            radioButton1.TabIndex = 6;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Sick Leave";
-            radioButton1.UseVisualStyleBackColor = true;
+            radAnnual.AutoSize = true;
+            radAnnual.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radAnnual.Location = new Point(4, 193);
+            radAnnual.Name = "radAnnual";
+            radAnnual.Size = new Size(120, 23);
+            radAnnual.TabIndex = 6;
+            radAnnual.TabStop = true;
+            radAnnual.Text = "Annual leave";
+            radAnnual.UseVisualStyleBackColor = true;
+            // 
+            // radPaternity
+            // 
+            radPaternity.AutoSize = true;
+            radPaternity.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radPaternity.Location = new Point(5, 167);
+            radPaternity.Name = "radPaternity";
+            radPaternity.Size = new Size(93, 23);
+            radPaternity.TabIndex = 6;
+            radPaternity.TabStop = true;
+            radPaternity.Text = "Paternity";
+            radPaternity.UseVisualStyleBackColor = true;
+            // 
+            // radMaternity
+            // 
+            radMaternity.AutoSize = true;
+            radMaternity.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radMaternity.Location = new Point(5, 141);
+            radMaternity.Name = "radMaternity";
+            radMaternity.Size = new Size(97, 23);
+            radMaternity.TabIndex = 6;
+            radMaternity.TabStop = true;
+            radMaternity.Text = "Maternity";
+            radMaternity.UseVisualStyleBackColor = true;
+            // 
+            // radSchool
+            // 
+            radSchool.AutoSize = true;
+            radSchool.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radSchool.Location = new Point(5, 112);
+            radSchool.Name = "radSchool";
+            radSchool.Size = new Size(121, 23);
+            radSchool.TabIndex = 6;
+            radSchool.TabStop = true;
+            radSchool.Text = "School leave";
+            radSchool.UseVisualStyleBackColor = true;
+            // 
+            // radVacation
+            // 
+            radVacation.AutoSize = true;
+            radVacation.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radVacation.Location = new Point(6, 83);
+            radVacation.Name = "radVacation";
+            radVacation.Size = new Size(91, 23);
+            radVacation.TabIndex = 6;
+            radVacation.TabStop = true;
+            radVacation.Text = "Vacation";
+            radVacation.UseVisualStyleBackColor = true;
+            // 
+            // radFamilyEmergency
+            // 
+            radFamilyEmergency.AutoSize = true;
+            radFamilyEmergency.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radFamilyEmergency.Location = new Point(6, 54);
+            radFamilyEmergency.Name = "radFamilyEmergency";
+            radFamilyEmergency.Size = new Size(163, 23);
+            radFamilyEmergency.TabIndex = 6;
+            radFamilyEmergency.TabStop = true;
+            radFamilyEmergency.Text = "Family emergency";
+            radFamilyEmergency.UseVisualStyleBackColor = true;
+            // 
+            // radSick
+            // 
+            radSick.AutoSize = true;
+            radSick.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            radSick.Location = new Point(6, 25);
+            radSick.Name = "radSick";
+            radSick.Size = new Size(106, 23);
+            radSick.TabIndex = 6;
+            radSick.TabStop = true;
+            radSick.Text = "Sick Leave";
+            radSick.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -133,13 +205,13 @@
             label3.TabIndex = 2;
             label3.Text = "Surpervisor name";
             // 
-            // textBox2
+            // txtSurpervisorName
             // 
-            textBox2.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(30, 125);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(298, 26);
-            textBox2.TabIndex = 3;
+            txtSurpervisorName.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSurpervisorName.Location = new Point(30, 125);
+            txtSurpervisorName.Name = "txtSurpervisorName";
+            txtSurpervisorName.Size = new Size(298, 26);
+            txtSurpervisorName.TabIndex = 3;
             // 
             // label4
             // 
@@ -151,103 +223,31 @@
             label4.TabIndex = 2;
             label4.Text = "Department";
             // 
-            // radioButton2
+            // lnkSubmit
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton2.Location = new Point(6, 54);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(163, 23);
-            radioButton2.TabIndex = 6;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Family emergency";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton3.Location = new Point(6, 83);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(91, 23);
-            radioButton3.TabIndex = 6;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Vacation";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            radioButton4.AutoSize = true;
-            radioButton4.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton4.Location = new Point(5, 112);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(121, 23);
-            radioButton4.TabIndex = 6;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "School leave";
-            radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton5.Location = new Point(5, 141);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(97, 23);
-            radioButton5.TabIndex = 6;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Maternity";
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            radioButton6.AutoSize = true;
-            radioButton6.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton6.Location = new Point(5, 167);
-            radioButton6.Name = "radioButton6";
-            radioButton6.Size = new Size(93, 23);
-            radioButton6.TabIndex = 6;
-            radioButton6.TabStop = true;
-            radioButton6.Text = "Paternity";
-            radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            radioButton7.AutoSize = true;
-            radioButton7.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            radioButton7.Location = new Point(4, 193);
-            radioButton7.Name = "radioButton7";
-            radioButton7.Size = new Size(120, 23);
-            radioButton7.TabIndex = 6;
-            radioButton7.TabStop = true;
-            radioButton7.Text = "Annual leave";
-            radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.Image = Properties.Resources.icons8_arrow_20__2_;
-            linkLabel1.ImageAlign = ContentAlignment.MiddleRight;
-            linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
-            linkLabel1.LinkColor = Color.FromArgb(9, 75, 108);
-            linkLabel1.Location = new Point(334, 422);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(127, 23);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Submit";
-            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            lnkSubmit.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lnkSubmit.Image = Properties.Resources.icons8_arrow_20__2_;
+            lnkSubmit.ImageAlign = ContentAlignment.MiddleRight;
+            lnkSubmit.LinkBehavior = LinkBehavior.HoverUnderline;
+            lnkSubmit.LinkColor = Color.FromArgb(9, 75, 108);
+            lnkSubmit.Location = new Point(334, 422);
+            lnkSubmit.Name = "lnkSubmit";
+            lnkSubmit.Size = new Size(127, 23);
+            lnkSubmit.TabIndex = 6;
+            lnkSubmit.TabStop = true;
+            lnkSubmit.Text = "Submit";
+            lnkSubmit.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Leave_application
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
-            Controls.Add(linkLabel1);
+            Controls.Add(lnkSubmit);
             Controls.Add(groupBox1);
-            Controls.Add(comboBox1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(cmbDepartment);
+            Controls.Add(txtSurpervisorName);
+            Controls.Add(txtEmployeeName);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -267,19 +267,19 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
-        private TextBox textBox1;
-        private ComboBox comboBox1;
+        private TextBox txtEmployeeName;
+        private ComboBox cmbDepartment;
         private GroupBox groupBox1;
-        private RadioButton radioButton1;
+        private RadioButton radSick;
         private Label label3;
-        private TextBox textBox2;
-        private RadioButton radioButton5;
-        private RadioButton radioButton4;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
+        private TextBox txtSurpervisorName;
+        private RadioButton radMaternity;
+        private RadioButton radSchool;
+        private RadioButton radVacation;
+        private RadioButton radFamilyEmergency;
         private Label label4;
-        private RadioButton radioButton7;
-        private RadioButton radioButton6;
-        private LinkLabel linkLabel1;
+        private RadioButton radAnnual;
+        private RadioButton radPaternity;
+        private LinkLabel lnkSubmit;
     }
 }

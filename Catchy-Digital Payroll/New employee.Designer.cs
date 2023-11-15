@@ -46,9 +46,9 @@
             txtNextSurname = new TextBox();
             label9 = new Label();
             label10 = new Label();
-            textBox11 = new TextBox();
+            txtNextEmail = new TextBox();
             label11 = new Label();
-            textBox12 = new TextBox();
+            txtNextPhone = new TextBox();
             label12 = new Label();
             textBox13 = new TextBox();
             label13 = new Label();
@@ -67,8 +67,9 @@
             picEmployee = new PictureBox();
             panel2 = new Panel();
             label16 = new Label();
-            comboBox3 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cmbOccupation = new ComboBox();
+            cmbNextRelationship = new ComboBox();
+            btnClose = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picEmployee).BeginInit();
             SuspendLayout();
@@ -247,13 +248,13 @@
             label10.TabIndex = 1;
             label10.Text = "Relationship [next of kin]";
             // 
-            // textBox11
+            // txtNextEmail
             // 
-            textBox11.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox11.Location = new Point(296, 235);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(256, 26);
-            textBox11.TabIndex = 0;
+            txtNextEmail.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNextEmail.Location = new Point(296, 235);
+            txtNextEmail.Name = "txtNextEmail";
+            txtNextEmail.Size = new Size(256, 26);
+            txtNextEmail.TabIndex = 0;
             // 
             // label11
             // 
@@ -266,13 +267,13 @@
             label11.TabIndex = 1;
             label11.Text = "Email [next of kin]";
             // 
-            // textBox12
+            // txtNextPhone
             // 
-            textBox12.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox12.Location = new Point(296, 286);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(256, 26);
-            textBox12.TabIndex = 0;
+            txtNextPhone.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNextPhone.Location = new Point(296, 286);
+            txtNextPhone.Name = "txtNextPhone";
+            txtNextPhone.Size = new Size(256, 26);
+            txtNextPhone.TabIndex = 0;
             // 
             // label12
             // 
@@ -369,6 +370,7 @@
             btnProceed.BackColor = Color.FromArgb(9, 75, 108);
             btnProceed.FlatAppearance.BorderSize = 0;
             btnProceed.FlatStyle = FlatStyle.Flat;
+            btnProceed.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnProceed.ForeColor = Color.White;
             btnProceed.Image = Properties.Resources.icons8_arrow_15;
             btnProceed.ImageAlign = ContentAlignment.MiddleLeft;
@@ -380,6 +382,7 @@
             btnProceed.TextAlign = ContentAlignment.MiddleRight;
             btnProceed.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnProceed.UseVisualStyleBackColor = false;
+            btnProceed.Click += btnProceed_Click;
             // 
             // cmbNationality
             // 
@@ -438,13 +441,16 @@
             btnUpload.TabIndex = 1;
             btnUpload.Text = "Upload now";
             btnUpload.UseVisualStyleBackColor = true;
+            btnUpload.Click += btnUpload_Click;
             btnUpload.MouseHover += btnUpload_MouseHover;
             // 
             // picEmployee
             // 
+            picEmployee.Image = Properties.Resources.icons8_user_100;
             picEmployee.Location = new Point(18, 28);
             picEmployee.Name = "picEmployee";
             picEmployee.Size = new Size(221, 172);
+            picEmployee.SizeMode = PictureBoxSizeMode.CenterImage;
             picEmployee.TabIndex = 0;
             picEmployee.TabStop = false;
             // 
@@ -467,36 +473,48 @@
             label16.Text = "Employee registration";
             label16.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // comboBox3
+            // cmbOccupation
             // 
-            comboBox3.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(584, 82);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(256, 27);
-            comboBox3.TabIndex = 3;
+            cmbOccupation.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbOccupation.FormattingEnabled = true;
+            cmbOccupation.Location = new Point(584, 82);
+            cmbOccupation.Name = "cmbOccupation";
+            cmbOccupation.Size = new Size(256, 27);
+            cmbOccupation.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbNextRelationship
             // 
-            comboBox1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Parent-Child", "Sibling", "Grandparent-Grandchild", "Spousal", "Aunt/Uncle-Niece/Nephew", "Cousin", "Extended Family", "In-Law", "Stepfamily", "Legal", "Financial Dependence", "Emotional Support" });
-            comboBox1.Location = new Point(296, 183);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(256, 27);
-            comboBox1.TabIndex = 3;
+            cmbNextRelationship.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbNextRelationship.FormattingEnabled = true;
+            cmbNextRelationship.Items.AddRange(new object[] { "Parent-Child", "Sibling", "Grandparent-Grandchild", "Spousal", "Aunt/Uncle-Niece/Nephew", "Cousin", "Extended Family", "In-Law", "Stepfamily", "Legal", "Financial Dependence", "Emotional Support" });
+            cmbNextRelationship.Location = new Point(296, 183);
+            cmbNextRelationship.Name = "cmbNextRelationship";
+            cmbNextRelationship.Size = new Size(256, 27);
+            cmbNextRelationship.TabIndex = 3;
+            // 
+            // btnClose
+            // 
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Image = Properties.Resources.icons8_cancel_30;
+            btnClose.Location = new Point(786, 10);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(75, 27);
+            btnClose.TabIndex = 7;
+            btnClose.UseVisualStyleBackColor = true;
             // 
             // New_employee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
+            Controls.Add(btnClose);
             Controls.Add(label16);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(comboBox3);
+            Controls.Add(cmbOccupation);
             Controls.Add(cmbRace);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbNextRelationship);
             Controls.Add(cmbNationality);
             Controls.Add(btnProceed);
             Controls.Add(label23);
@@ -511,11 +529,11 @@
             Controls.Add(txtID);
             Controls.Add(label12);
             Controls.Add(label5);
-            Controls.Add(textBox12);
+            Controls.Add(txtNextPhone);
             Controls.Add(txtPhone);
             Controls.Add(label11);
             Controls.Add(label4);
-            Controls.Add(textBox11);
+            Controls.Add(txtNextEmail);
             Controls.Add(txtEmail);
             Controls.Add(label10);
             Controls.Add(label3);
@@ -558,9 +576,9 @@
         private TextBox txtNextSurname;
         private Label label9;
         private Label label10;
-        private TextBox textBox11;
+        private TextBox txtNextEmail;
         private Label label11;
-        private TextBox textBox12;
+        private TextBox txtNextPhone;
         private Label label12;
         private TextBox textBox13;
         private Label label13;
@@ -579,7 +597,8 @@
         private Button btnRemove;
         private Panel panel2;
         private Label label16;
-        private ComboBox comboBox3;
-        private ComboBox comboBox1;
+        private ComboBox cmbOccupation;
+        private ComboBox cmbNextRelationship;
+        private Button btnClose;
     }
 }

@@ -123,6 +123,16 @@ namespace Catchy_Digital_Payroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_coal_mine_90 {
             get {
                 object obj = ResourceManager.GetObject("icons8-coal-mine-90", resourceCulture);
@@ -206,6 +216,16 @@ namespace Catchy_Digital_Payroll.Properties {
         internal static System.Drawing.Bitmap icons8_password_100__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-password-100 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_register_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-register-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -41,7 +41,7 @@ namespace Catchy_Digital_Payroll
             btnUserProfile.Text = "  Logged in as" + "\n" + $"  {Username}";
             lblUser.Text = $"{User} [ADMIN]";
 
-            NavBar.Start();
+            //NavBar.Start();
             Time.Start();
             openChildForm(new Main_menu());
 
@@ -92,22 +92,22 @@ namespace Catchy_Digital_Payroll
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Employee_List());
         }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new About_Us());
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Profile());
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Reports());
         }
 
         private void btnUserProfile_Click(object sender, EventArgs e)
