@@ -10,7 +10,8 @@ namespace Catchy_Digital_Payroll
     public class HR_Manager
     {
         string file = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Registration.txt";
-        string active = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Active.txt";
+        public string active = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Active.txt";
+        public string reports = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Reports.txt";
 
         private string fullName;
         private string username;
@@ -230,6 +231,12 @@ namespace Catchy_Digital_Payroll
                 sw.WriteLine(Display());
             }
         }
-
+        public void AddReport(string reportName, string description, string date)
+        {
+            using (StreamWriter sw = new StreamWriter(reports, true))
+            {
+                sw.WriteLine($"{reportName}|{description}|{date}");
+            }
+        }
     }
 }

@@ -45,6 +45,8 @@
             txtSurpervisorName = new TextBox();
             label4 = new Label();
             lnkSubmit = new LinkLabel();
+            label5 = new Label();
+            dateTimePicker1 = new DateTimePicker();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -237,12 +239,32 @@
             lnkSubmit.TabStop = true;
             lnkSubmit.Text = "Submit";
             lnkSubmit.TextAlign = ContentAlignment.MiddleCenter;
+            lnkSubmit.LinkClicked += lnkSubmit_LinkClicked;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(385, 52);
+            label5.Name = "label5";
+            label5.Size = new Size(96, 19);
+            label5.TabIndex = 2;
+            label5.Text = "Return date";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dateTimePicker1.Location = new Point(385, 74);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(272, 26);
+            dateTimePicker1.TabIndex = 7;
             // 
             // Leave_application
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
+            Controls.Add(dateTimePicker1);
             Controls.Add(lnkSubmit);
             Controls.Add(groupBox1);
             Controls.Add(cmbDepartment);
@@ -250,6 +272,7 @@
             Controls.Add(txtEmployeeName);
             Controls.Add(label4);
             Controls.Add(label3);
+            Controls.Add(label5);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -281,5 +304,7 @@
         private RadioButton radAnnual;
         private RadioButton radPaternity;
         private LinkLabel lnkSubmit;
+        private Label label5;
+        private DateTimePicker dateTimePicker1;
     }
 }

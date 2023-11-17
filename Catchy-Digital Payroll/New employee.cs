@@ -35,81 +35,123 @@ namespace Catchy_Digital_Payroll
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            string homeAddress = $"{textBox13.Text} {textBox14.Text} {textBox23.Text}";
-            string gender = "";
 
-            Employee employee = new Employee(txtName.Text, txtSurname.Text, txtEmployeeID.Text, txtEmail.Text, txtPhone.Text, txtID.Text, cmbNationality.Text, cmbRace.Text, homeAddress, cmbOccupation.Text, txtNextName.Text, txtNextSurname.Text, cmbNextRelationship.Text, txtNextEmail.Text, txtNextPhone.Text);
-
-            if (validate.IsEmpty(txtName.Text) || !validate.IsValidName(txtName.Text))
+            if (!validate.IsValidName(txtName.Text))
             {
                 MessageBox.Show("Invalid name entered", "Registration failed");
             }
-            else if (validate.IsEmpty(txtSurname.Text) || !validate.IsValidName(txtSurname.Text))
+            else if (!validate.IsValidName(txtSurname.Text))
             {
                 MessageBox.Show("Invalid surname entered", "Registration failed");
             }
-            else if (validate.IsEmpty(txtEmployeeID.Text) || !validate.IsNumeric(txtEmployeeID.Text))
+            else if (!validate.IsNumeric(txtEmployeeID.Text))
             {
                 MessageBox.Show("Invalid employee id entered", "Registration failed");
             }
-            else if (validate.IsEmpty(txtEmail.Text) || !validate.IsValidEmail(txtEmail.Text))
+            else if (!validate.IsValidEmail(txtEmail.Text))
             {
                 MessageBox.Show("Invalid email entered", "Registration failed");
             }
-            else if (!validate.IsValidPhoneNumber(txtPhone.Text) || validate.IsEmpty(txtPhone.Text))
+            else if (!validate.IsValidPhoneNumber(txtPhone.Text))
             {
                 MessageBox.Show("Invalid phone number entered", "Registration failed");
             }
-            else if (!validate.ValidID(txtID.Text) || validate.IsEmpty(txtID.Text))
+            else if (!validate.ValidID(txtID.Text))
             {
                 MessageBox.Show("Invalid ID number entered", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbNationality.Text) || validate.IsValidName(cmbNationality.Text))
+            else if (validate.IsEmpty(cmbNationality.Text))
             {
                 MessageBox.Show("Invalid nationality selection", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbRace.Text) || validate.IsValidName(cmbRace.Text))
+            else if (validate.IsEmpty(cmbRace.Text))
             {
                 MessageBox.Show("Invalid race selection", "Registration failed");
             }
-            else if (validate.IsEmpty(textBox13.Text) || validate.IsValidName(textBox13.Text))
+            else if (!validate.IsValidName(textBox13.Text))
             {
                 MessageBox.Show("Invalid address entered", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbOccupation.Text) || validate.IsValidName(cmbOccupation.Text))
+            else if (validate.IsEmpty(cmbOccupation.Text))
             {
                 MessageBox.Show("Invalid occupation selection", "Registration failed");
             }
-            else if (validate.IsEmpty(txtNextName.Text) || validate.IsValidName(txtNextName.Text))
+            else if (!validate.IsValidName(txtNextName.Text))
             {
                 MessageBox.Show("Invalid next of kin name entered", "Registration failed");
             }
-            else if (validate.IsEmpty(txtNextSurname.Text) || validate.IsValidName(txtNextSurname.Text))
+            else if (!validate.IsValidName(txtNextSurname.Text))
             {
                 MessageBox.Show("Invalid next of kin surname entered", "Registration failed");
             }
-            else if (validate.IsEmpty(txtNextEmail.Text) || validate.IsValidEmail(txtNextEmail.Text))
-            {
-                MessageBox.Show("Invalid next of kin email entered", "Registration failed");
-            }
-            else if (validate.IsEmpty(cmbNextRelationship.Text) || validate.IsValidName(cmbNextRelationship.Text))
+            else if (validate.IsEmpty(cmbNextRelationship.Text))
             {
                 MessageBox.Show("Invalid next of kin relationship selected", "Registration failed");
             }
-            else if (validate.IsEmpty(txtNextPhone.Text) || validate.IsValidPhoneNumber(txtNextPhone.Text))
+            else if (!validate.IsValidPhoneNumber(txtNextPhone.Text))
             {
                 MessageBox.Show("Invalid next of kin number entered entered", "Registration failed");
             }
             else
             {
-                gender = validate.Gender(txtID.Text);
+                string homeAddress = $"{textBox13.Text} {textBox14.Text} {textBox23.Text}";
 
-                if (MessageBox.Show($"Add {txtName.Text} {txtSurname.Text} to the system?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.OK)
+                string gender = validate.Gender(txtID.Text);
+
+                DateTime date = DateTime.Now;
+
+                Employee employee = new Employee(txtName.Text, txtSurname.Text, txtEmployeeID.Text, txtEmail.Text, txtPhone.Text, txtID.Text, cmbNationality.Text, cmbRace.Text, homeAddress, cmbOccupation.Text, txtNextName.Text, txtNextSurname.Text, cmbNextRelationship.Text, txtNextEmail.Text, txtNextPhone.Text, gender);
+                HR_Manager hr = new HR_Manager();
+
+                string[] line = GetLastLine(hr.active).Split('|');
+
+                DialogResult result = MessageBox.Show($"Add {txtName.Text} {txtSurname.Text} to the system?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    this.Hide();
-                    employee.Add();
+                    hr.AddReport("Employee registration", $"{line[0]} added {txtName.Text} {txtSurname.Text} to the system", date.ToLocalTime().ToString());
+
+                    this.Close();
+                    employee.SaveEmployee();
+                    employee.SaveImportantInfo();
                 }
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnUpload_MouseLeave(object sender, EventArgs e)
+        {
+            btnUpload.FlatAppearance.BorderSize = 0;
+        }
+
+        private void btnRemove_MouseLeave(object sender, EventArgs e)
+        {
+            btnRemove.FlatAppearance.BorderSize = 0;
+        }
+        public string GetLastLine(string filePath)
+        {
+            string lastLine = null;
+
+            try
+            {
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                using (StreamReader reader = new StreamReader(fileStream))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        lastLine = reader.ReadLine();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading the file: {ex.Message}");
+            }
+            return lastLine;
         }
     }
 }

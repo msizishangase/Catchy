@@ -31,13 +31,17 @@
             EmployeeList = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
-            button1 = new Button();
-            linkLabel1 = new LinkLabel();
+            btnAddEmployee = new Button();
+            lnkDeleteEmployee = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)EmployeeList).BeginInit();
             SuspendLayout();
             // 
             // EmployeeList
             // 
+            EmployeeList.AllowUserToAddRows = false;
+            EmployeeList.AllowUserToDeleteRows = false;
+            EmployeeList.AllowUserToResizeColumns = false;
+            EmployeeList.AllowUserToResizeRows = false;
             EmployeeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             EmployeeList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             EmployeeList.Location = new Point(12, 52);
@@ -65,47 +69,50 @@
             label1.Text = "Employees";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnAddEmployee
             // 
-            button1.BackColor = Color.FromArgb(9, 75, 108);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.ImageAlign = ContentAlignment.MiddleRight;
-            button1.Location = new Point(672, 434);
-            button1.Name = "button1";
-            button1.Size = new Size(201, 33);
-            button1.TabIndex = 3;
-            button1.Text = "Add employee";
-            button1.UseVisualStyleBackColor = false;
+            btnAddEmployee.BackColor = Color.FromArgb(9, 75, 108);
+            btnAddEmployee.FlatAppearance.BorderSize = 0;
+            btnAddEmployee.FlatStyle = FlatStyle.Flat;
+            btnAddEmployee.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAddEmployee.ForeColor = Color.White;
+            btnAddEmployee.ImageAlign = ContentAlignment.MiddleRight;
+            btnAddEmployee.Location = new Point(672, 434);
+            btnAddEmployee.Name = "btnAddEmployee";
+            btnAddEmployee.Size = new Size(201, 33);
+            btnAddEmployee.TabIndex = 3;
+            btnAddEmployee.Text = "Add employee";
+            btnAddEmployee.UseVisualStyleBackColor = false;
             // 
-            // linkLabel1
+            // lnkDeleteEmployee
             // 
-            linkLabel1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            linkLabel1.ImageAlign = ContentAlignment.MiddleRight;
-            linkLabel1.LinkBehavior = LinkBehavior.HoverUnderline;
-            linkLabel1.LinkColor = Color.FromArgb(9, 75, 108);
-            linkLabel1.Location = new Point(460, 436);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(189, 31);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Add employee";
-            linkLabel1.TextAlign = ContentAlignment.MiddleCenter;
+            lnkDeleteEmployee.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lnkDeleteEmployee.Image = Properties.Resources.icons8_delete_30;
+            lnkDeleteEmployee.ImageAlign = ContentAlignment.MiddleRight;
+            lnkDeleteEmployee.LinkBehavior = LinkBehavior.HoverUnderline;
+            lnkDeleteEmployee.LinkColor = Color.Red;
+            lnkDeleteEmployee.Location = new Point(12, 436);
+            lnkDeleteEmployee.Name = "lnkDeleteEmployee";
+            lnkDeleteEmployee.Size = new Size(196, 31);
+            lnkDeleteEmployee.TabIndex = 4;
+            lnkDeleteEmployee.TabStop = true;
+            lnkDeleteEmployee.Text = "Delete employee";
+            lnkDeleteEmployee.TextAlign = ContentAlignment.MiddleCenter;
+            lnkDeleteEmployee.LinkClicked += lnkDeleteEmployee_LinkClicked;
             // 
             // Employee_List
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
-            Controls.Add(linkLabel1);
-            Controls.Add(button1);
+            Controls.Add(lnkDeleteEmployee);
+            Controls.Add(btnAddEmployee);
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(EmployeeList);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Employee_List";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Employee_List";
             Load += Employee_List_Load;
             ((System.ComponentModel.ISupportInitialize)EmployeeList).EndInit();
@@ -117,7 +124,7 @@
         private DataGridView EmployeeList;
         private Panel panel1;
         private Label label1;
-        private Button button1;
-        private LinkLabel linkLabel1;
+        private Button btnAddEmployee;
+        private LinkLabel lnkDeleteEmployee;
     }
 }

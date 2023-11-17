@@ -36,27 +36,27 @@
             label2 = new Label();
             txtOverTimeHours = new TextBox();
             label3 = new Label();
-            ID = new TextBox();
+            txtEmployeeID = new TextBox();
             label4 = new Label();
             panel2 = new Panel();
-            label5 = new Label();
-            label6 = new Label();
-            label8 = new Label();
             lblGrossPay = new Label();
+            lblNetPay = new Label();
             label7 = new Label();
+            label6 = new Label();
+            label5 = new Label();
             lnkCalculate = new LinkLabel();
             panel3 = new Panel();
+            lblUIF = new Label();
             lblMedicalAid = new Label();
+            lblTotalDeductions = new Label();
+            lblPension = new Label();
             lblIncomeTax = new Label();
+            label18 = new Label();
+            label15 = new Label();
             label11 = new Label();
+            label14 = new Label();
             label12 = new Label();
             label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            lblPension = new Label();
-            lblUIF = new Label();
-            label18 = new Label();
-            lblTotalDeductions = new Label();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -138,13 +138,13 @@
             label3.TabIndex = 8;
             label3.Text = "Overtime hours [if applicable]";
             // 
-            // ID
+            // txtEmployeeID
             // 
-            ID.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            ID.Location = new Point(12, 71);
-            ID.Name = "ID";
-            ID.Size = new Size(256, 26);
-            ID.TabIndex = 7;
+            txtEmployeeID.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmployeeID.Location = new Point(12, 71);
+            txtEmployeeID.Name = "txtEmployeeID";
+            txtEmployeeID.Size = new Size(256, 26);
+            txtEmployeeID.TabIndex = 7;
             // 
             // label4
             // 
@@ -162,7 +162,7 @@
             panel2.BackColor = SystemColors.Control;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(lblGrossPay);
-            panel2.Controls.Add(label8);
+            panel2.Controls.Add(lblNetPay);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
@@ -170,39 +170,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(256, 97);
             panel2.TabIndex = 9;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(9, 75, 108);
-            label5.Location = new Point(55, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(139, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Gross/Net pay";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(9, 75, 108);
-            label6.Location = new Point(11, 29);
-            label6.Name = "label6";
-            label6.Size = new Size(102, 19);
-            label6.TabIndex = 8;
-            label6.Text = "Gross pay:";
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.FromArgb(9, 75, 108);
-            label8.Location = new Point(135, 63);
-            label8.Name = "label8";
-            label8.Size = new Size(59, 19);
-            label8.TabIndex = 8;
-            label8.Text = "R 0.00";
             // 
             // lblGrossPay
             // 
@@ -215,6 +182,17 @@
             lblGrossPay.TabIndex = 8;
             lblGrossPay.Text = "R 0.00";
             // 
+            // lblNetPay
+            // 
+            lblNetPay.AutoSize = true;
+            lblNetPay.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNetPay.ForeColor = Color.FromArgb(9, 75, 108);
+            lblNetPay.Location = new Point(135, 63);
+            lblNetPay.Name = "lblNetPay";
+            lblNetPay.Size = new Size(59, 19);
+            lblNetPay.TabIndex = 8;
+            lblNetPay.Text = "R 0.00";
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -225,6 +203,28 @@
             label7.Size = new Size(82, 19);
             label7.TabIndex = 8;
             label7.Text = "Net pay:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.FromArgb(9, 75, 108);
+            label6.Location = new Point(11, 29);
+            label6.Name = "label6";
+            label6.Size = new Size(102, 19);
+            label6.TabIndex = 8;
+            label6.Text = "Gross pay:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(9, 75, 108);
+            label5.Location = new Point(55, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(139, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Gross/Net pay";
             // 
             // lnkCalculate
             // 
@@ -240,6 +240,7 @@
             lnkCalculate.TabStop = true;
             lnkCalculate.Text = "Calculate salary";
             lnkCalculate.TextAlign = ContentAlignment.MiddleCenter;
+            lnkCalculate.LinkClicked += lnkCalculate_LinkClicked;
             // 
             // panel3
             // 
@@ -261,6 +262,17 @@
             panel3.Size = new Size(333, 344);
             panel3.TabIndex = 9;
             // 
+            // lblUIF
+            // 
+            lblUIF.AutoSize = true;
+            lblUIF.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUIF.ForeColor = Color.FromArgb(9, 75, 108);
+            lblUIF.Location = new Point(197, 126);
+            lblUIF.Name = "lblUIF";
+            lblUIF.Size = new Size(59, 19);
+            lblUIF.TabIndex = 8;
+            lblUIF.Text = "R 0.00";
+            // 
             // lblMedicalAid
             // 
             lblMedicalAid.AutoSize = true;
@@ -271,6 +283,28 @@
             lblMedicalAid.Size = new Size(59, 19);
             lblMedicalAid.TabIndex = 8;
             lblMedicalAid.Text = "R 0.00";
+            // 
+            // lblTotalDeductions
+            // 
+            lblTotalDeductions.AutoSize = true;
+            lblTotalDeductions.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTotalDeductions.ForeColor = Color.FromArgb(9, 75, 108);
+            lblTotalDeductions.Location = new Point(197, 213);
+            lblTotalDeductions.Name = "lblTotalDeductions";
+            lblTotalDeductions.Size = new Size(59, 19);
+            lblTotalDeductions.TabIndex = 8;
+            lblTotalDeductions.Text = "R 0.00";
+            // 
+            // lblPension
+            // 
+            lblPension.AutoSize = true;
+            lblPension.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPension.ForeColor = Color.FromArgb(9, 75, 108);
+            lblPension.Location = new Point(197, 171);
+            lblPension.Name = "lblPension";
+            lblPension.Size = new Size(59, 19);
+            lblPension.TabIndex = 8;
+            lblPension.Text = "R 0.00";
             // 
             // lblIncomeTax
             // 
@@ -283,6 +317,28 @@
             lblIncomeTax.TabIndex = 8;
             lblIncomeTax.Text = "R 0.00";
             // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.ForeColor = Color.FromArgb(9, 75, 108);
+            label18.Location = new Point(11, 213);
+            label18.Name = "label18";
+            label18.Size = new Size(155, 19);
+            label18.TabIndex = 8;
+            label18.Text = "Total deductions:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.FromArgb(9, 75, 108);
+            label15.Location = new Point(11, 171);
+            label15.Name = "label15";
+            label15.Size = new Size(81, 19);
+            label15.TabIndex = 8;
+            label15.Text = "Pension:";
+            // 
             // label11
             // 
             label11.AutoSize = true;
@@ -293,6 +349,17 @@
             label11.Size = new Size(112, 19);
             label11.TabIndex = 8;
             label11.Text = "Income tax:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.ForeColor = Color.FromArgb(9, 75, 108);
+            label14.Location = new Point(11, 126);
+            label14.Name = "label14";
+            label14.Size = new Size(45, 19);
+            label14.TabIndex = 8;
+            label14.Text = "UIF:";
             // 
             // label12
             // 
@@ -316,72 +383,6 @@
             label13.TabIndex = 8;
             label13.Text = "Deductions";
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = Color.FromArgb(9, 75, 108);
-            label14.Location = new Point(11, 126);
-            label14.Name = "label14";
-            label14.Size = new Size(45, 19);
-            label14.TabIndex = 8;
-            label14.Text = "UIF:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.FromArgb(9, 75, 108);
-            label15.Location = new Point(11, 171);
-            label15.Name = "label15";
-            label15.Size = new Size(81, 19);
-            label15.TabIndex = 8;
-            label15.Text = "Pension:";
-            // 
-            // lblPension
-            // 
-            lblPension.AutoSize = true;
-            lblPension.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPension.ForeColor = Color.FromArgb(9, 75, 108);
-            lblPension.Location = new Point(197, 171);
-            lblPension.Name = "lblPension";
-            lblPension.Size = new Size(59, 19);
-            lblPension.TabIndex = 8;
-            lblPension.Text = "R 0.00";
-            // 
-            // lblUIF
-            // 
-            lblUIF.AutoSize = true;
-            lblUIF.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUIF.ForeColor = Color.FromArgb(9, 75, 108);
-            lblUIF.Location = new Point(197, 126);
-            lblUIF.Name = "lblUIF";
-            lblUIF.Size = new Size(59, 19);
-            lblUIF.TabIndex = 8;
-            lblUIF.Text = "R 0.00";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.ForeColor = Color.FromArgb(9, 75, 108);
-            label18.Location = new Point(11, 213);
-            label18.Name = "label18";
-            label18.Size = new Size(155, 19);
-            label18.TabIndex = 8;
-            label18.Text = "Total deductions:";
-            // 
-            // lblTotalDeductions
-            // 
-            lblTotalDeductions.AutoSize = true;
-            lblTotalDeductions.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTotalDeductions.ForeColor = Color.FromArgb(9, 75, 108);
-            lblTotalDeductions.Location = new Point(197, 213);
-            lblTotalDeductions.Name = "lblTotalDeductions";
-            lblTotalDeductions.Size = new Size(59, 19);
-            lblTotalDeductions.TabIndex = 8;
-            lblTotalDeductions.Text = "R 0.00";
-            // 
             // Salary
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -395,7 +396,7 @@
             Controls.Add(label2);
             Controls.Add(txtRateOfPay);
             Controls.Add(label4);
-            Controls.Add(ID);
+            Controls.Add(txtEmployeeID);
             Controls.Add(label1);
             Controls.Add(txtHoursWorked);
             Controls.Add(lblTime);
@@ -421,11 +422,11 @@
         private Label label2;
         private TextBox txtOverTimeHours;
         private Label label3;
-        private TextBox ID;
+        private TextBox txtEmployeeID;
         private Label label4;
         private Panel panel2;
         private Label lblGrossPay;
-        private Label label8;
+        private Label lblNetPay;
         private Label label7;
         private Label label6;
         private Label label5;

@@ -388,7 +388,7 @@
             // 
             cmbNationality.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbNationality.FormattingEnabled = true;
-            cmbNationality.Items.AddRange(new object[] { "RSA ID ", "", "Foreign iD" });
+            cmbNationality.Items.AddRange(new object[] { "RSA ID ", "Foreign ID" });
             cmbNationality.Location = new Point(26, 387);
             cmbNationality.Name = "cmbNationality";
             cmbNationality.Size = new Size(256, 27);
@@ -398,7 +398,7 @@
             // 
             cmbRace.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbRace.FormattingEnabled = true;
-            cmbRace.Items.AddRange(new object[] { "African ", "", "White ", "Indian ", "Coloureds", "Asian" });
+            cmbRace.Items.AddRange(new object[] { "African ", "White ", "Indian ", "Coloureds", "Asian" });
             cmbRace.Location = new Point(26, 438);
             cmbRace.Name = "cmbRace";
             cmbRace.Size = new Size(256, 27);
@@ -427,6 +427,7 @@
             btnRemove.TabIndex = 1;
             btnRemove.Text = "Remove";
             btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.MouseLeave += btnRemove_MouseLeave;
             btnRemove.MouseHover += btnRemove_MouseHover;
             // 
             // btnUpload
@@ -442,6 +443,7 @@
             btnUpload.Text = "Upload now";
             btnUpload.UseVisualStyleBackColor = true;
             btnUpload.Click += btnUpload_Click;
+            btnUpload.MouseLeave += btnUpload_MouseLeave;
             btnUpload.MouseHover += btnUpload_MouseHover;
             // 
             // picEmployee
@@ -477,6 +479,7 @@
             // 
             cmbOccupation.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmbOccupation.FormattingEnabled = true;
+            cmbOccupation.Items.AddRange(new object[] { "Project Manager ", "Supervisor ", "General worker ", "Environmental engineers ", "Electricity engineers", "CAO", "COO", "CFO" });
             cmbOccupation.Location = new Point(584, 82);
             cmbOccupation.Name = "cmbOccupation";
             cmbOccupation.Size = new Size(256, 27);
@@ -502,6 +505,7 @@
             btnClose.Size = new Size(75, 27);
             btnClose.TabIndex = 7;
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // New_employee
             // 

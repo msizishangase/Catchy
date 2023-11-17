@@ -11,7 +11,7 @@ namespace Catchy_Digital_Payroll
     internal class Employee
     {
         public string employeeFile = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Employee.txt";
-
+        public string importantEmployeeInfo = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Employee [displayed].txt";
         //Employee details
         private string name;
         private string surname;
@@ -23,6 +23,7 @@ namespace Catchy_Digital_Payroll
         private string race;
         private string homeAddress;
         private string occupation;
+        private string gender;
 
         //Next of kin details
         private string nextName;
@@ -46,6 +47,7 @@ namespace Catchy_Digital_Payroll
         public string propNextRelationship { get => nextRelationship; set => nextRelationship = value; }
         public string propNextEmail { get => nextEmail; set => nextEmail = value; }
         public string propNextPhoneNumber { get => nextPhoneNumber; set => nextPhoneNumber = value; }
+        public string propGender { get => gender; set => gender = value; }
 
         public Employee()
         {
@@ -64,9 +66,10 @@ namespace Catchy_Digital_Payroll
             propNextRelationship = "";
             propNextEmail = "";
             propNextPhoneNumber = "";
+            propGender = "";
         }
 
-        public Employee(string name, string surname, string employeeID, string email, string phoneNumber, string iDnumber, string nationality, string race, string homeAddress, string occupation, string nextName, string nextSurname, string nextRelationship, string nextEmail, string nextPhoneNumber)
+        public Employee(string name, string surname, string employeeID, string email, string phoneNumber, string iDnumber, string nationality, string race, string homeAddress, string occupation, string nextName, string nextSurname, string nextRelationship, string nextEmail, string nextPhoneNumber, string gender)
         {
             this.propName = name;
             this.propSurname = surname;
@@ -83,14 +86,22 @@ namespace Catchy_Digital_Payroll
             this.propNextRelationship = nextRelationship;
             this.propNextEmail = nextEmail;
             this.propNextPhoneNumber = nextPhoneNumber;
+            this.propGender = gender;
         }
-        public void Add()
+        public void SaveEmployee()
         {
             using (StreamWriter sw = new StreamWriter(employeeFile, true))
             {
                 sw.WriteLine($"{propName}|{propSurname}|{propEmployeeID}|{propEmail}|{propPhoneNumber}|{propIDnumber}|" +
                     $"{propNationality}|{propRace}|{propOccupation}|{propHomeAddress}|{propNextName}|{propNextSurname}|" +
-                    $"{propNextRelationship}|{propNextEmail}|{propPhoneNumber}|");
+                    $"{propNextRelationship}|{propNextEmail}|{propPhoneNumber}|{propGender}");
+            }
+        }
+        public void SaveImportantInfo()
+        {
+            using (StreamWriter writer = new StreamWriter(importantEmployeeInfo, true))
+            {
+                writer.WriteLine($"{propName}|{propSurname}|{propEmployeeID}|{propEmail}|{propOccupation}");
             }
         }
     }

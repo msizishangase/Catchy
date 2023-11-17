@@ -57,14 +57,12 @@
             // 
             dataReports.AllowUserToAddRows = false;
             dataReports.AllowUserToDeleteRows = false;
-            dataReports.AllowUserToResizeColumns = false;
-            dataReports.AllowUserToResizeRows = false;
             dataReports.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataReports.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataReports.Location = new Point(12, 47);
             dataReports.Name = "dataReports";
             dataReports.RowTemplate.Height = 25;
-            dataReports.Size = new Size(861, 372);
+            dataReports.Size = new Size(861, 390);
             dataReports.TabIndex = 2;
             // 
             // Reports
