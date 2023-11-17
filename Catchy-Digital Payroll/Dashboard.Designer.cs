@@ -30,11 +30,15 @@
         {
             components = new System.ComponentModel.Container();
             NavigationBar = new Panel();
-            btnReports = new Button();
-            btnUserProfile = new Button();
-            btnSettings = new Button();
+            panel3 = new Panel();
             btnAboutUs = new Button();
+            btnReports = new Button();
+            btnSettings = new Button();
+            panEmployeeSub = new Panel();
+            btnEmployeeList = new Button();
+            btnNewEmployee = new Button();
             btnEmployees = new Button();
+            btnUserProfile = new Button();
             btnDashboard = new Button();
             btnMenu = new Button();
             NavBar = new System.Windows.Forms.Timer(components);
@@ -46,7 +50,10 @@
             panelDisplay = new Panel();
             panel2 = new Panel();
             linkLogout = new LinkLabel();
+            EmployeeSubmenu = new System.Windows.Forms.Timer(components);
             NavigationBar.SuspendLayout();
+            panel3.SuspendLayout();
+            panEmployeeSub.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -55,11 +62,9 @@
             // NavigationBar
             // 
             NavigationBar.BackColor = Color.FromArgb(9, 75, 108);
-            NavigationBar.Controls.Add(btnReports);
+            NavigationBar.Controls.Add(panel3);
+            NavigationBar.Controls.Add(panEmployeeSub);
             NavigationBar.Controls.Add(btnUserProfile);
-            NavigationBar.Controls.Add(btnSettings);
-            NavigationBar.Controls.Add(btnAboutUs);
-            NavigationBar.Controls.Add(btnEmployees);
             NavigationBar.Controls.Add(btnDashboard);
             NavigationBar.Controls.Add(btnMenu);
             NavigationBar.Dock = DockStyle.Left;
@@ -71,6 +76,39 @@
             NavigationBar.Size = new Size(174, 565);
             NavigationBar.TabIndex = 2;
             // 
+            // panel3
+            // 
+            panel3.Controls.Add(btnAboutUs);
+            panel3.Controls.Add(btnReports);
+            panel3.Controls.Add(btnSettings);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(5, 141);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(164, 135);
+            panel3.TabIndex = 0;
+            // 
+            // btnAboutUs
+            // 
+            btnAboutUs.BackColor = Color.FromArgb(9, 75, 108);
+            btnAboutUs.Dock = DockStyle.Top;
+            btnAboutUs.FlatAppearance.BorderSize = 0;
+            btnAboutUs.FlatStyle = FlatStyle.Flat;
+            btnAboutUs.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAboutUs.ForeColor = Color.White;
+            btnAboutUs.Image = Properties.Resources.icons8_about_us_30__1_;
+            btnAboutUs.ImageAlign = ContentAlignment.TopLeft;
+            btnAboutUs.Location = new Point(0, 90);
+            btnAboutUs.Name = "btnAboutUs";
+            btnAboutUs.Size = new Size(164, 45);
+            btnAboutUs.TabIndex = 3;
+            btnAboutUs.Text = "  About Us";
+            btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
+            btnAboutUs.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAboutUs.UseVisualStyleBackColor = false;
+            btnAboutUs.Click += btnAboutUs_Click;
+            btnAboutUs.Enter += btnAboutUs_Enter;
+            btnAboutUs.Leave += btnAboutUs_Leave;
+            // 
             // btnReports
             // 
             btnReports.BackColor = Color.FromArgb(9, 75, 108);
@@ -81,7 +119,7 @@
             btnReports.ForeColor = Color.White;
             btnReports.Image = Properties.Resources.icons8_graph_report_30__1_;
             btnReports.ImageAlign = ContentAlignment.TopLeft;
-            btnReports.Location = new Point(5, 230);
+            btnReports.Location = new Point(0, 45);
             btnReports.Name = "btnReports";
             btnReports.Size = new Size(164, 45);
             btnReports.TabIndex = 3;
@@ -92,6 +130,103 @@
             btnReports.Click += btnReports_Click;
             btnReports.Enter += btnReports_Enter;
             btnReports.Leave += btnReports_Leave;
+            // 
+            // btnSettings
+            // 
+            btnSettings.BackColor = Color.FromArgb(9, 75, 108);
+            btnSettings.Dock = DockStyle.Top;
+            btnSettings.FlatAppearance.BorderSize = 0;
+            btnSettings.FlatStyle = FlatStyle.Flat;
+            btnSettings.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSettings.ForeColor = Color.White;
+            btnSettings.Image = Properties.Resources.icons8_settings_30__3_;
+            btnSettings.ImageAlign = ContentAlignment.TopLeft;
+            btnSettings.Location = new Point(0, 0);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Size = new Size(164, 45);
+            btnSettings.TabIndex = 3;
+            btnSettings.Text = "  Settings";
+            btnSettings.TextAlign = ContentAlignment.MiddleLeft;
+            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSettings.UseVisualStyleBackColor = false;
+            btnSettings.Click += btnSettings_Click;
+            btnSettings.Enter += btnSettings_Enter;
+            btnSettings.Leave += btnSettings_Leave;
+            // 
+            // panEmployeeSub
+            // 
+            panEmployeeSub.Controls.Add(btnEmployeeList);
+            panEmployeeSub.Controls.Add(btnNewEmployee);
+            panEmployeeSub.Controls.Add(btnEmployees);
+            panEmployeeSub.Dock = DockStyle.Top;
+            panEmployeeSub.Location = new Point(5, 95);
+            panEmployeeSub.MaximumSize = new Size(164, 128);
+            panEmployeeSub.MinimumSize = new Size(164, 46);
+            panEmployeeSub.Name = "panEmployeeSub";
+            panEmployeeSub.Size = new Size(164, 46);
+            panEmployeeSub.TabIndex = 0;
+            // 
+            // btnEmployeeList
+            // 
+            btnEmployeeList.BackColor = Color.FromArgb(9, 75, 108);
+            btnEmployeeList.Dock = DockStyle.Top;
+            btnEmployeeList.FlatAppearance.BorderSize = 0;
+            btnEmployeeList.FlatStyle = FlatStyle.Flat;
+            btnEmployeeList.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEmployeeList.ForeColor = Color.White;
+            btnEmployeeList.Image = Properties.Resources.icons8_list_30__1_;
+            btnEmployeeList.ImageAlign = ContentAlignment.TopLeft;
+            btnEmployeeList.Location = new Point(0, 85);
+            btnEmployeeList.Name = "btnEmployeeList";
+            btnEmployeeList.Size = new Size(164, 45);
+            btnEmployeeList.TabIndex = 4;
+            btnEmployeeList.Text = "  Employee list";
+            btnEmployeeList.TextAlign = ContentAlignment.MiddleLeft;
+            btnEmployeeList.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEmployeeList.UseVisualStyleBackColor = false;
+            btnEmployeeList.Click += btnEmployeeList_Click;
+            // 
+            // btnNewEmployee
+            // 
+            btnNewEmployee.BackColor = Color.FromArgb(9, 75, 108);
+            btnNewEmployee.Dock = DockStyle.Top;
+            btnNewEmployee.FlatAppearance.BorderSize = 0;
+            btnNewEmployee.FlatStyle = FlatStyle.Flat;
+            btnNewEmployee.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnNewEmployee.ForeColor = Color.White;
+            btnNewEmployee.Image = Properties.Resources.icons8_new_30;
+            btnNewEmployee.ImageAlign = ContentAlignment.TopLeft;
+            btnNewEmployee.Location = new Point(0, 40);
+            btnNewEmployee.Name = "btnNewEmployee";
+            btnNewEmployee.Size = new Size(164, 45);
+            btnNewEmployee.TabIndex = 4;
+            btnNewEmployee.Text = "  New employee";
+            btnNewEmployee.TextAlign = ContentAlignment.MiddleLeft;
+            btnNewEmployee.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnNewEmployee.UseVisualStyleBackColor = false;
+            btnNewEmployee.Click += btnNewEmployee_Click;
+            // 
+            // btnEmployees
+            // 
+            btnEmployees.BackColor = Color.FromArgb(9, 75, 108);
+            btnEmployees.Dock = DockStyle.Top;
+            btnEmployees.FlatAppearance.BorderSize = 0;
+            btnEmployees.FlatStyle = FlatStyle.Flat;
+            btnEmployees.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEmployees.ForeColor = Color.White;
+            btnEmployees.Image = Properties.Resources.icons8_employees_30__1_;
+            btnEmployees.ImageAlign = ContentAlignment.TopLeft;
+            btnEmployees.Location = new Point(0, 0);
+            btnEmployees.Name = "btnEmployees";
+            btnEmployees.Size = new Size(164, 40);
+            btnEmployees.TabIndex = 3;
+            btnEmployees.Text = "  Employees";
+            btnEmployees.TextAlign = ContentAlignment.MiddleLeft;
+            btnEmployees.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEmployees.UseVisualStyleBackColor = false;
+            btnEmployees.Click += btnEmployees_Click;
+            btnEmployees.Enter += btnEmployees_Enter;
+            btnEmployees.Leave += btnEmployees_Leave;
             // 
             // btnUserProfile
             // 
@@ -113,72 +248,6 @@
             btnUserProfile.Click += btnUserProfile_Click;
             btnUserProfile.Enter += btnUserProfile_Enter;
             btnUserProfile.Leave += btnUserProfile_Leave;
-            // 
-            // btnSettings
-            // 
-            btnSettings.BackColor = Color.FromArgb(9, 75, 108);
-            btnSettings.Dock = DockStyle.Top;
-            btnSettings.FlatAppearance.BorderSize = 0;
-            btnSettings.FlatStyle = FlatStyle.Flat;
-            btnSettings.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSettings.ForeColor = Color.White;
-            btnSettings.Image = Properties.Resources.icons8_settings_30__3_;
-            btnSettings.ImageAlign = ContentAlignment.TopLeft;
-            btnSettings.Location = new Point(5, 185);
-            btnSettings.Name = "btnSettings";
-            btnSettings.Size = new Size(164, 45);
-            btnSettings.TabIndex = 3;
-            btnSettings.Text = "  Settings";
-            btnSettings.TextAlign = ContentAlignment.MiddleLeft;
-            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSettings.UseVisualStyleBackColor = false;
-            btnSettings.Click += btnSettings_Click;
-            btnSettings.Enter += btnSettings_Enter;
-            btnSettings.Leave += btnSettings_Leave;
-            // 
-            // btnAboutUs
-            // 
-            btnAboutUs.BackColor = Color.FromArgb(9, 75, 108);
-            btnAboutUs.Dock = DockStyle.Top;
-            btnAboutUs.FlatAppearance.BorderSize = 0;
-            btnAboutUs.FlatStyle = FlatStyle.Flat;
-            btnAboutUs.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAboutUs.ForeColor = Color.White;
-            btnAboutUs.Image = Properties.Resources.icons8_about_us_30__1_;
-            btnAboutUs.ImageAlign = ContentAlignment.TopLeft;
-            btnAboutUs.Location = new Point(5, 140);
-            btnAboutUs.Name = "btnAboutUs";
-            btnAboutUs.Size = new Size(164, 45);
-            btnAboutUs.TabIndex = 3;
-            btnAboutUs.Text = "  About Us";
-            btnAboutUs.TextAlign = ContentAlignment.MiddleLeft;
-            btnAboutUs.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAboutUs.UseVisualStyleBackColor = false;
-            btnAboutUs.Click += btnAboutUs_Click;
-            btnAboutUs.Enter += btnAboutUs_Enter;
-            btnAboutUs.Leave += btnAboutUs_Leave;
-            // 
-            // btnEmployees
-            // 
-            btnEmployees.BackColor = Color.FromArgb(9, 75, 108);
-            btnEmployees.Dock = DockStyle.Top;
-            btnEmployees.FlatAppearance.BorderSize = 0;
-            btnEmployees.FlatStyle = FlatStyle.Flat;
-            btnEmployees.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEmployees.ForeColor = Color.White;
-            btnEmployees.Image = Properties.Resources.icons8_employees_30__1_;
-            btnEmployees.ImageAlign = ContentAlignment.TopLeft;
-            btnEmployees.Location = new Point(5, 95);
-            btnEmployees.Name = "btnEmployees";
-            btnEmployees.Size = new Size(164, 45);
-            btnEmployees.TabIndex = 3;
-            btnEmployees.Text = "  Employees";
-            btnEmployees.TextAlign = ContentAlignment.MiddleLeft;
-            btnEmployees.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEmployees.UseVisualStyleBackColor = false;
-            btnEmployees.Click += btnEmployees_Click;
-            btnEmployees.Enter += btnEmployees_Enter;
-            btnEmployees.Leave += btnEmployees_Leave;
             // 
             // btnDashboard
             // 
@@ -314,6 +383,11 @@
             linkLogout.Text = "Log out";
             linkLogout.LinkClicked += linkLogout_LinkClicked;
             // 
+            // EmployeeSubmenu
+            // 
+            EmployeeSubmenu.Interval = 10;
+            EmployeeSubmenu.Tick += EmployeeSubmenu_Tick;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -330,6 +404,8 @@
             Text = "Dashboard";
             Load += Dashboard_Load;
             NavigationBar.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panEmployeeSub.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -356,5 +432,10 @@
         private Panel panelDisplay;
         private Panel panel2;
         private LinkLabel linkLogout;
+        private Panel panEmployeeSub;
+        private Button btnEmployeeList;
+        private Button btnNewEmployee;
+        private Panel panel3;
+        private System.Windows.Forms.Timer EmployeeSubmenu;
     }
 }

@@ -213,9 +213,39 @@ namespace Catchy_Digital_Payroll.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_list_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-list-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_list_30__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-list-30 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_menu_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-menu-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_new_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-new-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

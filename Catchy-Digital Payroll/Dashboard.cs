@@ -13,6 +13,7 @@ namespace Catchy_Digital_Payroll
     public partial class Dashboard : Form
     {
         bool sideBarExpand;
+        bool employeeSub;
 
         public Dashboard()
         {
@@ -92,7 +93,7 @@ namespace Catchy_Digital_Payroll
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
-            openChildForm(new Employee_List());
+            EmployeeSubmenu.Start();
         }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
@@ -219,6 +220,38 @@ namespace Catchy_Digital_Payroll
             this.Hide();
             Form1 form = new Form1();
             form.Show();
+        }
+
+        private void EmployeeSubmenu_Tick(object sender, EventArgs e)
+        {
+            if (employeeSub)
+            {
+                panEmployeeSub.Height += 10;
+                if (panEmployeeSub.Height == panEmployeeSub.MaximumSize.Height)
+                {
+                    employeeSub = false;
+                    EmployeeSubmenu.Stop();
+                }
+            }
+            else
+            {
+                panEmployeeSub.Height -= 10;
+                if (panEmployeeSub.Height == panEmployeeSub.MinimumSize.Height)
+                {
+                    employeeSub = true;
+                    EmployeeSubmenu.Stop();
+                }
+            }
+        }
+
+        private void btnNewEmployee_Click(object sender, EventArgs e)
+        {
+            openChildForm(new New_employee());
+        }
+
+        private void btnEmployeeList_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Employee_List());
         }
 
         public string Username { get; set; }
