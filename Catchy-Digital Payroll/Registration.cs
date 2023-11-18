@@ -17,6 +17,8 @@ namespace Catchy_Digital_Payroll
             InitializeComponent();
         }
 
+        Validation validate = new Validation();
+
         private void Registration_Load(object sender, EventArgs e)
         {
             txtOtherGender.Visible = false;
@@ -25,20 +27,23 @@ namespace Catchy_Digital_Payroll
             lblEmailWarning.Visible = false;
             lblConfirmEmailWarning.Visible = false;
             lblGenderWarning.Visible = false;
-            lblOtherGenderWarning.Visible = false;
+            lblOtherWarning.Visible = false;
             lblPasswordWarning.Visible = false;
             lblConfirmPasswordWarning.Visible = false;
+            radMale.Checked = true;
+            cmbTitle.SelectedIndex = 0;
         }
 
         private void radOther_CheckedChanged(object sender, EventArgs e)
         {
             if (radOther.Checked)
             {
-
+                lblOtherWarning.Visible = true;
                 txtOtherGender.Visible = true;
             }
             else
             {
+                lblOtherWarning.Visible = false;
                 txtOtherGender.Visible = false;
             }
         }
@@ -50,6 +55,11 @@ namespace Catchy_Digital_Payroll
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            Validation val = new Validation();
+            //if (val.IsEmpty(txtUsername.Text) || !val.IsEmpty(txtUsername))
+            //{
+
+            //}
             Form1 form = new Form1();
             form.Show();
             this.Hide();
@@ -61,24 +71,24 @@ namespace Catchy_Digital_Payroll
 
             if (radMale.Checked)
             {
-                lblOtherGenderWarning.Visible = false;
+                lblOtherWarning.Visible = false;
                 gender = "Male";
             }
             else if (radFemale.Checked)
             {
-                lblOtherGenderWarning.Visible = false;
+                lblOtherWarning.Visible = false;
                 gender = "Female";
             }
             else if (radOther.Checked)
             {
                 if (txtOtherGender.Text == "")
                 {
-                    lblOtherGenderWarning.Visible = true;
+                    lblOtherWarning.Visible = true;
                     MessageBox.Show("You haven't specified your gender yet!", "GENDER");
                 }
                 else
                 {
-                    lblOtherGenderWarning.Visible = false;
+                    lblOtherWarning.Visible = false;
                     gender = txtOtherGender.Text;
                 }
             }
@@ -94,60 +104,77 @@ namespace Catchy_Digital_Payroll
             hr.propPassword = txtPassword.Text;
             hr.propGender = gender;
 
-
-            if (hr.UserAlreadyExist() == false)
+            if (!hr.UserAlreadyExist())
             {
-                if (txtFullname.Text != "" && txtUsername.Text != "" && txtEmailaddress.Text != "" && txtConfirmEmail.Text != "" && gender != "" && txtPassword.Text != "" && txtConfirmPassword.Text != "")
+                if (!validate.IsValidName(txtFullname.Text))
                 {
-                    if (txtUsername.Text.Length > 4)
+                    MessageBox.Show("Invalid name", "Registration failed");
+                }
+                else if (!validate.IsValidName(txtSurname.Text))
+                {
+                    MessageBox.Show("Invalid surname", "Registration failed");
+                }
+                else if (!validate.ValidUsername(txtUsername.Text))
+                {
+                    MessageBox.Show("Invalid username", "Registration failed");
+                }
+                else if (!validate.IsValidEmail(txtEmailaddress.Text))
+                {
+                    MessageBox.Show("Invalid email", "Registration failed");
+                }
+                else if (txtConfirmEmail.Text != txtEmailaddress.Text)
+                {
+                    MessageBox.Show("Emails do not match", "Registration failed");
+                }
+                else if (txtOtherGender.Visible)
+                {
+                    if (!validate.IsValidName(txtOtherGender.Text))
                     {
-                        if (txtPassword.Text.Length >= 6 && txtConfirmPassword.Text.Length >= 6)
-                        {
-                            if (ValidEmail(txtEmailaddress.Text) && txtConfirmEmail.Text == txtEmailaddress.Text)
-                            {
-                                if (PasswordMatch(txtPassword.Text, txtConfirmPassword.Text))
-                                {
-                                    MessageBox.Show("User successfully added to the system!", "REGISTRATION SUCCESS");
-                                    hr.Register();
-
-                                    Dashboard dash = new Dashboard();
-                                    dash.Show();
-                                    dash.Username = txtUsername.Text;
-                                    dash.User = txtFullname.Text;
-                                    dash.Picture = pictureBox1.ImageLocation; 
-                                    this.Hide();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Passwords do not match!", "ALERT");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Check your email address", "ALERT");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Password needs to be atleast 6 characters long", "ALERT");
-                        }
+                        MessageBox.Show("Invalid gender entered", "Registration failed");
                     }
-                    else
-                    {
-                        MessageBox.Show("Username cannot be less than 5 characters", "ALERT");
-                    }
+                }
+                else if (!validate.ValidID(txtID.Text))
+                {
+                    MessageBox.Show("Invalid ID number", "Registration failed");
+                }
+                else if (!validate.IsValidName(cmbTitle.Text))
+                {
+                    MessageBox.Show("Invalid title selection", "Registration failed");
+                }
+                else if (!validate.IsValidPhoneNumber(txtPhone.Text))
+                {
+                    MessageBox.Show("Invalid phone number", "Registration failed");
+                }
+                else if (!validate.ValidatePassword(txtPassword.Text))
+                {
+                    MessageBox.Show("Invalid password [must contain atleast 8 characters, one upper case, one lower case, and atleast one special character]", "Registration failed");
+                }
+                else if (txtConfirmPassword.Text != txtPassword.Text)
+                {
+                    MessageBox.Show("Passwords do not match", "Registration failed");
                 }
                 else
                 {
-                    MessageBox.Show("All fields must be filled!", "ALERT");
+                    this.Hide();
+                    Form1 form = new Form1();
+                    form.Show();
                 }
             }
             else
             {
+                DialogResult result = MessageBox.Show($"{txtUsername.Text} has an account already, do you want to log in?", "Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                MessageBox.Show($"An account with the username: {txtUsername.Text} already has an account!", "ALERT");
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide();
+                    Form1 form = new Form1();
+                    form.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Ensure that you use a different username!", "Registration");
+                }
             }
-
         }
 
         private void btnAddProfilePicture_Click(object sender, EventArgs e)
@@ -197,15 +224,15 @@ namespace Catchy_Digital_Payroll
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "")
+            if (validate.IsEmpty(txtPassword.Text))
             {
                 lblPasswordWarning.Text = "Create password";
                 lblPasswordWarning.Visible = true;
             }
-            else if (txtPassword.Text.Length < 6)
+            else if (txtPassword.Text.Length < 8)
             {
+                lblPasswordWarning.Text = "Password is too short";
                 lblPasswordWarning.Visible = true;
-                lblPasswordWarning.Text = "Password too short";
             }
             else
             {
@@ -215,7 +242,12 @@ namespace Catchy_Digital_Payroll
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "")
+            if (!validate.ValidatePassword(txtPassword.Text))
+            {
+                lblPasswordWarning.Visible = true;
+                lblPasswordWarning.Text = "Invalid password";
+            }
+            else
             {
                 lblPasswordWarning.Visible = false;
             }
@@ -223,13 +255,22 @@ namespace Catchy_Digital_Payroll
 
         private void txtFullname_TextChanged(object sender, EventArgs e)
         {
-            if (txtFullname.Text == "")
+            if (validate.IsValidName(txtFullname.Text))
             {
-                lblFullnameWarning.Visible = true;
+                if (char.IsUpper(txtFullname.Text[0]))
+                {
+                    lblFullnameWarning.Visible = false;
+                }
+                else
+                {
+                    lblFullnameWarning.Text = "Must start with upper case";
+                    lblFullnameWarning.Visible = true;
+                }
             }
             else
             {
-                lblFullnameWarning.Visible = false;
+                lblFullnameWarning.Text = "Invalid name";
+                lblFullnameWarning.Visible = true;
             }
         }
 
@@ -262,17 +303,6 @@ namespace Catchy_Digital_Payroll
                 lblUsernameWarning.Visible = false;
             }
         }
-        public bool ValidEmail(string email) //Email field validation
-        {
-            if (email.Contains('@'))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         private void txtEmailaddress_TextChanged(object sender, EventArgs e)
         {
@@ -281,9 +311,9 @@ namespace Catchy_Digital_Payroll
                 lblEmailWarning.Text = "Email can't be empty";
                 lblEmailWarning.Visible = true;
             }
-            else if (!ValidEmail(txtEmailaddress.Text))
+            else if (!validate.IsValidEmail(txtEmailaddress.Text))
             {
-                lblEmailWarning.Text = "Include '@' ";
+                lblEmailWarning.Text = "Include '@', '.' ";
                 lblEmailWarning.Visible = true;
             }
             else
@@ -309,28 +339,56 @@ namespace Catchy_Digital_Payroll
         {
             if (txtOtherGender.Text == "")
             {
-                lblOtherGenderWarning.Visible = true;
+                lblOtherWarning.Visible = true;
             }
             else
             {
-                lblOtherGenderWarning.Visible = false;
-            }
-        }
-        public bool PasswordMatch(string pass, string confirm)
-        {
-            if (confirm == pass)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
+                lblOtherWarning.Visible = false;
             }
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)
         {
             //
+        }
+
+        private void txtSurname_TextChanged(object sender, EventArgs e)
+        {
+            if (!validate.IsValidName(txtSurname.Text))
+            {
+                lblSurnameWarning.Text = "Invalid surname";
+                lblSurnameWarning.Visible = true;
+            }
+            else
+            {
+                lblSurnameWarning.Visible = false;
+            }
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+            if (!validate.ValidID(txtID.Text))
+            {
+                lblIdWarning.Text = "Invalid ID";
+                lblIdWarning.Visible = true;
+            }
+            else
+            {
+                lblIdWarning.Visible = false;
+            }
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+            if (validate.IsValidPhoneNumber(txtPhone.Text))
+            {
+                lblPhoneNumberWarning.Text = "Invalid phone number";
+                lblPhoneNumberWarning.Visible = true;
+            }
+            else
+            {
+                lblPhoneNumberWarning.Visible = false;
+            }
         }
     }
 

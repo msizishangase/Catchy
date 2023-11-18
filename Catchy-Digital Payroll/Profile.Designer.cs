@@ -36,6 +36,8 @@
             label5 = new Label();
             panel1 = new Panel();
             panel9 = new Panel();
+            panel18 = new Panel();
+            label11 = new Label();
             panel16 = new Panel();
             lblNumber = new Label();
             panel15 = new Panel();
@@ -53,6 +55,7 @@
             panel2 = new Panel();
             lblTitle = new Label();
             panel8 = new Panel();
+            label10 = new Label();
             label9 = new Label();
             panel7 = new Panel();
             label8 = new Label();
@@ -65,8 +68,10 @@
             btnBack = new Button();
             btnUpload = new Button();
             btnRemove = new Button();
+            panel17 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            panel18.SuspendLayout();
             panel16.SuspendLayout();
             panel15.SuspendLayout();
             panel14.SuspendLayout();
@@ -145,6 +150,7 @@
             // panel1
             // 
             panel1.Controls.Add(panel9);
+            panel1.Controls.Add(panel18);
             panel1.Controls.Add(panel16);
             panel1.Controls.Add(panel15);
             panel1.Controls.Add(panel14);
@@ -156,6 +162,7 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(label2);
+            panel1.Controls.Add(label10);
             panel1.Controls.Add(label9);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(label8);
@@ -169,7 +176,7 @@
             panel1.Controls.Add(panel4);
             panel1.Location = new Point(284, 71);
             panel1.Name = "panel1";
-            panel1.Size = new Size(405, 283);
+            panel1.Size = new Size(405, 302);
             panel1.TabIndex = 3;
             panel1.Paint += panel1_Paint;
             // 
@@ -179,6 +186,25 @@
             panel9.Name = "panel9";
             panel9.Size = new Size(195, 25);
             panel9.TabIndex = 2;
+            // 
+            // panel18
+            // 
+            panel18.Controls.Add(label11);
+            panel18.Location = new Point(183, 268);
+            panel18.Name = "panel18";
+            panel18.Size = new Size(195, 25);
+            panel18.TabIndex = 2;
+            // 
+            // label11
+            // 
+            label11.Dock = DockStyle.Fill;
+            label11.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.ForeColor = Color.FromArgb(9, 75, 108);
+            label11.Location = new Point(0, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(195, 25);
+            label11.TabIndex = 1;
+            label11.Text = "HR";
             // 
             // panel16
             // 
@@ -339,12 +365,23 @@
             panel8.Size = new Size(195, 25);
             panel8.TabIndex = 2;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(9, 75, 108);
+            label10.Location = new Point(18, 268);
+            label10.Name = "label10";
+            label10.Size = new Size(106, 20);
+            label10.TabIndex = 1;
+            label10.Text = "Department";
+            // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(9, 75, 108);
-            label9.Location = new Point(20, 242);
+            label9.Location = new Point(18, 237);
             label9.Name = "label9";
             label9.Size = new Size(126, 20);
             label9.TabIndex = 1;
@@ -463,11 +500,20 @@
             btnRemove.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRemove.UseVisualStyleBackColor = true;
             // 
+            // panel17
+            // 
+            panel17.BackColor = Color.FromArgb(9, 75, 108);
+            panel17.Location = new Point(12, 54);
+            panel17.Name = "panel17";
+            panel17.Size = new Size(861, 3);
+            panel17.TabIndex = 15;
+            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 497);
+            Controls.Add(panel17);
             Controls.Add(btnRemove);
             Controls.Add(btnUpload);
             Controls.Add(btnBack);
@@ -481,6 +527,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel18.ResumeLayout(false);
             panel16.ResumeLayout(false);
             panel15.ResumeLayout(false);
             panel14.ResumeLayout(false);
@@ -532,5 +579,9 @@
         private Button btnBack;
         private Button btnUpload;
         private Button btnRemove;
+        private Panel panel17;
+        private Panel panel18;
+        private Label label11;
+        private Label label10;
     }
 }

@@ -46,7 +46,11 @@
             label4 = new Label();
             lnkSubmit = new LinkLabel();
             label5 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            returnDate = new DateTimePicker();
+            label6 = new Label();
+            effecticeDate = new DateTimePicker();
+            label7 = new Label();
+            cmbLeaveType = new ComboBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -108,7 +112,7 @@
             groupBox1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(30, 223);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(298, 222);
+            groupBox1.Size = new Size(521, 222);
             groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Reason for leave";
@@ -232,7 +236,7 @@
             lnkSubmit.ImageAlign = ContentAlignment.MiddleRight;
             lnkSubmit.LinkBehavior = LinkBehavior.HoverUnderline;
             lnkSubmit.LinkColor = Color.FromArgb(9, 75, 108);
-            lnkSubmit.Location = new Point(334, 422);
+            lnkSubmit.Location = new Point(567, 422);
             lnkSubmit.Name = "lnkSubmit";
             lnkSubmit.Size = new Size(127, 23);
             lnkSubmit.TabIndex = 6;
@@ -245,34 +249,76 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(385, 52);
+            label5.Location = new Point(392, 154);
             label5.Name = "label5";
             label5.Size = new Size(96, 19);
             label5.TabIndex = 2;
             label5.Text = "Return date";
             // 
-            // dateTimePicker1
+            // returnDate
             // 
-            dateTimePicker1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dateTimePicker1.Location = new Point(385, 74);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(272, 26);
-            dateTimePicker1.TabIndex = 7;
+            returnDate.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            returnDate.Location = new Point(392, 176);
+            returnDate.Name = "returnDate";
+            returnDate.Size = new Size(298, 26);
+            returnDate.TabIndex = 7;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(392, 103);
+            label6.Name = "label6";
+            label6.Size = new Size(110, 19);
+            label6.TabIndex = 2;
+            label6.Text = "Effective date";
+            // 
+            // effecticeDate
+            // 
+            effecticeDate.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            effecticeDate.Location = new Point(392, 125);
+            effecticeDate.Name = "effecticeDate";
+            effecticeDate.Size = new Size(298, 26);
+            effecticeDate.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(392, 52);
+            label7.Name = "label7";
+            label7.Size = new Size(98, 19);
+            label7.TabIndex = 2;
+            label7.Text = "Department";
+            // 
+            // cmbLeaveType
+            // 
+            cmbLeaveType.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbLeaveType.FormattingEnabled = true;
+            cmbLeaveType.Items.AddRange(new object[] { "Paid", "UnPaid" });
+            cmbLeaveType.Location = new Point(392, 74);
+            cmbLeaveType.Name = "cmbLeaveType";
+            cmbLeaveType.Size = new Size(298, 27);
+            cmbLeaveType.TabIndex = 4;
             // 
             // Leave_application
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(effecticeDate);
+            Controls.Add(returnDate);
             Controls.Add(lnkSubmit);
             Controls.Add(groupBox1);
+            Controls.Add(cmbLeaveType);
             Controls.Add(cmbDepartment);
             Controls.Add(txtSurpervisorName);
             Controls.Add(txtEmployeeName);
+            Controls.Add(label7);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label5);
+            Controls.Add(label6);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -305,6 +351,10 @@
         private RadioButton radPaternity;
         private LinkLabel lnkSubmit;
         private Label label5;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker returnDate;
+        private Label label6;
+        private DateTimePicker effecticeDate;
+        private Label label7;
+        private ComboBox cmbLeaveType;
     }
 }

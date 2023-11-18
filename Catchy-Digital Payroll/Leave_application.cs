@@ -52,7 +52,7 @@ namespace Catchy_Digital_Payroll
 
             using (StreamWriter sw = new StreamWriter(leave, true))
             {
-                sw.WriteLine($"{txtEmployeeName.Text}|{txtSurpervisorName.Text}|{dateTimePicker1.Text}|{reason}");
+                sw.WriteLine($"{txtEmployeeName.Text}|{txtSurpervisorName.Text}|{returnDate.Text}|{reason}");
             }
         }
     }

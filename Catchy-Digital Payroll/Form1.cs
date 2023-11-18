@@ -62,14 +62,10 @@ namespace Catchy_Digital_Payroll
                     dash.Username = hr.CurrentUser();
                     dash.User = hr.GetFullName();
                     dash.Show();
-
-                    Profile profile = new Profile();
-                    profile.MyName = txtUsername.Text;
-                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect credentials, try again!", "ALERT");
+                    MessageBox.Show("Incorrect username or password, try again!", "ALERT");
                 }
             }
         }

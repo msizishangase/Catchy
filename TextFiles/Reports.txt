@@ -4,3 +4,4 @@ Employee deletion|Msizi Shangase deleted Msizi Mthandeni Sifiso Shangase from th
 Employee deletion|Msizi Shangase deleted Msizi Mthandeni Sifiso Shangase from the system|2023/11/17 13:59:04
 Employee registration|Mhlengi Ngcobo added Mhlengi Ngcobo to the system|2023/11/17 15:24:20
 Employee deletion|Mhlengi Ngcobo deleted Mhlengi Ngcobo from the system|2023/11/17 15:28:13
+Employee registration|Msizi Shangase added Zakes Bantwini to the system|2023/11/17 22:08:03

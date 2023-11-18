@@ -61,7 +61,19 @@
             lblGenderWarning = new Label();
             lblPasswordWarning = new Label();
             lblConfirmPasswordWarning = new Label();
-            lblOtherGenderWarning = new Label();
+            lblOtherWarning = new Label();
+            txtSurname = new TextBox();
+            label10 = new Label();
+            txtID = new TextBox();
+            label11 = new Label();
+            label12 = new Label();
+            txtPhone = new TextBox();
+            label13 = new Label();
+            lblSurnameWarning = new Label();
+            lblIdWarning = new Label();
+            lblTitleWarning = new Label();
+            lblPhoneNumberWarning = new Label();
+            cmbTitle = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -93,7 +105,7 @@
             panel4.BackColor = Color.FromArgb(9, 75, 108);
             panel4.Location = new Point(12, 32);
             panel4.Name = "panel4";
-            panel4.Size = new Size(680, 3);
+            panel4.Size = new Size(950, 3);
             panel4.TabIndex = 5;
             // 
             // txtFullname
@@ -112,9 +124,9 @@
             label1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(19, 57);
             label1.Name = "label1";
-            label1.Size = new Size(89, 19);
+            label1.Size = new Size(82, 19);
             label1.TabIndex = 7;
-            label1.Text = "Full name";
+            label1.Text = "Name(s)";
             // 
             // txtEmailaddress
             // 
@@ -167,7 +179,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(370, 76);
+            txtPassword.Location = new Point(650, 76);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(314, 27);
             txtPassword.TabIndex = 6;
@@ -178,7 +190,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(370, 54);
+            label7.Location = new Point(650, 54);
             label7.Name = "label7";
             label7.Size = new Size(89, 19);
             label7.TabIndex = 7;
@@ -187,7 +199,7 @@
             // txtConfirmPassword
             // 
             txtConfirmPassword.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtConfirmPassword.Location = new Point(370, 139);
+            txtConfirmPassword.Location = new Point(650, 139);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.Size = new Size(314, 27);
             txtConfirmPassword.TabIndex = 6;
@@ -198,7 +210,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(370, 117);
+            label8.Location = new Point(650, 117);
             label8.Name = "label8";
             label8.Size = new Size(161, 19);
             label8.TabIndex = 7;
@@ -219,7 +231,7 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnAddProfilePicture);
             panel1.Controls.Add(pictureBox1);
-            panel1.Location = new Point(370, 182);
+            panel1.Location = new Point(650, 182);
             panel1.Name = "panel1";
             panel1.Size = new Size(314, 187);
             panel1.TabIndex = 9;
@@ -278,7 +290,7 @@
             // txtOtherGender
             // 
             txtOtherGender.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtOtherGender.Location = new Point(19, 378);
+            txtOtherGender.Location = new Point(331, 339);
             txtOtherGender.Name = "txtOtherGender";
             txtOtherGender.Size = new Size(286, 27);
             txtOtherGender.TabIndex = 6;
@@ -292,7 +304,7 @@
             btnRegister.FlatStyle = FlatStyle.Flat;
             btnRegister.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnRegister.ForeColor = SystemColors.Control;
-            btnRegister.Location = new Point(370, 406);
+            btnRegister.Location = new Point(650, 406);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(314, 37);
             btnRegister.TabIndex = 11;
@@ -327,7 +339,7 @@
             btnExit.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btnExit.ForeColor = Color.FromArgb(192, 0, 0);
             btnExit.Image = Properties.Resources.icons8_exit_30;
-            btnExit.Location = new Point(601, 448);
+            btnExit.Location = new Point(873, 448);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(91, 37);
             btnExit.TabIndex = 12;
@@ -357,12 +369,12 @@
             lblFullnameWarning.AutoSize = true;
             lblFullnameWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblFullnameWarning.ForeColor = Color.Red;
-            lblFullnameWarning.Location = new Point(169, 57);
+            lblFullnameWarning.Location = new Point(115, 59);
             lblFullnameWarning.Name = "lblFullnameWarning";
             lblFullnameWarning.Padding = new Padding(2, 0, 0, 0);
-            lblFullnameWarning.Size = new Size(136, 16);
+            lblFullnameWarning.Size = new Size(114, 16);
             lblFullnameWarning.TabIndex = 14;
-            lblFullnameWarning.Text = "Enter your full name";
+            lblFullnameWarning.Text = "Enter your name";
             // 
             // lblUsernameWarning
             // 
@@ -417,7 +429,7 @@
             lblPasswordWarning.AutoSize = true;
             lblPasswordWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblPasswordWarning.ForeColor = Color.Red;
-            lblPasswordWarning.Location = new Point(528, 60);
+            lblPasswordWarning.Location = new Point(808, 60);
             lblPasswordWarning.Name = "lblPasswordWarning";
             lblPasswordWarning.Padding = new Padding(2, 0, 0, 0);
             lblPasswordWarning.Size = new Size(141, 16);
@@ -429,37 +441,173 @@
             lblConfirmPasswordWarning.AutoSize = true;
             lblConfirmPasswordWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblConfirmPasswordWarning.ForeColor = Color.Red;
-            lblConfirmPasswordWarning.Location = new Point(528, 119);
+            lblConfirmPasswordWarning.Location = new Point(808, 119);
             lblConfirmPasswordWarning.Name = "lblConfirmPasswordWarning";
             lblConfirmPasswordWarning.Padding = new Padding(2, 0, 0, 0);
             lblConfirmPasswordWarning.Size = new Size(156, 16);
             lblConfirmPasswordWarning.TabIndex = 14;
             lblConfirmPasswordWarning.Text = "Passwords don't match";
             // 
-            // lblOtherGenderWarning
+            // lblOtherWarning
             // 
-            lblOtherGenderWarning.AutoSize = true;
-            lblOtherGenderWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOtherGenderWarning.ForeColor = Color.Red;
-            lblOtherGenderWarning.Location = new Point(169, 406);
-            lblOtherGenderWarning.Name = "lblOtherGenderWarning";
-            lblOtherGenderWarning.Padding = new Padding(2, 0, 0, 0);
-            lblOtherGenderWarning.Size = new Size(134, 16);
-            lblOtherGenderWarning.TabIndex = 14;
-            lblOtherGenderWarning.Text = "Specify your gender";
+            lblOtherWarning.AutoSize = true;
+            lblOtherWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOtherWarning.ForeColor = Color.Red;
+            lblOtherWarning.Location = new Point(477, 320);
+            lblOtherWarning.Name = "lblOtherWarning";
+            lblOtherWarning.Padding = new Padding(2, 0, 0, 0);
+            lblOtherWarning.Size = new Size(134, 16);
+            lblOtherWarning.TabIndex = 14;
+            lblOtherWarning.Text = "Specify your gender";
+            // 
+            // txtSurname
+            // 
+            txtSurname.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSurname.Location = new Point(327, 76);
+            txtSurname.Name = "txtSurname";
+            txtSurname.Size = new Size(286, 27);
+            txtSurname.TabIndex = 6;
+            txtSurname.TextChanged += txtSurname_TextChanged;
+            txtSurname.Leave += txtFullname_Leave;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(327, 54);
+            label10.Name = "label10";
+            label10.Size = new Size(83, 19);
+            label10.TabIndex = 7;
+            label10.Text = "Surname";
+            // 
+            // txtID
+            // 
+            txtID.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtID.Location = new Point(327, 139);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(286, 27);
+            txtID.TabIndex = 6;
+            txtID.TextChanged += txtID_TextChanged;
+            txtID.Leave += txtUsername_Leave;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Location = new Point(327, 117);
+            label11.Name = "label11";
+            label11.Size = new Size(96, 19);
+            label11.TabIndex = 7;
+            label11.Text = "ID number";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(327, 182);
+            label12.Name = "label12";
+            label12.Size = new Size(44, 19);
+            label12.TabIndex = 7;
+            label12.Text = "Title";
+            // 
+            // txtPhone
+            // 
+            txtPhone.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPhone.Location = new Point(327, 269);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(286, 27);
+            txtPhone.TabIndex = 6;
+            txtPhone.TextChanged += txtPhone_TextChanged;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.Location = new Point(327, 247);
+            label13.Name = "label13";
+            label13.Size = new Size(129, 19);
+            label13.TabIndex = 7;
+            label13.Text = "Phone number";
+            // 
+            // lblSurnameWarning
+            // 
+            lblSurnameWarning.AutoSize = true;
+            lblSurnameWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSurnameWarning.ForeColor = Color.Red;
+            lblSurnameWarning.Location = new Point(477, 54);
+            lblSurnameWarning.Name = "lblSurnameWarning";
+            lblSurnameWarning.Padding = new Padding(2, 0, 0, 0);
+            lblSurnameWarning.Size = new Size(136, 16);
+            lblSurnameWarning.TabIndex = 14;
+            lblSurnameWarning.Text = "Enter your full name";
+            lblSurnameWarning.Visible = false;
+            // 
+            // lblIdWarning
+            // 
+            lblIdWarning.AutoSize = true;
+            lblIdWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblIdWarning.ForeColor = Color.Red;
+            lblIdWarning.Location = new Point(477, 119);
+            lblIdWarning.Name = "lblIdWarning";
+            lblIdWarning.Padding = new Padding(2, 0, 0, 0);
+            lblIdWarning.Size = new Size(119, 16);
+            lblIdWarning.TabIndex = 14;
+            lblIdWarning.Text = "Create username";
+            lblIdWarning.Visible = false;
+            // 
+            // lblTitleWarning
+            // 
+            lblTitleWarning.AutoSize = true;
+            lblTitleWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTitleWarning.ForeColor = Color.Red;
+            lblTitleWarning.Location = new Point(477, 185);
+            lblTitleWarning.Name = "lblTitleWarning";
+            lblTitleWarning.Padding = new Padding(2, 0, 0, 0);
+            lblTitleWarning.Size = new Size(112, 16);
+            lblTitleWarning.TabIndex = 14;
+            lblTitleWarning.Text = "Enter your email";
+            lblTitleWarning.Visible = false;
+            // 
+            // lblPhoneNumberWarning
+            // 
+            lblPhoneNumberWarning.AutoSize = true;
+            lblPhoneNumberWarning.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPhoneNumberWarning.ForeColor = Color.Red;
+            lblPhoneNumberWarning.Location = new Point(477, 247);
+            lblPhoneNumberWarning.Name = "lblPhoneNumberWarning";
+            lblPhoneNumberWarning.Padding = new Padding(2, 0, 0, 0);
+            lblPhoneNumberWarning.Size = new Size(94, 16);
+            lblPhoneNumberWarning.TabIndex = 14;
+            lblPhoneNumberWarning.Text = "Confirm email";
+            lblPhoneNumberWarning.Visible = false;
+            // 
+            // cmbTitle
+            // 
+            cmbTitle.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbTitle.FormattingEnabled = true;
+            cmbTitle.Items.AddRange(new object[] { "MR", "MISS", "MRS" });
+            cmbTitle.Location = new Point(331, 206);
+            cmbTitle.Name = "cmbTitle";
+            cmbTitle.Size = new Size(282, 28);
+            cmbTitle.TabIndex = 15;
             // 
             // Registration
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(710, 493);
+            ClientSize = new Size(985, 493);
+            Controls.Add(cmbTitle);
             Controls.Add(lblConfirmPasswordWarning);
             Controls.Add(lblPasswordWarning);
-            Controls.Add(lblOtherGenderWarning);
+            Controls.Add(lblOtherWarning);
             Controls.Add(lblGenderWarning);
+            Controls.Add(lblPhoneNumberWarning);
             Controls.Add(lblConfirmEmailWarning);
+            Controls.Add(lblTitleWarning);
             Controls.Add(lblEmailWarning);
+            Controls.Add(lblIdWarning);
             Controls.Add(lblUsernameWarning);
+            Controls.Add(lblSurnameWarning);
             Controls.Add(lblFullnameWarning);
             Controls.Add(btnBack);
             Controls.Add(btnExit);
@@ -474,12 +622,19 @@
             Controls.Add(txtOtherGender);
             Controls.Add(txtPassword);
             Controls.Add(label6);
+            Controls.Add(label13);
             Controls.Add(label3);
+            Controls.Add(txtPhone);
             Controls.Add(txtConfirmEmail);
+            Controls.Add(label12);
             Controls.Add(label2);
             Controls.Add(txtEmailaddress);
+            Controls.Add(label11);
             Controls.Add(label9);
+            Controls.Add(txtID);
             Controls.Add(txtUsername);
+            Controls.Add(label10);
+            Controls.Add(txtSurname);
             Controls.Add(label1);
             Controls.Add(txtFullname);
             Controls.Add(panel4);
@@ -531,6 +686,18 @@
         private Label lblGenderWarning;
         private Label lblPasswordWarning;
         private Label lblConfirmPasswordWarning;
-        private Label lblOtherGenderWarning;
+        private Label lblOtherWarning;
+        private TextBox txtSurname;
+        private Label label10;
+        private TextBox txtID;
+        private Label label11;
+        private Label label12;
+        private TextBox txtPhone;
+        private Label label13;
+        private Label lblSurnameWarning;
+        private Label lblIdWarning;
+        private Label lblTitleWarning;
+        private Label lblPhoneNumberWarning;
+        private ComboBox cmbTitle;
     }
 }

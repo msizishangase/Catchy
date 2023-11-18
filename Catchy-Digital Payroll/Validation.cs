@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Catchy_Digital_Payroll
 {
@@ -20,7 +21,7 @@ namespace Catchy_Digital_Payroll
             }
 
             // Check if the numeric string has exactly 10 digits
-            if (phoneNumber.Length == 10)
+            if (phoneNumber.Length == 10 && phoneNumber.StartsWith('0'))
             {
                 return true;
             }
@@ -53,7 +54,7 @@ namespace Catchy_Digital_Payroll
         }
         public bool IsValidEmail(string input)
         {
-            if (input.Contains("@") && input.Contains("."))
+            if (input.Contains("@") && input.Contains(".") && input.Length >= 5)
             {
                 return true;
             }
@@ -81,6 +82,57 @@ namespace Catchy_Digital_Payroll
             {
                 return "Male";
             }
+        }
+        public bool ValidUsername(string username)
+        {
+            if (username.Length >= 5)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public bool ValidatePassword(string password)
+        {
+            // Check for minimum length 
+            if (password.Length < 8)
+            {
+                MessageBox.Show("Password must be at least 8 characters long.", "Alert");
+                return false;
+            }
+
+            // Check for at least one uppercase letter
+            if (!password.Any(char.IsUpper))
+            {
+                MessageBox.Show("Password must contain at least one uppercase letter.", "Alert");
+                return false;
+            }
+
+            // Check for at least one lowercase letter
+            if (!password.Any(char.IsLower))
+            {
+                MessageBox.Show("Password must contain at least one lowercase letter.", "Alert");
+                return false;
+            }
+
+            // Check for at least one digit
+            if (!password.Any(char.IsDigit))
+            {
+                MessageBox.Show("Password must contain at least one digit.", "Alert");
+                return false;
+            }
+
+            // Check for the presence of special characters
+            if (!password.Any(c => !char.IsLetterOrDigit(c)))
+            {
+                MessageBox.Show("Password must contain at least one special character.", "Alert");
+                return false;
+            }
+
+            // If all checks pass, the password is considered valid
+            return true;
         }
     }
 }
