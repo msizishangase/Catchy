@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,19 +21,29 @@ namespace Catchy_Digital_Payroll
             InitializeComponent();
 
         }
+
+        public Panel PanelDisplay
+        {
+            get { return panelDisplay; }
+        }
+
         private Form? activeForm = null;
-        public void openChildForm(Form childForm)
+        public void openChildForm(Form childForm, Panel panel)
         {
             if (activeForm != null)
             {
                 activeForm.Close();
             }
+
             activeForm = childForm;
+
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panelDisplay.Controls.Add(childForm);
-            panelDisplay.Tag = childForm;
+
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
+
             childForm.BringToFront();
             childForm.Show();
         }
@@ -44,7 +55,7 @@ namespace Catchy_Digital_Payroll
 
             //NavBar.Start();
             Time.Start();
-            openChildForm(new Main_menu());
+            openChildForm(new Main_menu(), panelDisplay);
 
         }
 
@@ -98,22 +109,22 @@ namespace Catchy_Digital_Payroll
 
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
-            openChildForm(new About_Us());
+            openChildForm(new About_Us(), panelDisplay);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            openChildForm(new Profile());
+            openChildForm(new Profile(), panelDisplay);
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            openChildForm(new Reports());
+            openChildForm(new Reports(), panelDisplay);
         }
 
         private void btnUserProfile_Click(object sender, EventArgs e)
         {
-            openChildForm(new Profile());
+            openChildForm(new Profile(), panelDisplay);
         }
 
         private void btnMenu_Enter(object sender, EventArgs e)
@@ -190,7 +201,7 @@ namespace Catchy_Digital_Payroll
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            openChildForm(new Main_menu());
+            openChildForm(new Main_menu(), panelDisplay);
         }
 
         private void btnDashboard_Enter(object sender, EventArgs e)
@@ -217,9 +228,14 @@ namespace Catchy_Digital_Payroll
 
         private void linkLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            Form1 form = new Form1();
-            form.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to log out?", "Log out", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Form1 form = new Form1();
+                form.Show();
+            }
         }
 
         private void EmployeeSubmenu_Tick(object sender, EventArgs e)
@@ -246,12 +262,22 @@ namespace Catchy_Digital_Payroll
 
         private void btnNewEmployee_Click(object sender, EventArgs e)
         {
-            openChildForm(new New_employee());
+            openChildForm(new New_employee(), panelDisplay);
         }
 
         private void btnEmployeeList_Click(object sender, EventArgs e)
         {
-            openChildForm(new Employee_List());
+            openChildForm(new Employee_List(), panelDisplay);
+        }
+
+        private void btnLeave_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Leave_application(), panelDisplay);
+        }
+
+        private void btnSalary_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Salary(), panelDisplay);
         }
 
         public string Username { get; set; }

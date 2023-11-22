@@ -32,7 +32,6 @@
             label1 = new Label();
             label2 = new Label();
             txtEmployeeName = new TextBox();
-            cmbDepartment = new ComboBox();
             groupBox1 = new GroupBox();
             radAnnual = new RadioButton();
             radPaternity = new RadioButton();
@@ -42,15 +41,16 @@
             radFamilyEmergency = new RadioButton();
             radSick = new RadioButton();
             label3 = new Label();
-            txtSurpervisorName = new TextBox();
+            txtSurname = new TextBox();
             label4 = new Label();
             lnkSubmit = new LinkLabel();
             label5 = new Label();
             returnDate = new DateTimePicker();
             label6 = new Label();
-            effecticeDate = new DateTimePicker();
+            effectiveDate = new DateTimePicker();
             label7 = new Label();
             cmbLeaveType = new ComboBox();
+            txtEmployeeID = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -90,15 +90,6 @@
             txtEmployeeName.Name = "txtEmployeeName";
             txtEmployeeName.Size = new Size(298, 26);
             txtEmployeeName.TabIndex = 3;
-            // 
-            // cmbDepartment
-            // 
-            cmbDepartment.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmbDepartment.FormattingEnabled = true;
-            cmbDepartment.Location = new Point(30, 176);
-            cmbDepartment.Name = "cmbDepartment";
-            cmbDepartment.Size = new Size(298, 27);
-            cmbDepartment.TabIndex = 4;
             // 
             // groupBox1
             // 
@@ -207,17 +198,17 @@
             label3.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(30, 103);
             label3.Name = "label3";
-            label3.Size = new Size(141, 19);
+            label3.Size = new Size(152, 19);
             label3.TabIndex = 2;
-            label3.Text = "Surpervisor name";
+            label3.Text = "Employee surname";
             // 
-            // txtSurpervisorName
+            // txtSurname
             // 
-            txtSurpervisorName.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSurpervisorName.Location = new Point(30, 125);
-            txtSurpervisorName.Name = "txtSurpervisorName";
-            txtSurpervisorName.Size = new Size(298, 26);
-            txtSurpervisorName.TabIndex = 3;
+            txtSurname.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtSurname.Location = new Point(30, 125);
+            txtSurname.Name = "txtSurname";
+            txtSurname.Size = new Size(298, 26);
+            txtSurname.TabIndex = 3;
             // 
             // label4
             // 
@@ -225,9 +216,9 @@
             label4.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.Location = new Point(30, 154);
             label4.Name = "label4";
-            label4.Size = new Size(98, 19);
+            label4.Size = new Size(103, 19);
             label4.TabIndex = 2;
-            label4.Text = "Department";
+            label4.Text = "Employee ID";
             // 
             // lnkSubmit
             // 
@@ -273,13 +264,13 @@
             label6.TabIndex = 2;
             label6.Text = "Effective date";
             // 
-            // effecticeDate
+            // effectiveDate
             // 
-            effecticeDate.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            effecticeDate.Location = new Point(392, 125);
-            effecticeDate.Name = "effecticeDate";
-            effecticeDate.Size = new Size(298, 26);
-            effecticeDate.TabIndex = 7;
+            effectiveDate.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            effectiveDate.Location = new Point(392, 125);
+            effectiveDate.Name = "effectiveDate";
+            effectiveDate.Size = new Size(298, 26);
+            effectiveDate.TabIndex = 7;
             // 
             // label7
             // 
@@ -287,9 +278,9 @@
             label7.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(392, 52);
             label7.Name = "label7";
-            label7.Size = new Size(98, 19);
+            label7.Size = new Size(91, 19);
             label7.TabIndex = 2;
-            label7.Text = "Department";
+            label7.Text = "Leave type";
             // 
             // cmbLeaveType
             // 
@@ -301,18 +292,26 @@
             cmbLeaveType.Size = new Size(298, 27);
             cmbLeaveType.TabIndex = 4;
             // 
+            // txtEmployeeID
+            // 
+            txtEmployeeID.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtEmployeeID.Location = new Point(30, 176);
+            txtEmployeeID.Name = "txtEmployeeID";
+            txtEmployeeID.Size = new Size(298, 26);
+            txtEmployeeID.TabIndex = 3;
+            // 
             // Leave_application
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
-            Controls.Add(effecticeDate);
+            Controls.Add(effectiveDate);
             Controls.Add(returnDate);
             Controls.Add(lnkSubmit);
             Controls.Add(groupBox1);
             Controls.Add(cmbLeaveType);
-            Controls.Add(cmbDepartment);
-            Controls.Add(txtSurpervisorName);
+            Controls.Add(txtEmployeeID);
+            Controls.Add(txtSurname);
             Controls.Add(txtEmployeeName);
             Controls.Add(label7);
             Controls.Add(label4);
@@ -325,6 +324,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Leave_application";
             Text = "Leave_application";
+            Load += Leave_application_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);
@@ -337,11 +337,10 @@
         private Label label1;
         private Label label2;
         private TextBox txtEmployeeName;
-        private ComboBox cmbDepartment;
         private GroupBox groupBox1;
         private RadioButton radSick;
         private Label label3;
-        private TextBox txtSurpervisorName;
+        private TextBox txtSurname;
         private RadioButton radMaternity;
         private RadioButton radSchool;
         private RadioButton radVacation;
@@ -353,8 +352,9 @@
         private Label label5;
         private DateTimePicker returnDate;
         private Label label6;
-        private DateTimePicker effecticeDate;
+        private DateTimePicker effectiveDate;
         private Label label7;
         private ComboBox cmbLeaveType;
+        private TextBox txtEmployeeID;
     }
 }

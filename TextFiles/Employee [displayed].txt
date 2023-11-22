@@ -1,1 +1,4 @@
-Zakes|Bantwini|001|zakes@gmail.com|Project Manager 
+Nomasonto|Gumede|001|sontogumede@gmail.com|General worker |
+Anele|Mazibuka|002|anele9638@gmail.com|General worker |
+Wendy|Ndlovu|003|wendy@gmail.com|CAO|
+Mhlengi|Ngcobo|004|mhlengi@gmail.com|CAO|

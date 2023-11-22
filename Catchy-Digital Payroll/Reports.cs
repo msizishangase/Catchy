@@ -52,5 +52,10 @@ namespace Catchy_Digital_Payroll
                 }
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

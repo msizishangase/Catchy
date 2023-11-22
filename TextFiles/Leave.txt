@@ -1,0 +1,10 @@
+Msizi|Shangase|005|Paid|Sick Leave|Wednesday, 22 November 2023
+Msizi|Shangase|005|Paid|Sick Leave|Wednesday, 22 November 2023
+Sanele|Ngcobo|022|UnPaid|Vacation|Monday, 27 November 2023|Duration: 6
+Sanele|Ngcobo|02|UnPaid|Vacation|Monday, 27 November 2023|Duration: 6
+Sanele|Ngcobo|02|UnPaid|Vacation|Monday, 27 November 2023|Duration: 6
+Sanele|Ngcobo|02|UnPaid|Vacation|Monday, 27 November 2023|Duration: 6
+Mhlengiii|Mhlengiii||Paid|Sick Leave|Monday, 20 November 2023|Duration: 0
+Sipho|Ndlela|101|Paid|Sick Leave|Saturday, 16 December 2023|Duration: 25
+Anele|Mazibuko|002|Paid|Vacation|Thursday, 21 December 2023|Duration: 29
+Mhlengi|Ngcobo|004|Paid|Sick Leave|Tuesday, 21 November 2023|Duration: 0

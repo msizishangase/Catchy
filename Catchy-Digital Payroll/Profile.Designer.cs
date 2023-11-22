@@ -48,6 +48,8 @@
             lblGender = new Label();
             panel12 = new Panel();
             lblAge = new Label();
+            panel19 = new Panel();
+            lblUsername = new Label();
             panel11 = new Panel();
             lblSurname = new Label();
             panel10 = new Panel();
@@ -63,11 +65,10 @@
             panel6 = new Panel();
             label6 = new Label();
             panel5 = new Panel();
+            label12 = new Label();
             panel3 = new Panel();
             panel4 = new Panel();
             btnBack = new Button();
-            btnUpload = new Button();
-            btnRemove = new Button();
             panel17 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -77,6 +78,7 @@
             panel14.SuspendLayout();
             panel13.SuspendLayout();
             panel12.SuspendLayout();
+            panel19.SuspendLayout();
             panel11.SuspendLayout();
             panel10.SuspendLayout();
             panel2.SuspendLayout();
@@ -107,9 +109,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.icons8_user_100__1_;
-            pictureBox1.Location = new Point(47, 71);
+            pictureBox1.Location = new Point(43, 71);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(221, 192);
+            pictureBox1.Size = new Size(251, 267);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -141,7 +143,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(9, 75, 108);
-            label5.Location = new Point(18, 118);
+            label5.Location = new Point(18, 149);
             label5.Name = "label5";
             label5.Size = new Size(40, 20);
             label5.TabIndex = 1;
@@ -156,6 +158,7 @@
             panel1.Controls.Add(panel14);
             panel1.Controls.Add(panel13);
             panel1.Controls.Add(panel12);
+            panel1.Controls.Add(panel19);
             panel1.Controls.Add(panel11);
             panel1.Controls.Add(panel10);
             panel1.Controls.Add(panel2);
@@ -171,12 +174,13 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(panel5);
+            panel1.Controls.Add(label12);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel4);
-            panel1.Location = new Point(284, 71);
+            panel1.Location = new Point(321, 71);
             panel1.Name = "panel1";
-            panel1.Size = new Size(405, 302);
+            panel1.Size = new Size(405, 328);
             panel1.TabIndex = 3;
             panel1.Paint += panel1_Paint;
             // 
@@ -190,7 +194,7 @@
             // panel18
             // 
             panel18.Controls.Add(label11);
-            panel18.Location = new Point(183, 268);
+            panel18.Location = new Point(183, 299);
             panel18.Name = "panel18";
             panel18.Size = new Size(195, 25);
             panel18.TabIndex = 2;
@@ -209,7 +213,7 @@
             // panel16
             // 
             panel16.Controls.Add(lblNumber);
-            panel16.Location = new Point(183, 237);
+            panel16.Location = new Point(183, 268);
             panel16.Name = "panel16";
             panel16.Size = new Size(195, 25);
             panel16.TabIndex = 2;
@@ -228,7 +232,7 @@
             // panel15
             // 
             panel15.Controls.Add(lblEmail);
-            panel15.Location = new Point(183, 206);
+            panel15.Location = new Point(183, 237);
             panel15.Name = "panel15";
             panel15.Size = new Size(195, 25);
             panel15.TabIndex = 2;
@@ -247,7 +251,7 @@
             // panel14
             // 
             panel14.Controls.Add(lblLocation);
-            panel14.Location = new Point(183, 175);
+            panel14.Location = new Point(183, 206);
             panel14.Name = "panel14";
             panel14.Size = new Size(195, 25);
             panel14.TabIndex = 2;
@@ -266,7 +270,7 @@
             // panel13
             // 
             panel13.Controls.Add(lblGender);
-            panel13.Location = new Point(183, 144);
+            panel13.Location = new Point(183, 175);
             panel13.Name = "panel13";
             panel13.Size = new Size(195, 25);
             panel13.TabIndex = 2;
@@ -285,7 +289,7 @@
             // panel12
             // 
             panel12.Controls.Add(lblAge);
-            panel12.Location = new Point(183, 113);
+            panel12.Location = new Point(183, 144);
             panel12.Name = "panel12";
             panel12.Size = new Size(195, 25);
             panel12.TabIndex = 2;
@@ -300,6 +304,25 @@
             lblAge.Size = new Size(195, 25);
             lblAge.TabIndex = 1;
             lblAge.Text = "20";
+            // 
+            // panel19
+            // 
+            panel19.Controls.Add(lblUsername);
+            panel19.Location = new Point(183, 113);
+            panel19.Name = "panel19";
+            panel19.Size = new Size(195, 25);
+            panel19.TabIndex = 2;
+            // 
+            // lblUsername
+            // 
+            lblUsername.Dock = DockStyle.Fill;
+            lblUsername.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUsername.ForeColor = Color.FromArgb(9, 75, 108);
+            lblUsername.Location = new Point(0, 0);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(195, 25);
+            lblUsername.TabIndex = 1;
+            lblUsername.Text = "Sandy";
             // 
             // panel11
             // 
@@ -370,7 +393,7 @@
             label10.AutoSize = true;
             label10.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.FromArgb(9, 75, 108);
-            label10.Location = new Point(18, 268);
+            label10.Location = new Point(18, 299);
             label10.Name = "label10";
             label10.Size = new Size(106, 20);
             label10.TabIndex = 1;
@@ -381,7 +404,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(9, 75, 108);
-            label9.Location = new Point(18, 237);
+            label9.Location = new Point(18, 268);
             label9.Name = "label9";
             label9.Size = new Size(126, 20);
             label9.TabIndex = 1;
@@ -399,7 +422,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(9, 75, 108);
-            label8.Location = new Point(20, 211);
+            label8.Location = new Point(20, 242);
             label8.Name = "label8";
             label8.Size = new Size(54, 20);
             label8.TabIndex = 1;
@@ -410,7 +433,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(9, 75, 108);
-            label7.Location = new Point(20, 180);
+            label7.Location = new Point(20, 211);
             label7.Name = "label7";
             label7.Size = new Size(78, 20);
             label7.TabIndex = 1;
@@ -428,7 +451,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(9, 75, 108);
-            label6.Location = new Point(18, 149);
+            label6.Location = new Point(18, 180);
             label6.Name = "label6";
             label6.Size = new Size(67, 20);
             label6.TabIndex = 1;
@@ -440,6 +463,17 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(195, 25);
             panel5.TabIndex = 2;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.ForeColor = Color.FromArgb(9, 75, 108);
+            label12.Location = new Point(18, 118);
+            label12.Name = "label12";
+            label12.Size = new Size(91, 20);
+            label12.TabIndex = 1;
+            label12.Text = "Username";
             // 
             // panel3
             // 
@@ -471,35 +505,6 @@
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
             // 
-            // btnUpload
-            // 
-            btnUpload.FlatAppearance.BorderSize = 0;
-            btnUpload.FlatStyle = FlatStyle.Flat;
-            btnUpload.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpload.ForeColor = Color.FromArgb(9, 75, 108);
-            btnUpload.Location = new Point(43, 274);
-            btnUpload.Name = "btnUpload";
-            btnUpload.Size = new Size(121, 37);
-            btnUpload.TabIndex = 14;
-            btnUpload.Text = "Upload now";
-            btnUpload.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnUpload.UseVisualStyleBackColor = true;
-            btnUpload.Click += button1_Click;
-            // 
-            // btnRemove
-            // 
-            btnRemove.FlatAppearance.BorderSize = 0;
-            btnRemove.FlatStyle = FlatStyle.Flat;
-            btnRemove.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnRemove.ForeColor = Color.Red;
-            btnRemove.Location = new Point(157, 274);
-            btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(121, 37);
-            btnRemove.TabIndex = 14;
-            btnRemove.Text = "Remove";
-            btnRemove.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnRemove.UseVisualStyleBackColor = true;
-            // 
             // panel17
             // 
             panel17.BackColor = Color.FromArgb(9, 75, 108);
@@ -514,8 +519,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 497);
             Controls.Add(panel17);
-            Controls.Add(btnRemove);
-            Controls.Add(btnUpload);
             Controls.Add(btnBack);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
@@ -533,6 +536,7 @@
             panel14.ResumeLayout(false);
             panel13.ResumeLayout(false);
             panel12.ResumeLayout(false);
+            panel19.ResumeLayout(false);
             panel11.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -577,11 +581,12 @@
         private Label lblName;
         private Label lblTitle;
         private Button btnBack;
-        private Button btnUpload;
-        private Button btnRemove;
         private Panel panel17;
         private Panel panel18;
         private Label label11;
         private Label label10;
+        private Panel panel19;
+        private Label lblUsername;
+        private Label label12;
     }
 }

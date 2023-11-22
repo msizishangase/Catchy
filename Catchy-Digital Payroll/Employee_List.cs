@@ -120,5 +120,15 @@ namespace Catchy_Digital_Payroll
             }
             return lastLine;
         }
+
+        //private void btnAddEmployee_Click(object sender, EventArgs e)
+        //{
+        //    //Dashboard dashboard = new Dashboard();
+        //    //dashboard.openChildForm(new New_employee(), dashboard.PanelDisplay);
+
+        //    New_employee employee = new New_employee();
+        //    employee.Show();
+        //}
+        
     }
 }

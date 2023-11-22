@@ -31,6 +31,7 @@
             panel1 = new Panel();
             label1 = new Label();
             dataReports = new DataGridView();
+            btnClose = new Button();
             ((System.ComponentModel.ISupportInitialize)dataReports).BeginInit();
             SuspendLayout();
             // 
@@ -39,7 +40,7 @@
             panel1.BackColor = Color.FromArgb(9, 75, 108);
             panel1.Location = new Point(12, 38);
             panel1.Name = "panel1";
-            panel1.Size = new Size(861, 3);
+            panel1.Size = new Size(878, 3);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -62,14 +63,27 @@
             dataReports.Location = new Point(12, 47);
             dataReports.Name = "dataReports";
             dataReports.RowTemplate.Height = 25;
-            dataReports.Size = new Size(861, 390);
+            dataReports.Size = new Size(877, 455);
             dataReports.TabIndex = 2;
+            // 
+            // btnClose
+            // 
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Image = Properties.Resources.icons8_cancel_30;
+            btnClose.Location = new Point(815, 5);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(75, 27);
+            btnClose.TabIndex = 8;
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // Reports
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(885, 475);
+            ClientSize = new Size(901, 514);
+            Controls.Add(btnClose);
             Controls.Add(dataReports);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -86,5 +100,6 @@
         private Panel panel1;
         private Label label1;
         private DataGridView dataReports;
+        private Button btnClose;
     }
 }

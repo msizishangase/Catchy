@@ -62,7 +62,6 @@
             cmbNationality = new ComboBox();
             cmbRace = new ComboBox();
             panel1 = new Panel();
-            btnRemove = new Button();
             btnUpload = new Button();
             picEmployee = new PictureBox();
             panel2 = new Panel();
@@ -407,28 +406,12 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(btnRemove);
             panel1.Controls.Add(btnUpload);
             panel1.Controls.Add(picEmployee);
             panel1.Location = new Point(584, 133);
             panel1.Name = "panel1";
             panel1.Size = new Size(256, 281);
             panel1.TabIndex = 4;
-            // 
-            // btnRemove
-            // 
-            btnRemove.FlatAppearance.BorderSize = 0;
-            btnRemove.FlatStyle = FlatStyle.Flat;
-            btnRemove.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRemove.ForeColor = Color.Red;
-            btnRemove.Location = new Point(18, 243);
-            btnRemove.Name = "btnRemove";
-            btnRemove.Size = new Size(221, 26);
-            btnRemove.TabIndex = 1;
-            btnRemove.Text = "Remove";
-            btnRemove.UseVisualStyleBackColor = true;
-            btnRemove.MouseLeave += btnRemove_MouseLeave;
-            btnRemove.MouseHover += btnRemove_MouseHover;
             // 
             // btnUpload
             // 
@@ -598,7 +581,6 @@
         private Panel panel1;
         private Button btnUpload;
         private PictureBox picEmployee;
-        private Button btnRemove;
         private Panel panel2;
         private Label label16;
         private ComboBox cmbOccupation;

@@ -78,6 +78,22 @@ namespace Catchy_Digital_Payroll
                 ucdays.Days(i);
                 dayContainter.Controls.Add(ucdays);
             }
+
+            if (lblDate.Text.Contains("December"))
+            {
+                btnPrevious.Visible = true;
+                btnNext.Visible = false;
+            }
+            else if (lblDate.Text.Contains("January"))
+            {
+                btnNext.Visible = true;
+                btnPrevious.Visible = false;
+            }
+            else
+            {
+                btnNext.Visible = true;
+                btnPrevious.Visible = true;
+            }
         }
 
         private void btnPrevious_Click(object sender, EventArgs e)
@@ -106,6 +122,34 @@ namespace Catchy_Digital_Payroll
                 ucdays.Days(i);
                 dayContainter.Controls.Add(ucdays);
             }
+
+            if (lblDate.Text.Contains("December"))
+            {
+                btnPrevious.Visible = true;
+                btnNext.Visible = false;
+            }
+            else if (lblDate.Text.Contains("January"))
+            {
+                btnNext.Visible = true;
+                btnPrevious.Visible = false;
+            }
+            else
+            {
+                btnNext.Visible = true;
+                btnPrevious.Visible = true;
+            }
+        }
+
+        private void lnkNewEmployee_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            New_employee employee = new New_employee();
+            employee.Show();
+        }
+
+        private void lnkReports_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Reports reports = new Reports();
+            reports.Show();
         }
     }
 }

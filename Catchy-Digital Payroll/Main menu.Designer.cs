@@ -40,13 +40,10 @@
             btnPrevious = new Button();
             lblDate = new Label();
             groupBox1 = new GroupBox();
-            linkLabel3 = new LinkLabel();
-            linkLabel2 = new LinkLabel();
-            linkLabel1 = new LinkLabel();
+            lnkReports = new LinkLabel();
+            lnkNewEmployee = new LinkLabel();
             label8 = new Label();
             label12 = new Label();
-            label11 = new Label();
-            label10 = new Label();
             label9 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -186,13 +183,11 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(linkLabel3);
-            groupBox1.Controls.Add(linkLabel2);
-            groupBox1.Controls.Add(linkLabel1);
+            groupBox1.Anchor = AnchorStyles.None;
+            groupBox1.Controls.Add(lnkReports);
+            groupBox1.Controls.Add(lnkNewEmployee);
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label12);
-            groupBox1.Controls.Add(label11);
-            groupBox1.Controls.Add(label10);
             groupBox1.Controls.Add(label9);
             groupBox1.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.FromArgb(9, 75, 108);
@@ -203,38 +198,31 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Quick links";
             // 
-            // linkLabel3
+            // lnkReports
             // 
-            linkLabel3.AutoSize = true;
-            linkLabel3.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLabel3.Location = new Point(103, 306);
-            linkLabel3.Name = "linkLabel3";
-            linkLabel3.Size = new Size(64, 16);
-            linkLabel3.TabIndex = 2;
-            linkLabel3.TabStop = true;
-            linkLabel3.Text = "Reports";
+            lnkReports.AutoSize = true;
+            lnkReports.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lnkReports.LinkBehavior = LinkBehavior.HoverUnderline;
+            lnkReports.Location = new Point(103, 169);
+            lnkReports.Name = "lnkReports";
+            lnkReports.Size = new Size(64, 16);
+            lnkReports.TabIndex = 2;
+            lnkReports.TabStop = true;
+            lnkReports.Text = "Reports";
+            lnkReports.LinkClicked += lnkReports_LinkClicked;
             // 
-            // linkLabel2
+            // lnkNewEmployee
             // 
-            linkLabel2.AutoSize = true;
-            linkLabel2.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLabel2.Location = new Point(126, 150);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(92, 16);
-            linkLabel2.TabIndex = 2;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Dark theme";
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLabel1.Location = new Point(29, 38);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(147, 16);
-            linkLabel1.TabIndex = 2;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Add new employee";
+            lnkNewEmployee.AutoSize = true;
+            lnkNewEmployee.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lnkNewEmployee.LinkBehavior = LinkBehavior.HoverUnderline;
+            lnkNewEmployee.Location = new Point(29, 38);
+            lnkNewEmployee.Name = "lnkNewEmployee";
+            lnkNewEmployee.Size = new Size(147, 16);
+            lnkNewEmployee.TabIndex = 2;
+            lnkNewEmployee.TabStop = true;
+            lnkNewEmployee.Text = "Add new employee";
+            lnkNewEmployee.LinkClicked += lnkNewEmployee_LinkClicked;
             // 
             // label8
             // 
@@ -252,35 +240,12 @@
             // 
             label12.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label12.ForeColor = Color.FromArgb(9, 75, 108);
-            label12.Location = new Point(3, 290);
+            label12.Location = new Point(3, 153);
             label12.Margin = new Padding(0);
             label12.Name = "label12";
             label12.Size = new Size(242, 153);
             label12.TabIndex = 1;
             label12.Text = "Unlock data insights at your fingertips with \r\na single click to comprehensive analytics. Streamline your decision-making process and stay ahead with effortlessly accessible and actionable reports.";
-            // 
-            // label11
-            // 
-            label11.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.ForeColor = Color.FromArgb(9, 75, 108);
-            label11.Location = new Point(3, 166);
-            label11.Margin = new Padding(0);
-            label11.Name = "label11";
-            label11.Size = new Size(242, 114);
-            label11.TabIndex = 1;
-            label11.Text = "transform your workspace effortlessly \r\nwith just one click. Enhance readability \r\nand reduce eye strain for a seamless \r\nand stylish user experience.";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.ForeColor = Color.FromArgb(9, 75, 108);
-            label10.Location = new Point(3, 134);
-            label10.Margin = new Padding(0);
-            label10.Name = "label10";
-            label10.Size = new Size(242, 32);
-            label10.TabIndex = 1;
-            label10.Text = "Experience a sleek and eye-friendly\r\ninterface with our";
             // 
             // label9
             // 
@@ -336,12 +301,9 @@
         private Label lblDate;
         private GroupBox groupBox1;
         private Label label8;
-        private LinkLabel linkLabel1;
+        private LinkLabel lnkNewEmployee;
         private Label label9;
-        private LinkLabel linkLabel2;
-        private Label label10;
         private Label label12;
-        private Label label11;
-        private LinkLabel linkLabel3;
+        private LinkLabel lnkReports;
     }
 }

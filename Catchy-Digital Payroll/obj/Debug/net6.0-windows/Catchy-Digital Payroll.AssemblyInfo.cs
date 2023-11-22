@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Catchy-Digital Payroll")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+744b606e79a7d93f34e9583288f909d308e88976")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fd3173c9a42e25f91f9fb4965afe99d85ca0e67")]
 [assembly: System.Reflection.AssemblyProductAttribute("Catchy-Digital Payroll")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Catchy-Digital Payroll")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

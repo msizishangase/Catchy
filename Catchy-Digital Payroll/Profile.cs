@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Microsoft.VisualBasic;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,25 +60,51 @@ namespace Catchy_Digital_Payroll
                 }
             }
         }
+        
 
         private void Profile_Load(object sender, EventArgs e)
         {
+            string images = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Admin pictures.txt";
+
             Dashboard dash = new Dashboard();
+            Validation validation = new Validation();
 
-            //lblName.Text = GetLastLine(filePath);
             string[] line = GetLastLine(filePath).Split('|');
-            string[] fullname = line[0].Split(' ');
-            string name = fullname[0];
-            string surname = fullname[1];
 
-            //{ propFullname}|{ propUsername}|{ propGender}|{ propEmail}|{ propPassword}
-            lblName.Text = name;
-            lblSurname.Text = surname;
-            lblGender.Text = line[2];
+            int age = 23 - int.Parse(line[5].Substring(0, 2));
+
+            lblName.Text = line[0];
+            lblSurname.Text = line[1];
+            lblUsername.Text = line[2];
             lblEmail.Text = line[3];
+            lblGender.Text = line[4];
+            lblAge.Text = age.ToString();
+            lblNumber.Text = line[7];
+            lblTitle.Text = line[6];
+
+            string reader = "";
+            string[] data;
+
+            using (StreamReader sr = new StreamReader(images))
+            {
+                reader = sr.ReadLine();
+                while (reader != null)
+                {
+                    data = reader.Split('|');
+                    if (data[0] == lblUsername.Text)
+                    {
+                        pictureBox1.ImageLocation = data[1];
+
+                        pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+
+                        break;
+                    }
+                    reader = sr.ReadLine();
+                }
+            }
         }
 
-        //Gets the last line of the file
+        // Gets the last line of the file
         public string GetLastLine(string filePath)
         {
             string lastLine = null;

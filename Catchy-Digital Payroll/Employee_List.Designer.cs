@@ -31,7 +31,6 @@
             EmployeeList = new DataGridView();
             panel1 = new Panel();
             label1 = new Label();
-            btnAddEmployee = new Button();
             lnkDeleteEmployee = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)EmployeeList).BeginInit();
             SuspendLayout();
@@ -69,21 +68,6 @@
             label1.Text = "Employees";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnAddEmployee
-            // 
-            btnAddEmployee.BackColor = Color.FromArgb(9, 75, 108);
-            btnAddEmployee.FlatAppearance.BorderSize = 0;
-            btnAddEmployee.FlatStyle = FlatStyle.Flat;
-            btnAddEmployee.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAddEmployee.ForeColor = Color.White;
-            btnAddEmployee.ImageAlign = ContentAlignment.MiddleRight;
-            btnAddEmployee.Location = new Point(672, 434);
-            btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(201, 33);
-            btnAddEmployee.TabIndex = 3;
-            btnAddEmployee.Text = "Add employee";
-            btnAddEmployee.UseVisualStyleBackColor = false;
-            // 
             // lnkDeleteEmployee
             // 
             lnkDeleteEmployee.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -91,7 +75,7 @@
             lnkDeleteEmployee.ImageAlign = ContentAlignment.MiddleRight;
             lnkDeleteEmployee.LinkBehavior = LinkBehavior.HoverUnderline;
             lnkDeleteEmployee.LinkColor = Color.Red;
-            lnkDeleteEmployee.Location = new Point(12, 436);
+            lnkDeleteEmployee.Location = new Point(677, 435);
             lnkDeleteEmployee.Name = "lnkDeleteEmployee";
             lnkDeleteEmployee.Size = new Size(196, 31);
             lnkDeleteEmployee.TabIndex = 4;
@@ -106,7 +90,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(885, 475);
             Controls.Add(lnkDeleteEmployee);
-            Controls.Add(btnAddEmployee);
             Controls.Add(label1);
             Controls.Add(panel1);
             Controls.Add(EmployeeList);
@@ -124,7 +107,6 @@
         private DataGridView EmployeeList;
         private Panel panel1;
         private Label label1;
-        private Button btnAddEmployee;
         private LinkLabel lnkDeleteEmployee;
     }
 }

@@ -5,3 +5,44 @@ Employee deletion|Msizi Shangase deleted Msizi Mthandeni Sifiso Shangase from th
 Employee registration|Mhlengi Ngcobo added Mhlengi Ngcobo to the system|2023/11/17 15:24:20
 Employee deletion|Mhlengi Ngcobo deleted Mhlengi Ngcobo from the system|2023/11/17 15:28:13
 Employee registration|Msizi Shangase added Zakes Bantwini to the system|2023/11/17 22:08:03
+HR registration|Mhlengi Aphelele Ngcobo joined as a HR manager|2023/11/18 18:35:45
+Employee registration|Mhlengi Aphelele added Sanele Ngcobo to the system|2023/11/19 17:33:29
+Employee registration|Mhlengi Aphelele added Msizi Shangase to the system|2023/11/19 17:36:52
+Employee registration|Mhlengi Aphelele added dsfbgsd dbrfsdb to the system|2023/11/19 17:40:01
+Leave application|Mhlengi Aphelele applied leave for Msizi Shangase.|2023/11/20 10:47:53
+Leave application|Mhlengi Aphelele applied leave for Msizi Shangase.|2023/11/20 10:47:54
+Employee deletion|Mhlengi Aphelele deleted Zakes Bantwini from the system|2023/11/20 11:11:21
+Employee deletion|Mhlengi Aphelele deleted dsfbgsd dbrfsdb from the system|2023/11/20 11:11:34
+HR registration|Msizi Shangase joined as a HR manager|2023/11/20 11:58:19
+HR registration|Thobelani Biyela joined as a HR manager|2023/11/20 12:21:42
+HR registration|Zama Zulu joined as a HR manager|2023/11/20 12:25:18
+HR registration|Nosipho Bhengu joined as a HR manager|2023/11/20 12:27:56
+HR registration|Msizi Shangase joined as a HR manager|2023/11/20 14:05:02
+Leave application|Msizi applied leave for Sanele Ngcobo.|2023/11/20 14:14:08
+Leave application|Msizi applied leave for Sanele Ngcobo.|2023/11/20 14:14:20
+Leave application|Msizi applied leave for Sanele Ngcobo.|2023/11/20 14:14:26
+Leave application|Msizi applied leave for Sanele Ngcobo.|2023/11/20 14:15:57
+Employee registration|Msizi added Mhlengi Ngcobo to the system|2023/11/20 14:23:59
+Leave application|Mhlengi Aphelele applied leave for Mhlengiii Mhlengiii.|2023/11/20 14:42:54
+HR registration|Wendy  Ndlovu joined as a HR manager|2023/11/20 15:08:21
+HR registration|Sandiswa Ndlela joined as a HR manager|2023/11/20 17:44:55
+Employee registration|Sandiswa added Sipho Ndlela to the system|2023/11/20 17:53:53
+Leave application|Sandiswa applied leave for Sipho Ndlela.|2023/11/20 17:58:01
+Employee deletion|Msizi deleted Sipho Ndlela from the system|2023/11/21 11:45:10
+Employee deletion|Msizi deleted Mhlengi Ngcobo from the system|2023/11/21 12:15:22
+Employee deletion|Msizi deleted Msizi Shangase from the system|2023/11/21 12:15:39
+Employee deletion|Msizi deleted Sanele Ngcobo from the system|2023/11/21 12:16:02
+Employee registration|Msizi added Nomasonto Gumede to the system|2023/11/21 12:57:18
+HR registration|Sanele Njabulo Ngcobo joined as a HR manager|2023/11/21 13:03:13
+Employee registration|Sanele Njabulo added Anele Mazibuka to the system|2023/11/21 13:07:16
+Payslip generated|Sanele Njabulo generated a payslip for employee #1000|2023/11/21 13:15:22
+Payslip generated|Sanele Njabulo generated a payslip for employee #001|2023/11/21 13:19:15
+Payslip generated|Sanele Njabulo generated a payslip for employee #002|2023/11/21 13:20:58
+HR registration|Mhlengi Ngcobo joined as a HR manager|2023/11/21 13:31:11
+Employee registration|Mhlengi added Wendy Ndlovu to the system|2023/11/21 13:35:01
+Leave application|Mhlengi applied leave for Anele Mazibuko.|2023/11/21 13:38:58
+HR registration|Sane Ngcobo joined as a HR manager|2023/11/21 14:46:41
+HR registration|Jacob Zuma joined as a HR manager|2023/11/21 14:51:44
+Employee registration|Sane added Mhlengi Ngcobo to the system|2023/11/21 14:55:36
+Payslip generated|Sane generated a payslip for employee #004|2023/11/21 14:56:48
+Leave application|Sane applied leave for Mhlengi Ngcobo.|2023/11/21 15:01:35

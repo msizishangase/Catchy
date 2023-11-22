@@ -1,4 +1,4 @@
-Msizi Mthandeni Sifiso|Shangase|003|shangasemsizy@gmail.com|0655465903|0405225851089|RSA ID |African |CAO|Durban Kingsgate 55 David Webster|Nontobeko|Shangase|Parent-Child|shangasenontobeko91@gmail.com|0655465903|Male
-Msizi Mthandeni Sifiso|Shangase|001|shangasemsizy@gmail.com|0655465903|0405225851089|RSA ID |African |COO|Durban 55 David Webster |Nontobeko|Shangase|Parent-Child|shangasenontobeko91@gmail.com|0655465903|Male
-Mhlengi|Ngcobo|22262057|mhlengi10@gmail.com|0788821014|0210235817088|RSA ID |African |COO|59 laguma road phoinex 4068  |Oledi|Mgobhozi|Parent-Child||0788821014|Male
-Zakes|Bantwini|001|zakes@gmail.com|0712345678|0204055854087|RSA ID |African |Project Manager |Durban  |Zamani|Zulu|Sibling|zama@gmail.com|0712345678|Male
+Nomasonto|Gumede|001|sontogumede@gmail.com|0769860772|0103114658089|RSA ID |African |General worker |Durban Kwamashu E |Candy|Gumede|Sibling|none|0769860772|Female|R17 490,00
+Anele|Mazibuka|002|anele9638@gmail.com|0649779995|0406170954084|RSA ID |African |General worker |Estcourt  |Nothabo|Sthole|Sibling|none|0649779995|Female|R27 490,00
+Wendy|Ndlovu|003|wendy@gmail.com|0823896346|0212044258082|RSA ID |African |CAO|Durban  |Sanele|Ngcobo|Spousal|ngcobohsaneler@gmail.com|0823896346|Female|
+Mhlengi|Ngcobo|004|mhlengi@gmail.com|0712563698|0202025658089|RSA ID |African |CAO|Durban Kwamashu |Sandiswa|Ndlela|Parent-Child|sandiswa99@gmail.com|0712563698|Male|R24 190,00

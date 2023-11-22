@@ -18,11 +18,6 @@ namespace Catchy_Digital_Payroll
         }
         Validation validate = new Validation();
 
-        private void btnRemove_MouseHover(object sender, EventArgs e)
-        {
-            btnRemove.FlatAppearance.BorderSize = 1;
-        }
-
         private void btnUpload_MouseHover(object sender, EventArgs e)
         {
             btnUpload.FlatAppearance.BorderSize = 1;
@@ -30,7 +25,16 @@ namespace Catchy_Digital_Payroll
 
         private void btnUpload_Click(object sender, EventArgs e)
         {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image Files|*.png;*.jpg;*.jpeg;*.gif;*.bmp|All Files|*.*";
 
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Set the selected image to the PictureBox
+                    picEmployee.ImageLocation = openFileDialog.FileName;
+                }
+            }
         }
 
         private void btnProceed_Click(object sender, EventArgs e)
@@ -60,11 +64,11 @@ namespace Catchy_Digital_Payroll
             {
                 MessageBox.Show("Invalid ID number entered", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbNationality.Text))
+            else if (!validate.IsValidName(cmbNationality.Text))
             {
                 MessageBox.Show("Invalid nationality selection", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbRace.Text))
+            else if (!validate.IsValidName(cmbRace.Text))
             {
                 MessageBox.Show("Invalid race selection", "Registration failed");
             }
@@ -72,7 +76,7 @@ namespace Catchy_Digital_Payroll
             {
                 MessageBox.Show("Invalid address entered", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbOccupation.Text))
+            else if (!validate.IsValidName(cmbOccupation.Text))
             {
                 MessageBox.Show("Invalid occupation selection", "Registration failed");
             }
@@ -84,7 +88,7 @@ namespace Catchy_Digital_Payroll
             {
                 MessageBox.Show("Invalid next of kin surname entered", "Registration failed");
             }
-            else if (validate.IsEmpty(cmbNextRelationship.Text))
+            else if (!validate.IsValidName(cmbNextRelationship.Text))
             {
                 MessageBox.Show("Invalid next of kin relationship selected", "Registration failed");
             }
@@ -92,10 +96,14 @@ namespace Catchy_Digital_Payroll
             {
                 MessageBox.Show("Invalid next of kin number entered entered", "Registration failed");
             }
+            else if (validate.EmployeeExists(txtEmployeeID.Text))
+            {
+                MessageBox.Show($"An employee with {txtEmployeeID.Text} ID already exists", "Registration failed");
+            }
             else
             {
                 string homeAddress = $"{textBox13.Text} {textBox14.Text} {textBox23.Text}";
-
+                
                 string gender = validate.Gender(txtID.Text);
 
                 DateTime date = DateTime.Now;
@@ -110,6 +118,38 @@ namespace Catchy_Digital_Payroll
                 if (result == DialogResult.Yes)
                 {
                     hr.AddReport("Employee registration", $"{line[0]} added {txtName.Text} {txtSurname.Text} to the system", date.ToLocalTime().ToString());
+
+                    if (String.IsNullOrEmpty(txtNextEmail.Text))
+                    {
+                        employee.propNextEmail = "none";
+                    }
+
+                    string destinationFilePath = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Employee pictures.txt";
+
+                    // Get the image path from the PictureBox
+                    string imagePath = picEmployee.ImageLocation;
+
+                    // Check if the image path is not empty
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        try
+                        {
+                            using (StreamWriter writer = new StreamWriter(destinationFilePath, true))
+                            {
+                                writer.WriteLine($"{txtEmployeeID.Text}|{imagePath}");
+                            }
+
+                            MessageBox.Show($"Image path saved to {destinationFilePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No image loaded in the PictureBox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
 
                     this.Close();
                     employee.SaveEmployee();
@@ -126,11 +166,6 @@ namespace Catchy_Digital_Payroll
         private void btnUpload_MouseLeave(object sender, EventArgs e)
         {
             btnUpload.FlatAppearance.BorderSize = 0;
-        }
-
-        private void btnRemove_MouseLeave(object sender, EventArgs e)
-        {
-            btnRemove.FlatAppearance.BorderSize = 0;
         }
         public string GetLastLine(string filePath)
         {

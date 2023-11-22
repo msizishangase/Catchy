@@ -30,12 +30,15 @@
         {
             components = new System.ComponentModel.Container();
             NavigationBar = new Panel();
+            panel4 = new Panel();
             panel3 = new Panel();
             btnAboutUs = new Button();
             btnReports = new Button();
             btnSettings = new Button();
             panEmployeeSub = new Panel();
+            btnLeave = new Button();
             btnEmployeeList = new Button();
+            btnSalary = new Button();
             btnNewEmployee = new Button();
             btnEmployees = new Button();
             btnUserProfile = new Button();
@@ -52,6 +55,7 @@
             linkLogout = new LinkLabel();
             EmployeeSubmenu = new System.Windows.Forms.Timer(components);
             NavigationBar.SuspendLayout();
+            panel4.SuspendLayout();
             panel3.SuspendLayout();
             panEmployeeSub.SuspendLayout();
             panel1.SuspendLayout();
@@ -62,7 +66,7 @@
             // NavigationBar
             // 
             NavigationBar.BackColor = Color.FromArgb(9, 75, 108);
-            NavigationBar.Controls.Add(panel3);
+            NavigationBar.Controls.Add(panel4);
             NavigationBar.Controls.Add(panEmployeeSub);
             NavigationBar.Controls.Add(btnUserProfile);
             NavigationBar.Controls.Add(btnDashboard);
@@ -76,13 +80,22 @@
             NavigationBar.Size = new Size(174, 565);
             NavigationBar.TabIndex = 2;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(panel3);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(5, 137);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(164, 196);
+            panel4.TabIndex = 1;
+            // 
             // panel3
             // 
             panel3.Controls.Add(btnAboutUs);
             panel3.Controls.Add(btnReports);
             panel3.Controls.Add(btnSettings);
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(5, 141);
+            panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(164, 135);
             panel3.TabIndex = 0;
@@ -155,20 +168,42 @@
             // 
             // panEmployeeSub
             // 
+            panEmployeeSub.Controls.Add(btnLeave);
             panEmployeeSub.Controls.Add(btnEmployeeList);
+            panEmployeeSub.Controls.Add(btnSalary);
             panEmployeeSub.Controls.Add(btnNewEmployee);
             panEmployeeSub.Controls.Add(btnEmployees);
             panEmployeeSub.Dock = DockStyle.Top;
             panEmployeeSub.Location = new Point(5, 95);
-            panEmployeeSub.MaximumSize = new Size(164, 128);
-            panEmployeeSub.MinimumSize = new Size(164, 46);
+            panEmployeeSub.MaximumSize = new Size(164, 218);
+            panEmployeeSub.MinimumSize = new Size(164, 42);
             panEmployeeSub.Name = "panEmployeeSub";
-            panEmployeeSub.Size = new Size(164, 46);
+            panEmployeeSub.Size = new Size(164, 42);
             panEmployeeSub.TabIndex = 0;
+            // 
+            // btnLeave
+            // 
+            btnLeave.BackColor = Color.FromArgb(30, 75, 108);
+            btnLeave.Dock = DockStyle.Top;
+            btnLeave.FlatAppearance.BorderSize = 0;
+            btnLeave.FlatStyle = FlatStyle.Flat;
+            btnLeave.Font = new Font("MS Reference Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLeave.ForeColor = Color.White;
+            btnLeave.Image = Properties.Resources.icons8_leave_30;
+            btnLeave.ImageAlign = ContentAlignment.TopLeft;
+            btnLeave.Location = new Point(0, 175);
+            btnLeave.Name = "btnLeave";
+            btnLeave.Size = new Size(164, 45);
+            btnLeave.TabIndex = 5;
+            btnLeave.Text = "  Leave application";
+            btnLeave.TextAlign = ContentAlignment.MiddleLeft;
+            btnLeave.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnLeave.UseVisualStyleBackColor = false;
+            btnLeave.Click += btnLeave_Click;
             // 
             // btnEmployeeList
             // 
-            btnEmployeeList.BackColor = Color.FromArgb(9, 75, 108);
+            btnEmployeeList.BackColor = Color.FromArgb(30, 75, 108);
             btnEmployeeList.Dock = DockStyle.Top;
             btnEmployeeList.FlatAppearance.BorderSize = 0;
             btnEmployeeList.FlatStyle = FlatStyle.Flat;
@@ -176,7 +211,7 @@
             btnEmployeeList.ForeColor = Color.White;
             btnEmployeeList.Image = Properties.Resources.icons8_list_30__1_;
             btnEmployeeList.ImageAlign = ContentAlignment.TopLeft;
-            btnEmployeeList.Location = new Point(0, 85);
+            btnEmployeeList.Location = new Point(0, 130);
             btnEmployeeList.Name = "btnEmployeeList";
             btnEmployeeList.Size = new Size(164, 45);
             btnEmployeeList.TabIndex = 4;
@@ -186,9 +221,29 @@
             btnEmployeeList.UseVisualStyleBackColor = false;
             btnEmployeeList.Click += btnEmployeeList_Click;
             // 
+            // btnSalary
+            // 
+            btnSalary.BackColor = Color.FromArgb(30, 75, 108);
+            btnSalary.Dock = DockStyle.Top;
+            btnSalary.FlatAppearance.BorderSize = 0;
+            btnSalary.FlatStyle = FlatStyle.Flat;
+            btnSalary.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSalary.ForeColor = Color.White;
+            btnSalary.Image = Properties.Resources.icons8_payment_30;
+            btnSalary.ImageAlign = ContentAlignment.TopLeft;
+            btnSalary.Location = new Point(0, 85);
+            btnSalary.Name = "btnSalary";
+            btnSalary.Size = new Size(164, 45);
+            btnSalary.TabIndex = 5;
+            btnSalary.Text = "  Pay employee";
+            btnSalary.TextAlign = ContentAlignment.MiddleLeft;
+            btnSalary.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSalary.UseVisualStyleBackColor = false;
+            btnSalary.Click += btnSalary_Click;
+            // 
             // btnNewEmployee
             // 
-            btnNewEmployee.BackColor = Color.FromArgb(9, 75, 108);
+            btnNewEmployee.BackColor = Color.FromArgb(30, 75, 108);
             btnNewEmployee.Dock = DockStyle.Top;
             btnNewEmployee.FlatAppearance.BorderSize = 0;
             btnNewEmployee.FlatStyle = FlatStyle.Flat;
@@ -314,7 +369,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Right;
             pictureBox1.Image = Properties.Resources.icons8_user_100;
-            pictureBox1.Location = new Point(598, 1);
+            pictureBox1.Location = new Point(868, 1);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(30, 27);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -323,11 +378,11 @@
             // 
             // lblUser
             // 
-            lblUser.Anchor = AnchorStyles.Right;
+            lblUser.Anchor = AnchorStyles.None;
             lblUser.AutoSize = true;
             lblUser.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblUser.ForeColor = Color.FromArgb(9, 75, 108);
-            lblUser.Location = new Point(634, 5);
+            lblUser.Location = new Point(571, 6);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(264, 19);
             lblUser.TabIndex = 0;
@@ -374,7 +429,7 @@
             linkLogout.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             linkLogout.ForeColor = Color.White;
             linkLogout.LinkBehavior = LinkBehavior.HoverUnderline;
-            linkLogout.LinkColor = Color.White;
+            linkLogout.LinkColor = Color.Red;
             linkLogout.Location = new Point(832, 3);
             linkLogout.Name = "linkLogout";
             linkLogout.Size = new Size(66, 19);
@@ -404,6 +459,7 @@
             Text = "Dashboard";
             Load += Dashboard_Load;
             NavigationBar.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panEmployeeSub.ResumeLayout(false);
             panel1.ResumeLayout(false);
@@ -437,5 +493,8 @@
         private Button btnNewEmployee;
         private Panel panel3;
         private System.Windows.Forms.Timer EmployeeSubmenu;
+        private Button btnLeave;
+        private Button btnSalary;
+        private Panel panel4;
     }
 }

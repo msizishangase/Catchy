@@ -75,7 +75,7 @@
             lblTime.AutoSize = true;
             lblTime.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTime.ForeColor = Color.FromArgb(9, 75, 108);
-            lblTime.Location = new Point(331, 9);
+            lblTime.Location = new Point(319, 9);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(155, 19);
             lblTime.TabIndex = 6;
@@ -404,6 +404,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Salary";
             Text = "Salary";
+            Load += Salary_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);

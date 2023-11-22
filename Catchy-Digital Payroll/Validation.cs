@@ -134,5 +134,26 @@ namespace Catchy_Digital_Payroll
             // If all checks pass, the password is considered valid
             return true;
         }
+        public bool EmployeeExists(string employeeID)
+        {
+            Employee employee = new Employee();
+
+            using (StreamReader sr = new StreamReader(employee.employeeFile))
+            {
+                string line;
+                string[] data;
+                line = sr.ReadLine();
+                while (line != null)
+                {
+                    data = line.Split('|');
+                    if (data.Length > 0 && data[2] == employeeID)
+                    {
+                        return true;
+                    }
+                    line = sr.ReadLine();
+                }
+            }
+            return false;
+        }
     }
 }

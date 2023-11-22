@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            chkShowpassword = new CheckBox();
             btnExit = new Button();
             btnForgotPassword = new Button();
             btnLogin = new Button();
@@ -59,6 +60,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(chkShowpassword);
             panel1.Controls.Add(btnExit);
             panel1.Controls.Add(btnForgotPassword);
             panel1.Controls.Add(btnLogin);
@@ -75,6 +77,18 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(436, 443);
             panel1.TabIndex = 0;
+            // 
+            // chkShowpassword
+            // 
+            chkShowpassword.AutoSize = true;
+            chkShowpassword.Font = new Font("MS Reference Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            chkShowpassword.Location = new Point(254, 240);
+            chkShowpassword.Name = "chkShowpassword";
+            chkShowpassword.Size = new Size(154, 24);
+            chkShowpassword.TabIndex = 6;
+            chkShowpassword.Text = "Show password";
+            chkShowpassword.UseVisualStyleBackColor = true;
+            chkShowpassword.CheckedChanged += chkShowpassword_CheckedChanged;
             // 
             // btnExit
             // 
@@ -99,7 +113,7 @@
             btnForgotPassword.FlatStyle = FlatStyle.Flat;
             btnForgotPassword.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnForgotPassword.ForeColor = Color.FromArgb(9, 75, 108);
-            btnForgotPassword.Location = new Point(222, 257);
+            btnForgotPassword.Location = new Point(221, 283);
             btnForgotPassword.Name = "btnForgotPassword";
             btnForgotPassword.Size = new Size(188, 43);
             btnForgotPassword.TabIndex = 3;
@@ -114,7 +128,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("MS Reference Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = SystemColors.Control;
-            btnLogin.Location = new Point(13, 257);
+            btnLogin.Location = new Point(12, 283);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(188, 43);
             btnLogin.TabIndex = 3;
@@ -301,7 +315,7 @@
             listBox1.Font = new Font("MS Reference Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Items.AddRange(new object[] { "CatchyPay Version 2.0 - Exciting New Features!", "", "We're thrilled to introduce CatchyPay Version 2.0, packed with powerful enhancements to make managing payroll even easier and more efficient for you and your team. Here's what's new:", "", "1. Employee Self-Service Portal", "", "Empower your employees with a new self-service portal! They can now access their pay stubs, tax documents, and update personal information directly through CatchyPay, reducing administrative workload.", "2. Enhanced Reporting", "", "We've revamped our reporting capabilities! Generate detailed payroll reports, customize them to suit your needs, and export data effortlessly.", "3. Automated Tax Calculations", "", "Say goodbye to manual tax calculations! CatchyPay now automates tax calculations based on the latest tax laws and regulations, reducing errors and saving you time.", "4. Seamless Integration with Accounting Software", "", "We've improved our integration options. CatchyPay seamlessly connects with popular accounting software like QuickBooks and Xero, streamlining your financial processes.", "5. Employee Onboarding Module", "", "Simplify the onboarding process with our new module. Easily add new hires, collect necessary documentation, and set up payroll accounts in a few clicks.", "6. Enhanced Security", "", "We take your data security seriously. CatchyPay 2.0 includes advanced security features to safeguard your sensitive payroll information.", "7. User-Friendly Interface", "", "Our redesigned user interface is more intuitive than ever. Enjoy a smoother, more pleasant payroll management experience.", "8. Improved Customer Support", "", "We've expanded our customer support team to provide you with faster, more responsive assistance. We're here to help you every step of the way.", "9. Bug Fixes and Performance Improvements", "", "We've addressed various bugs and made performance enhancements to ensure CatchyPay runs smoothly.", resources.GetString("listBox1.Items"), "", "Thank you for choosing CatchyPay!" });
+            listBox1.Items.AddRange(new object[] { "CatchyPay Version 2.4 - Exciting New Features!", "", "We're thrilled to introduce CatchyPay Version 2.0, packed with powerful enhancements to make managing payroll even easier and more efficient for you and your team. Here's what's new:", "", "1. Employee Self-Service Portal", "", "Empower your employees with a new self-service portal! They can now access their pay stubs, tax documents, and update personal information directly through CatchyPay, reducing administrative workload.", "2. Enhanced Reporting", "", "We've revamped our reporting capabilities! Generate detailed payroll reports, customize them to suit your needs, and export data effortlessly.", "3. Automated Tax Calculations", "", "Say goodbye to manual tax calculations! CatchyPay now automates tax calculations based on the latest tax laws and regulations, reducing errors and saving you time.", "4. Seamless Integration with Accounting Software", "", "We've improved our integration options. CatchyPay seamlessly connects with popular accounting software like QuickBooks and Xero, streamlining your financial processes.", "5. Employee Onboarding Module", "", "Simplify the onboarding process with our new module. Easily add new hires, collect necessary documentation, and set up payroll accounts in a few clicks.", "6. Enhanced Security", "", "We take your data security seriously. CatchyPay 2.0 includes advanced security features to safeguard your sensitive payroll information.", "7. User-Friendly Interface", "", "Our redesigned user interface is more intuitive than ever. Enjoy a smoother, more pleasant payroll management experience.", "8. Improved Customer Support", "", "We've expanded our customer support team to provide you with faster, more responsive assistance. We're here to help you every step of the way.", "9. Bug Fixes and Performance Improvements", "", "We've addressed various bugs and made performance enhancements to ensure CatchyPay runs smoothly.", resources.GetString("listBox1.Items"), "", "Thank you for choosing CatchyPay!" });
             listBox1.Location = new Point(12, 130);
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(338, 289);
@@ -358,5 +372,6 @@
         private Button btnExit;
         private Label lblPasswordWarning;
         private Label lblUsernameWarning;
+        private CheckBox chkShowpassword;
     }
 }

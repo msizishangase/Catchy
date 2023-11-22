@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Net.WebSockets;
+using System.Drawing;
 
 namespace Catchy_Digital_Payroll
 {
@@ -12,6 +13,7 @@ namespace Catchy_Digital_Payroll
     {
         public string employeeFile = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Employee.txt";
         public string importantEmployeeInfo = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Employee [displayed].txt";
+        public string leave = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Leave.txt";
         //Employee details
         private string name;
         private string surname;
@@ -64,7 +66,7 @@ namespace Catchy_Digital_Payroll
             propNextName = "";
             propNextSurname = "";
             propNextRelationship = "";
-            propNextEmail = "";
+            propNextEmail = "none";
             propNextPhoneNumber = "";
             propGender = "";
         }
@@ -94,14 +96,14 @@ namespace Catchy_Digital_Payroll
             {
                 sw.WriteLine($"{propName}|{propSurname}|{propEmployeeID}|{propEmail}|{propPhoneNumber}|{propIDnumber}|" +
                     $"{propNationality}|{propRace}|{propOccupation}|{propHomeAddress}|{propNextName}|{propNextSurname}|" +
-                    $"{propNextRelationship}|{propNextEmail}|{propPhoneNumber}|{propGender}");
+                    $"{propNextRelationship}|{propNextEmail}|{propPhoneNumber}|{propGender}|");
             }
         }
         public void SaveImportantInfo()
         {
             using (StreamWriter writer = new StreamWriter(importantEmployeeInfo, true))
             {
-                writer.WriteLine($"{propName}|{propSurname}|{propEmployeeID}|{propEmail}|{propOccupation}");
+                writer.WriteLine($"{propName}|{propSurname}|{propEmployeeID}|{propEmail}|{propOccupation}|");
             }
         }
     }

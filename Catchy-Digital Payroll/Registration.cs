@@ -64,6 +64,34 @@ namespace Catchy_Digital_Payroll
             form.Show();
             this.Hide();
         }
+        private void SaveImagePathToFile(PictureBox pictureBox, string description, string destinationFilePath)
+        {
+            try
+            {
+                // Get the image path from the PictureBox
+                string imagePath = pictureBox.ImageLocation;
+
+                // Check if the image path is not empty
+                if (!string.IsNullOrEmpty(imagePath))
+                {
+                    // Create a formatted string with description and image path
+                    string dataToWrite = $"{description} | {imagePath}";
+
+                    // Write the formatted string to the destination file
+                    File.WriteAllText(destinationFilePath, dataToWrite);
+
+                    MessageBox.Show($"Description and image path saved to {destinationFilePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No image loaded in the PictureBox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -98,11 +126,8 @@ namespace Catchy_Digital_Payroll
             }
 
             HR_Manager hr = new HR_Manager();
-            hr.propFullname = txtFullname.Text;
-            hr.propUsername = txtUsername.Text;
-            hr.propEmail = txtEmailaddress.Text;
-            hr.propPassword = txtPassword.Text;
-            hr.propGender = gender;
+            //hr.propUsername = txtUsername.Text;
+            //hr.propPassword = txtPassword.Text;
 
             if (!hr.UserAlreadyExist())
             {
@@ -155,6 +180,49 @@ namespace Catchy_Digital_Payroll
                 }
                 else
                 {
+                    DateTime date = DateTime.Now;
+
+                    hr.propFullnames = txtFullname.Text;
+                    hr.propSurname = txtSurname.Text;
+                    hr.propUsername = txtUsername.Text;
+                    hr.propEmail = txtEmailaddress.Text;
+                    hr.propPassword = txtPassword.Text;
+                    hr.propID = txtID.Text;
+                    hr.propPhone = txtPhone.Text;
+                    hr.propTitle = cmbTitle.Text;
+                    hr.propGender = gender;
+
+                    hr.AddReport("HR registration", $"{txtFullname.Text} {txtSurname.Text} joined as a HR manager", date.ToLocalTime().ToString());
+                    MessageBox.Show("Account registered successfully", "Success");
+                    hr.Register();
+
+                    string destinationFilePath = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Admin pictures.txt";
+
+                    // Get the image path from the PictureBox
+                    string imagePath = pictureBox1.ImageLocation;
+
+                    // Check if the image path is not empty
+                    if (!string.IsNullOrEmpty(imagePath))
+                    {
+                        try
+                        {
+                            using (StreamWriter writer = new StreamWriter(destinationFilePath, true))
+                            {
+                                writer.WriteLine($"{txtUsername.Text}|{imagePath}");
+                            }
+
+                            MessageBox.Show($"Image path saved to {destinationFilePath}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No image loaded in the PictureBox.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
                     this.Hide();
                     Form1 form = new Form1();
                     form.Show();
@@ -179,21 +247,14 @@ namespace Catchy_Digital_Payroll
 
         private void btnAddProfilePicture_Click(object sender, EventArgs e)
         {
-            Dashboard dash = new Dashboard();
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.ico";
+                openFileDialog.Filter = "Image Files|*.png;*.jpg;*.jpeg;*.gif;*.bmp|All Files|*.*";
+
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    // Get the selected file name
-                    string selectedFileName = openFileDialog.FileName;
-
-                    // Display the image in the PictureBox
-                    pictureBox1.Image = Image.FromFile(selectedFileName);
-
-                    // Set the image name using the property
-                    dash.Picture = selectedFileName;
-
+                    // Set the selected image to the PictureBox
+                    pictureBox1.ImageLocation = openFileDialog.FileName;
                 }
             }
         }
@@ -380,7 +441,7 @@ namespace Catchy_Digital_Payroll
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-            if (validate.IsValidPhoneNumber(txtPhone.Text))
+            if (!validate.IsValidPhoneNumber(txtPhone.Text))
             {
                 lblPhoneNumberWarning.Text = "Invalid phone number";
                 lblPhoneNumberWarning.Visible = true;

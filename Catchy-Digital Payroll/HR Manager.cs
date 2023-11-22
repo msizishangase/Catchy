@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Drawing;
 
 namespace Catchy_Digital_Payroll
 {
@@ -13,20 +14,24 @@ namespace Catchy_Digital_Payroll
         public string active = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Active.txt";
         public string reports = @"C:\Users\Msizi\OneDrive\Desktop\C# exercises\Catchy\TextFiles\Reports.txt";
 
-        private string fullName;
+        private string fullNames;
+        private string surname;
         private string username;
         private string email;
+        private string ID;
+        private string title;
+        private string phone;
         private string password;
         private string gender;
 
-        public string propFullname
+        public string propFullnames
         {
-            get { return fullName; }
+            get { return fullNames; }
             set
             {
                 if (value != "")
                 {
-                    fullName = value;
+                    fullNames = value;
                 }
             }
         }
@@ -74,24 +79,75 @@ namespace Catchy_Digital_Payroll
                 }
             }
         }
+        public string propSurname
+        {
+            get { return surname; }
+            set
+            {
+                if (value != "")
+                {
+                    surname = value;
+                }
+            }
+        }
+        public string propID
+        {
+            get { return ID; }
+            set
+            {
+                if (value != "")
+                {
+                    ID = value;
+                }
+            }
+        }
+        public string propTitle
+        {
+            get { return title; }
+            set
+            {
+                if (value != "")
+                {
+                    title = value;
+                }
+            }
+        }
+        public string propPhone
+        {
+            get { return phone; }
+            set
+            {
+                if (value != "")
+                {
+                    phone = value;
+                }
+            }
+        }
 
         public HR_Manager()
         {
-            propFullname = "";
+            propFullnames = "";
             propUsername = "";
             propEmail = "";
             propPassword = "";
             propGender = "";
+            propSurname = "";
+            propID = "";
+            propTitle = "";
+            propPhone = "";
         }
 
-        public HR_Manager(string fullName, string username, string email, string password, string gender)
+        public HR_Manager(string fullName, string username, string email, string password, string gender, string surname, string id, string title, string phone)
         {
-            propFullname = fullName;
+            propFullnames = fullName;
             propUsername = username;
             propEmail = email;
             propPassword = password;
             propGender = gender;
-
+            propSurname = surname;
+            propID = id;
+            propTitle = title;
+            propPhone = phone;
         }
         public void Register()
         {
@@ -99,10 +155,11 @@ namespace Catchy_Digital_Payroll
 
             using (writer)
             {
-                writer.WriteLine($"{propFullname}|{propUsername}|{propGender}|{propEmail}|{propPassword}");
+                writer.WriteLine($"{propFullnames}|{propSurname}|{propUsername}|{propEmail}|{propGender}|{propID}|{propTitle}|{propPhone}|{propPassword}");
             }
             MessageBox.Show("Your details are as follows:\n" +
-                $"Full name: {propFullname}\n" +
+                $"Name(s): {propFullnames}\n" +
+                $"Surname: {propSurname}" +
                 $"Username: {propUsername}\n" +
                 $"Email: {propEmail}\n" +
                 $"Password: {propPassword}", "DETAILS");
@@ -111,7 +168,7 @@ namespace Catchy_Digital_Payroll
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
-            string[] Record = new string[6];
+            string[] Record = new string[9];
             string currentUser = "";
 
             using (reader)
@@ -120,7 +177,7 @@ namespace Catchy_Digital_Payroll
                 while (lineRead != null)
                 {
                     Record = lineRead.Split('|');
-                    if (Record[1] == propUsername && Record[4] == propPassword)
+                    if (Record[2] == propUsername && Record[8] == propPassword)
                     {
                         currentUser = propUsername;
                     }
@@ -131,18 +188,17 @@ namespace Catchy_Digital_Payroll
         }
         public bool LogIn() //Returns true if username matches the password and false if it does not
         {
-            StreamReader reader = new StreamReader(file);
-            string lineRead = "";
-            string[] Record = new string[6];
+            string lineRead;
+            string[] Record;
             bool matches = false;
 
-            using (reader)
+            using (StreamReader reader = new StreamReader(file))
             {
                 lineRead = reader.ReadLine();
                 while (lineRead != null)
                 {
                     Record = lineRead.Split('|');
-                    if (Record[1] == propUsername && Record[4] == propPassword)
+                    if (Record[2] == propUsername && Record[8] == propPassword)
                     {
                         matches = true;
                     }
@@ -155,7 +211,7 @@ namespace Catchy_Digital_Payroll
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
-            string[] Record = new string[6];
+            string[] Record = new string[9];
             string FullName = "";
 
             using (reader)
@@ -164,9 +220,9 @@ namespace Catchy_Digital_Payroll
                 while (lineRead != null)
                 {
                     Record = lineRead.Split('|');
-                    if (Record[1] == propUsername && Record[4] == propPassword)
+                    if (Record[2] == propUsername && Record[8] == propPassword)
                     {
-                        FullName = Record[0];
+                        FullName = Record[0] + " " + Record[1];
                     }
                     lineRead = reader.ReadLine();
                 }
@@ -176,25 +232,20 @@ namespace Catchy_Digital_Payroll
 
         public bool UserAlreadyExist() //Returns true if user exists already and false if he/she doesn't
         {
-            StreamReader reader = new StreamReader(file);
-            string lineRead = "";
-            string[] Record = new string[6];
+            string lineRead;
+            string[] Record;
             bool exist = false;
 
-            using (reader)
+            using (StreamReader reader = new StreamReader(file))
             {
                 lineRead = reader.ReadLine();
                 while (lineRead != null)
                 {
                     Record = lineRead.Split('|');
-                    if (Record[1] == propUsername)
+                    if (Record.Length >= 4 && Record[2] == propUsername)
                     {
                         exist = true;
                         break;
-                    }
-                    else
-                    {
-                        exist = false;
                     }
                     lineRead = reader.ReadLine();
                 }
@@ -205,7 +256,7 @@ namespace Catchy_Digital_Payroll
         {
             StreamReader reader = new StreamReader(file);
             string lineRead = "";
-            string[] Record = new string[6];
+            string[] Record = new string[9];
             string data = "";
 
             using (reader)
@@ -214,9 +265,9 @@ namespace Catchy_Digital_Payroll
                 while (lineRead != null)
                 {
                     Record = lineRead.Split('|');
-                    if (Record[1] == propUsername)
+                    if (Record[2] == propUsername)
                     {
-                        data = $"{Record[0]}|{Record[1]}|{Record[2]}|{Record[3]}";
+                        data = $"{Record[0]}|{Record[1]}|{Record[2]}|{Record[3]}|{Record[4]}|{Record[5]}|{Record[6]}|{Record[7]}|{Record[8]}";
                         break;
                     }
                     lineRead = reader.ReadLine();
@@ -237,6 +288,27 @@ namespace Catchy_Digital_Payroll
             {
                 sw.WriteLine($"{reportName}|{description}|{date}");
             }
+        }
+        public string GetLastLine(string filePath)
+        {
+            string lastLine = null;
+
+            try
+            {
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+                using (StreamReader reader = new StreamReader(fileStream))
+                {
+                    while (!reader.EndOfStream)
+                    {
+                        lastLine = reader.ReadLine();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading the file: {ex.Message}");
+            }
+            return lastLine;
         }
     }
 }
