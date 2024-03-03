@@ -15,7 +15,7 @@ CactchyPay is a desktop application designed to streamline payroll processes and
 
 For any suggestions or inquiries, please reach out via GitHub or email:
 
-- GitHub: [YourGitHubUsername](https://github.com/msizishangase)
+- GitHub: https://github.com/msizishangase
 - Email: 22202887@dut4life.ac.za
 - Phone: +27655465903
 
